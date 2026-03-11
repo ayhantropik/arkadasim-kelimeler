@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkadaşım Kelimeler - Kelimelerin Eğlenceli Dünyası!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background: #fefefe;
+        }
+        .brand-name {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 0 2rem;
+            height: 70px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            width: 42px; height: 42px;
+            background: linear-gradient(135deg, #7c3aed, #f97316);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 20px; font-weight: 800;
+        }
+        .nav-logo span {
+            font-size: 1.25rem; font-weight: 800;
+            background: linear-gradient(135deg, #7c3aed, #f97316);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .nav-links {
+            display: flex; gap: 2rem; list-style: none; align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none; color: #555; font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #7c3aed; }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 5px;
+        }
+        .hamburger span {
+            width: 26px; height: 3px; background: #333;
+            border-radius: 3px; transition: 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-6px); }
+        .mobile-menu {
+            display: none; position: fixed; top: 70px; left: 0; right: 0;
+            background: #fff; padding: 1rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            flex-direction: column; gap: 1rem;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            text-decoration: none; color: #555; font-weight: 600;
+            padding: 0.5rem 0; font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #f97316 50%, #22c55e 75%, #3b82f6 100%);
+            display: flex; align-items: center; justify-content: center;
+            padding: 100px 2rem 4rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);
+        }
+        .hero-content {
+            display: flex; align-items: center; gap: 4rem;
+            max-width: 1200px; width: 100%; position: relative; z-index: 1;
+            flex-wrap: wrap; justify-content: center;
+        }
+        .hero-text { flex: 1; min-width: 320px; color: #fff; text-align: left; }
+        .hero-text h1 {
+            font-size: 3.5rem; font-weight: 900; line-height: 1.1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .hero-text .slogan {
+            font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        .hero-text p {
+            font-size: 1.15rem; line-height: 1.7; margin-bottom: 2rem;
+            color: rgba(255,255,255,0.85); max-width: 500px;
+        }
+        .store-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .store-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(0,0,0,0.3); color: #fff;
+            padding: 14px 28px; border-radius: 16px;
+            text-decoration: none; font-weight: 700;
+            transition: transform 0.3s, background 0.3s;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .store-btn:hover { transform: translateY(-3px); background: rgba(0,0,0,0.5); }
+        .store-btn i { font-size: 1.5rem; }
+        .store-btn .btn-text { display: flex; flex-direction: column; }
+        .store-btn .btn-text small { font-size: 0.65rem; font-weight: 400; opacity: 0.8; }
+        .store-btn .btn-text strong { font-size: 1rem; }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            width: 280px; height: 560px;
+            background: #1a1a2e;
+            border-radius: 40px;
+            border: 6px solid #333;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .phone-notch {
+            width: 120px; height: 28px;
+            background: #333;
+            border-radius: 0 0 16px 16px;
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            z-index: 2;
+        }
+        .phone-screen {
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, #4c1d95, #7c3aed);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 2rem 1rem; gap: 12px;
+        }
+        .phone-screen .app-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem;
+        }
+        .phone-screen .app-title {
+            color: #fff; font-weight: 800; font-size: 1.1rem; text-align: center;
+        }
+        .phone-screen .game-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 10px; margin-top: 10px;
+        }
+        .phone-screen .game-tile {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            animation: tileFloat 3s ease-in-out infinite;
+        }
+        .phone-screen .game-tile:nth-child(1) { background: #ef4444; animation-delay: 0s; }
+        .phone-screen .game-tile:nth-child(2) { background: #22c55e; animation-delay: 0.3s; }
+        .phone-screen .game-tile:nth-child(3) { background: #3b82f6; animation-delay: 0.6s; }
+        .phone-screen .game-tile:nth-child(4) { background: #f97316; animation-delay: 0.9s; }
+        .phone-screen .game-tile:nth-child(5) { background: #a855f7; animation-delay: 1.2s; }
+        .phone-screen .game-tile:nth-child(6) { background: #ec4899; animation-delay: 1.5s; }
+        @keyframes tileFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text { text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .store-buttons { justify-content: center; }
+            .phone-mockup { width: 220px; height: 440px; }
+        }
+
+        /* SECTIONS COMMON */
+        section { padding: 5rem 2rem; }
+        .section-title {
+            text-align: center; font-size: 2.5rem; font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #7c3aed, #f97316);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .section-subtitle {
+            text-align: center; color: #777; font-size: 1.1rem;
+            margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* FADE IN */
+        .fade-in {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* FEATURES */
+        #ozellikler { background: #f8f7ff; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .feature-card {
+            background: #fff; border-radius: 20px;
+            padding: 2rem; text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(124,58,237,0.15);
+        }
+        .feature-icon {
+            width: 70px; height: 70px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.2rem; font-size: 1.8rem; color: #fff;
+        }
+        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, #f97316, #fbbf24); }
+        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #22c55e, #4ade80); }
+        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+        .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #ef4444, #f87171); }
+        .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #ec4899, #f472b6); }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .feature-card p { color: #777; font-size: 0.95rem; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        /* GAMES */
+        #oyunlar { background: #fff; }
+        .games-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .game-card {
+            background: #fff; border-radius: 20px;
+            padding: 2rem; text-align: center;
+            border: 2px solid #f0f0f0;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: #a855f7;
+            box-shadow: 0 12px 40px rgba(124,58,237,0.12);
+        }
+        .game-emoji {
+            font-size: 3rem; margin-bottom: 1rem;
+            display: block;
+        }
+        .game-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .game-card p { color: #777; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
+        .difficulty {
+            display: inline-block; padding: 4px 14px;
+            border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+        }
+        .difficulty.easy { background: #dcfce7; color: #16a34a; }
+        .difficulty.medium { background: #fef3c7; color: #d97706; }
+        .difficulty.hard { background: #fee2e2; color: #dc2626; }
+
+        @media (max-width: 768px) {
+            .games-grid { grid-template-columns: 1fr; }
+        }
+
+        /* HOW TO PLAY */
+        #nasil-oynanir { background: #f8f7ff; }
+        .steps {
+            display: flex; gap: 2rem; justify-content: center;
+            flex-wrap: wrap; margin-top: 2rem;
+        }
+        .step {
+            text-align: center; flex: 1; min-width: 220px; max-width: 320px;
+            position: relative;
+        }
+        .step-number {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; font-weight: 900; color: #fff;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .step:nth-child(1) .step-number { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .step:nth-child(2) .step-number { background: linear-gradient(135deg, #f97316, #fbbf24); }
+        .step:nth-child(3) .step-number { background: linear-gradient(135deg, #22c55e, #4ade80); }
+        .step h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .step p { color: #777; font-size: 0.95rem; line-height: 1.6; }
+        .step-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        /* STATS */
+        #istatistikler {
+            background: linear-gradient(135deg, #7c3aed, #a855f7, #3b82f6);
+            color: #fff;
+        }
+        #istatistikler .section-title {
+            -webkit-text-fill-color: #fff;
+        }
+        #istatistikler .section-subtitle { color: rgba(255,255,255,0.8); }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .stat-card {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px; padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .stat-number {
+            font-size: 3rem; font-weight: 900;
+            margin-bottom: 0.3rem;
+        }
+        .stat-label { font-size: 1rem; opacity: 0.85; font-weight: 600; }
+        .stat-icon { font-size: 2rem; margin-bottom: 0.8rem; opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* TESTIMONIALS */
+        #yorumlar { background: #fff; }
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: #f8f7ff; border-radius: 20px;
+            padding: 2rem; position: relative;
+            transition: transform 0.3s;
+        }
+        .testimonial-card:hover { transform: translateY(-5px); }
+        .testimonial-avatar {
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800; color: #fff;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card:nth-child(1) .testimonial-avatar { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .testimonial-card:nth-child(2) .testimonial-avatar { background: linear-gradient(135deg, #f97316, #fbbf24); }
+        .testimonial-card:nth-child(3) .testimonial-avatar { background: linear-gradient(135deg, #22c55e, #4ade80); }
+        .testimonial-stars { color: #fbbf24; margin-bottom: 0.8rem; font-size: 1rem; }
+        .testimonial-text {
+            color: #555; font-size: 0.95rem; line-height: 1.7;
+            margin-bottom: 1rem; font-style: italic;
+        }
+        .testimonial-name { font-weight: 800; font-size: 1rem; }
+
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        /* FAQ */
+        #sss { background: #f8f7ff; }
+        .faq-list { max-width: 750px; margin: 0 auto; }
+        .faq-item {
+            background: #fff; border-radius: 16px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.3rem 1.5rem;
+            font-weight: 700; font-size: 1.05rem;
+            cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover { background: #f8f7ff; }
+        .faq-question i {
+            transition: transform 0.3s; color: #7c3aed;
+        }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.3rem;
+            color: #666; line-height: 1.7; font-size: 0.95rem;
+        }
+
+        /* ACADEMIC */
+        #akademik { background: #fff; }
+        .academic-intro {
+            text-align: center; max-width: 800px; margin: 0 auto 2.5rem;
+            color: #555; line-height: 1.8; font-size: 1.05rem;
+        }
+        .academic-tabs {
+            display: flex; justify-content: center; gap: 0.5rem;
+            flex-wrap: wrap; margin-bottom: 2.5rem;
+        }
+        .academic-tab {
+            padding: 12px 24px; border-radius: 30px;
+            border: 2px solid #e0e0e0; background: #fff;
+            font-weight: 700; font-size: 0.95rem; cursor: pointer;
+            transition: all 0.3s; font-family: 'Nunito', sans-serif;
+            color: #555;
+        }
+        .academic-tab:hover { border-color: #a855f7; color: #7c3aed; }
+        .academic-tab.active {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff; border-color: transparent;
+        }
+        .academic-panel { display: none; }
+        .academic-panel.active { display: block; }
+        .academic-card {
+            background: #f8f7ff; border-radius: 20px;
+            padding: 2rem; margin-bottom: 1.5rem;
+            border-left: 4px solid #7c3aed;
+        }
+        .academic-card h3 {
+            font-size: 1.15rem; font-weight: 800; margin-bottom: 0.8rem;
+            color: #333;
+        }
+        .academic-card p, .academic-card li {
+            color: #555; line-height: 1.8; font-size: 0.95rem;
+        }
+        .academic-card ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        .academic-card li { margin-bottom: 0.4rem; }
+        .academic-highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left-color: #f97316;
+            border-radius: 16px; padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+        .academic-highlight p { color: #92400e; font-weight: 600; }
+        .academic-quote {
+            background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+            border-left-color: #7c3aed;
+            padding: 1.5rem 2rem; border-radius: 16px;
+            margin: 1.5rem 0; font-style: italic;
+        }
+        .academic-quote p { color: #5b21b6; font-weight: 600; font-size: 1.05rem; }
+        .academic-game-list {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem; margin-top: 1rem;
+        }
+        .academic-game-item {
+            background: #fff; border-radius: 14px;
+            padding: 1.2rem; border: 1px solid #e8e5f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .academic-game-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(124,58,237,0.1);
+        }
+        .academic-game-item h4 {
+            font-size: 0.95rem; font-weight: 800; color: #7c3aed;
+            margin-bottom: 0.4rem;
+        }
+        .academic-game-item p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+        .cycle-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .cycle-box { border-radius: 20px; padding: 2rem; }
+        .cycle-bad {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 2px solid #fca5a5;
+        }
+        .cycle-good {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 2px solid #86efac;
+        }
+        .cycle-box h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; }
+        .cycle-bad h3 { color: #dc2626; }
+        .cycle-good h3 { color: #16a34a; }
+        .cycle-box .cycle-step {
+            padding: 0.5rem 0; font-size: 0.9rem; line-height: 1.5;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .cycle-box .cycle-step:last-child { border-bottom: none; }
+        .cycle-bad .cycle-step { color: #991b1b; }
+        .cycle-good .cycle-step { color: #166534; }
+        .cycle-arrow { font-weight: 700; opacity: 0.5; }
+        .compare-table {
+            width: 100%; border-collapse: separate;
+            border-spacing: 0; margin-top: 1rem;
+            border-radius: 12px; overflow: hidden;
+        }
+        .compare-table th {
+            padding: 12px 16px; font-weight: 800; font-size: 0.9rem;
+        }
+        .compare-table th:first-child { background: #dcfce7; color: #16a34a; }
+        .compare-table th:last-child { background: #fee2e2; color: #dc2626; }
+        .compare-table td {
+            padding: 10px 16px; font-size: 0.9rem; color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { background: #f0fdf4; }
+        .compare-table td:last-child { background: #fef2f2; }
+        @media (max-width: 768px) {
+            .cycle-container { grid-template-columns: 1fr; }
+            .academic-game-list { grid-template-columns: 1fr; }
+        }
+
+        /* CTA */
+        #indir {
+            background: linear-gradient(135deg, #f97316, #ec4899, #7c3aed);
+            color: #fff; text-align: center;
+            padding: 5rem 2rem;
+        }
+        #indir h2 {
+            font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem;
+        }
+        #indir p {
+            font-size: 1.15rem; margin-bottom: 2rem;
+            opacity: 0.9; max-width: 500px; margin-left: auto; margin-right: auto;
+        }
+        #indir .store-buttons { justify-content: center; }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a2e; color: #fff; padding: 4rem 2rem 2rem;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem; max-width: 1200px; margin: 0 auto;
+        }
+        .footer-about p {
+            color: #999; line-height: 1.7; margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        .footer-links h4, .footer-social h4 {
+            font-size: 1.1rem; margin-bottom: 1rem; font-weight: 800;
+        }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.6rem; }
+        .footer-links a {
+            color: #999; text-decoration: none; transition: color 0.3s;
+        }
+        .footer-links a:hover { color: #a855f7; }
+        .social-icons {
+            display: flex; gap: 1rem; margin-top: 0.5rem;
+        }
+        .social-icons a {
+            width: 44px; height: 44px;
+            border-radius: 12px; display: flex;
+            align-items: center; justify-content: center;
+            color: #fff; font-size: 1.2rem;
+            transition: transform 0.3s, opacity 0.3s;
+            background: rgba(255,255,255,0.08);
+        }
+        .social-icons a:hover { transform: translateY(-3px); opacity: 0.8; }
+        .footer-bottom {
+            text-align: center; margin-top: 3rem;
+            padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+            color: #666; font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+            #indir h2 { font-size: 2rem; }
+        }
+
+        /* Floating bubbles in hero */
+        .bubble {
+            position: absolute; border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            animation: bubbleFloat linear infinite;
+        }
+        @keyframes bubbleFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">
+        <div class="nav-logo-icon brand-name">AK</div>
+        <span class="brand-name">Arkadaşım Kelimeler</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#ozellikler">Özellikler</a></li>
+        <li><a href="#oyunlar">Oyunlar</a></li>
+        <li><a href="#nasil-oynanir">Nasıl Oynanır</a></li>
+        <li><a href="#yorumlar">Yorumlar</a></li>
+        <li><a href="#indir">İndir</a></li>
+        <li><a href="#akademik">Akademik</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#ozellikler">Özellikler</a>
+    <a href="#oyunlar">Oyunlar</a>
+    <a href="#nasil-oynanir">Nasıl Oynanır</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#indir">İndir</a>
+    <a href="#akademik">Akademik</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="bubble" style="width:80px;height:80px;left:10%;bottom:-80px;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="bubble" style="width:40px;height:40px;left:30%;bottom:-40px;animation-duration:9s;animation-delay:2s;"></div>
+    <div class="bubble" style="width:60px;height:60px;left:55%;bottom:-60px;animation-duration:14s;animation-delay:1s;"></div>
+    <div class="bubble" style="width:90px;height:90px;left:75%;bottom:-90px;animation-duration:11s;animation-delay:3s;"></div>
+    <div class="bubble" style="width:50px;height:50px;left:90%;bottom:-50px;animation-duration:10s;animation-delay:0.5s;"></div>
+    <div class="hero-content">
+        <div class="hero-text fade-in">
+            <h1 class="brand-name">Arkadaşım Kelimeler</h1>
+            <div class="slogan">✨ Kelimelerin Eğlenceli Dünyası!</div>
+            <p>Yüzlerce bulmaca, onlarca farklı oyun modu ve milyonlarca oyuncuyla buluşan Türkiye'nin en sevilen kelime oyunu platformu. Kelime hazineni geliştir, arkadaşlarınla yarış, eğlenceye dal!</p>
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-text">
+                        <small>İndir</small>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="store-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <small>İndir</small>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="phone-mockup fade-in">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+                <div class="app-icon">🔤</div>
+                <div class="app-title brand-name">Arkadaşım Kelimeler</div>
+                <div class="game-grid">
+                    <div class="game-tile">🔍</div>
+                    <div class="game-tile">🔀</div>
+                    <div class="game-tile">🧩</div>
+                    <div class="game-tile">🔗</div>
+                    <div class="game-tile">💡</div>
+                    <div class="game-tile">📝</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="ozellikler">
+    <div class="container">
+        <h2 class="section-title fade-in">Neden Arkadaşım Kelimeler?</h2>
+        <p class="section-subtitle fade-in">Kelime oyunlarını seviyorsan, doğru yerdesin! İşte seni bekleyen harika özellikler.</p>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <h3>Yüzlerce Bulmaca</h3>
+                <p>Her gün yenilenen bulmacalar ve farklı zorluk seviyeleri ile sıkılmadan oyna.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Çok Oyunculu Mod</h3>
+                <p>Arkadaşlarınla veya rastgele rakiplerle gerçek zamanlı kelime düellosu yap!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                <h3>Günlük Ödüller</h3>
+                <p>Her gün giriş yap, günlük bulmacaları çöz ve harika ödüller kazan.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-wifi-slash"></i></div>
+                <h3>Offline Oynama</h3>
+                <p>İnternet olmadan da eğlence devam etsin! Çevrimdışı modda oynamaya devam et.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                <h3>Liderlik Tablosu</h3>
+                <p>Global ve arkadaş sıralamaları ile en iyi kelime ustası sen ol!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3>Aile Dostu</h3>
+                <p>Her yaştan oyuncu için uygun, güvenli ve eğitici içerik. Tüm aile oynasın!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GAMES -->
+<section id="oyunlar">
+    <div class="container">
+        <h2 class="section-title fade-in">Oyunlarımız</h2>
+        <p class="section-subtitle fade-in">Platformumuzda seni bekleyen birbirinden eğlenceli kelime oyunlarını keşfet!</p>
+        <div class="games-grid">
+            <div class="game-card fade-in">
+                <span class="game-emoji">🔍</span>
+                <h3>Kelime Avı</h3>
+                <p>Harf karelerinde gizlenmiş kelimeleri bul. Gözünü aç, kelimeler her yerde!</p>
+                <span class="difficulty easy">Kolay</span>
+            </div>
+            <div class="game-card fade-in">
+                <span class="game-emoji">🔀</span>
+                <h3>Harf Karıştır</h3>
+                <p>Karışık harflerden anlamlı kelimeler oluştur. Hız ve zeka yarışı!</p>
+                <span class="difficulty medium">Orta</span>
+            </div>
+            <div class="game-card fade-in">
+                <span class="game-emoji">🧩</span>
+                <h3>Bulmaca Ustası</h3>
+                <p>Klasik çapraz bulmacaların modern hali. İpuçlarını takip et, boşlukları doldur!</p>
+                <span class="difficulty hard">Zor</span>
+            </div>
+            <div class="game-card fade-in">
+                <span class="game-emoji">🔗</span>
+                <h3>Kelime Zinciri</h3>
+                <p>Kelimeleri birbirine bağla, zinciri kırma! Strateji ve kelime bilgisi şart.</p>
+                <span class="difficulty medium">Orta</span>
+            </div>
+            <div class="game-card fade-in">
+                <span class="game-emoji">💡</span>
+                <h3>Anagram Savaşı</h3>
+                <p>Rakibinle aynı harflerden en çok kelimeyi kim bulacak? Zamana karşı yarış!</p>
+                <span class="difficulty hard">Zor</span>
+            </div>
+            <div class="game-card fade-in">
+                <span class="game-emoji">📝</span>
+                <h3>Günlük Bilmece</h3>
+                <p>Her gün yeni bir bilmece! Çöz, puanını artır, serini devam ettir.</p>
+                <span class="difficulty easy">Kolay</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO PLAY -->
+<section id="nasil-oynanir">
+    <div class="container">
+        <h2 class="section-title fade-in">Nasıl Oynanır?</h2>
+        <p class="section-subtitle fade-in">Üç kolay adımda eğlenceye katıl!</p>
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <div class="step-icon">📱</div>
+                <h3>Uygulamayı İndir</h3>
+                <p>App Store veya Google Play'den Arkadaşım Kelimeler'i ücretsiz indir.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <div class="step-icon">🎮</div>
+                <h3>Oyununu Seç</h3>
+                <p>Onlarca farklı oyun modundan sana en uygun olanı seç ve oynamaya başla.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <div class="step-icon">🎉</div>
+                <h3>Eğlenceye Başla</h3>
+                <p>Bulmacaları çöz, arkadaşlarınla yarış ve kelime ustası ol!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section id="istatistikler">
+    <div class="container">
+        <h2 class="section-title fade-in">Rakamlarla Biz</h2>
+        <p class="section-subtitle fade-in">Milyonlarca oyuncunun tercihi olmaktan gurur duyuyoruz.</p>
+        <div class="stats-grid">
+            <div class="stat-card fade-in">
+                <div class="stat-icon"><i class="fas fa-download"></i></div>
+                <div class="stat-number" data-target="1000000" data-suffix="+">0</div>
+                <div class="stat-label">İndirme</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon"><i class="fas fa-gamepad"></i></div>
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div class="stat-label">Oyun</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number" data-target="4.8" data-suffix="" data-decimal="true">0</div>
+                <div class="stat-label">Puan</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-target="500000" data-suffix="+">0</div>
+                <div class="stat-label">Aktif Oyuncu</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="yorumlar">
+    <div class="container">
+        <h2 class="section-title fade-in">Oyuncularımız Ne Diyor?</h2>
+        <p class="section-subtitle fade-in">Milyonlarca mutlu oyuncudan bazıları...</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-avatar">AY</div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Kelime oyunlarına bayılıyorum ve bu uygulama hepsinin en iyisi! Özellikle Kelime Zinciri modu çok bağımlılık yapıyor. Arkadaşlarımla yarışıyoruz, harika!"</p>
+                <div class="testimonial-name">Ayşe Y.</div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-avatar">MK</div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Otobüste, metroda, her yerde oynuyorum. Offline modu sayesinde internetsiz bile devam edebiliyorum. Günlük bulmacalar muhteşem!"</p>
+                <div class="testimonial-name">Mehmet K.</div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-avatar">ZD</div>
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Çocuklarımla birlikte oynuyoruz. Hem eğlenceli hem eğitici! Kelime hazineleri gözle görülür şekilde gelişti. Tüm aileye tavsiye ederim."</p>
+                <div class="testimonial-name">Zeynep D.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="sss">
+    <div class="container">
+        <h2 class="section-title fade-in">Sıkça Sorulan Sorular</h2>
+        <p class="section-subtitle fade-in">Merak ettiklerin burada!</p>
+        <div class="faq-list">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Arkadaşım Kelimeler ücretsiz mi?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Evet! Uygulamamız tamamen ücretsiz olarak indirilebilir ve oynanabilir. Uygulama içi satın alma seçenekleri mevcut olsa da, tüm temel oyun modları ve bulmacalar ücretsizdir.</div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    İnternetsiz oynayabilir miyim?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Evet! Offline mod sayesinde internet bağlantınız olmadan da birçok oyun modunu oynayabilirsiniz. Çok oyunculu mod ve liderlik tablosu gibi özellikler için internet bağlantısı gereklidir.</div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Hangi cihazlarda çalışır?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Arkadaşım Kelimeler iOS 13+ ve Android 8.0+ sürümlerini destekler. Hem telefon hem de tablet cihazlarda sorunsuz çalışır ve tüm ekran boyutlarına uyum sağlar.</div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Arkadaşlarımla nasıl oynayabilirim?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Çok Oyunculu Mod'da arkadaşlarınızı davet kodu veya kullanıcı adı ile bulabilirsiniz. Ayrıca rastgele eşleşme ile dünyanın her yerinden oyuncularla yarışabilirsiniz.</div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Çocuklar için güvenli mi?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Kesinlikle! Uygulamamız aile dostu içeriğe sahiptir. Tüm kelimeler ve bulmacalar her yaş grubuna uygun olarak hazırlanmıştır. Ebeveyn kontrolleri de mevcuttur.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACADEMIC -->
+<section id="akademik">
+    <div class="container">
+        <h2 class="section-title fade-in">Bilimsel Temel</h2>
+        <p class="section-subtitle fade-in">İlk Okuma Yazma: Bir Çocuğun Eğitim Hayatındaki En Kritik Eşik</p>
+        <p class="academic-intro fade-in">Bilimsel bir perspektif ile eğitimci, nörobilimci ve kişisel gelişim uzmanı gözüyle hazırlanmış bu bölümde, Arkadaşım Kelimeler platformunun bilimsel altyapısını keşfedin.</p>
+
+        <div class="academic-tabs fade-in">
+            <button class="academic-tab active" data-panel="panel-noro">Nörobilimsel Boyut</button>
+            <button class="academic-tab" data-panel="panel-egitim">Eğitim Bilimi</button>
+            <button class="academic-tab" data-panel="panel-gelisim">Kişisel Gelişim</button>
+            <button class="academic-tab" data-panel="panel-model">Bütünleşik Model</button>
+            <button class="academic-tab" data-panel="panel-sonuc">Sonuç</button>
+        </div>
+
+        <!-- PANEL: NÖROBİLİM -->
+        <div class="academic-panel active" id="panel-noro">
+            <div class="academic-card fade-in">
+                <h3>1.1. Kritik Dönem ve Nöroplastisite</h3>
+                <p>İlk okuma yazma öğrenimi, genellikle 5-7 yaş aralığında başlar. Bu dönem, nörobilimde <strong>"kritik dönem"</strong> (critical period) olarak adlandırılan beynin belirli becerileri öğrenmeye en açık olduğu zaman dilimidir.</p>
+                <p style="margin-top:0.8rem">Bu dönemde beyin saniyede yaklaşık <strong>700-1000 yeni sinaptik bağlantı</strong> kurar. Görsel korteks (harf tanıma), temporal lob (ses işleme), frontal lob (anlam kurma), angular girus (ses-harf eşleştirme) arasında yoğun bir nöral ağ inşası gerçekleşir.</p>
+                <p style="margin-top:0.8rem">Fransız nörobilimci <strong>Stanislas Dehaene</strong>'in ortaya koyduğu <strong>"Nöronal Geri Dönüşüm Hipotezi"</strong>ne göre, beyin esasen okuma için değil, yüz tanıma ve nesne tanıma için tasarlanmıştır. Beyinde yüz ve nesne tanıma için ayrılmış bölgeler (özellikle sol fusiform girus — "Visual Word Form Area") okuma işlevi için yeniden yapılandırılır.</p>
+            </div>
+
+            <div class="academic-highlight fade-in">
+                <p>EN KRİTİK NOKTA: Bu yeniden yapılandırma yalnızca bir kez optimal koşullarda gerçekleşir. Yanlış yöntemlerle bu süreç bozulursa, beyin alternatif ama verimsiz yollar oluşturur — bu da kalıcı okuma-öğrenme kısıtlamalarına zemin hazırlar.</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>A-K Projesinde 4 Bilişsel Alanı Destekleyen Oyunlar</h3>
+                <p>Bu kritik dönemde optimal koşulları desteklemek için yapılandırılmış <strong>30 formatta 6.000'in üzerinde oyun</strong> bulunmaktadır.</p>
+
+                <h3 style="margin-top:1.5rem; color:#7c3aed;">Görsel Korteks (Harf Tanıma)</h3>
+                <div class="academic-game-list">
+                    <div class="academic-game-item">
+                        <h4>Çiftini Bul</h4>
+                        <p>Kelime çiftlerini görsel olarak kıyaslar, aynı olanı/olmayanı tespit ederek görsel hafızayı ve veri tabanını pekiştirir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Şifre Oyunu</h4>
+                        <p>Harfleri farklı sembollerle eşleştirir ve kelimeleri oluştururken ses-sembol eşleştirme yaparak görsel hafızaya aktarır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Okuma-İşlemleme</h4>
+                        <p>Art arda çıkan harfleri zihninde birleştirerek kelimeyi oluşturur ve göster-yap aşamasıyla görsel veri tabanına aktarır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Görsel Hafıza</h4>
+                        <p>Kelimeleri kısa süre aklında tutarak seçenekler arasından bulur, görsel veri tabanını güçlendirir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Başta-Ortada-Sonda</h4>
+                        <p>Kelimenin görsel karşılığını bulurken hem kelimeyi hem görseli beynin görsel veri tabanına gönderir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Saklı Gerçek</h4>
+                        <p>Kutulardaki harflerden kelime oluşturulurken göster-yap yöntemiyle görsel veri tabanına kaydedilir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Hafıza Ustası</h4>
+                        <p>Görsellerin aynılarını/farklılarını tespit ederek görsel belleği çalıştırır, ses-sembol ilişkisinin kurulmasını kolaylaştırır.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:1.5rem; color:#f97316;">Temporal Lob (Ses İşleme)</h3>
+                <div class="academic-game-list">
+                    <div class="academic-game-item">
+                        <h4>Tonlama Oyunu</h4>
+                        <p>Farklı tonlardaki davul seslerini hafızada tutarak görseller ile eşleştirir. İşitsel farkındalığı ve dikkati geliştirir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Rengârenk Oyunu</h4>
+                        <p>Sesin yazıya, yazının renge dönüştürülmesiyle fonolojik olarak ses-görsel arasında işleme yapılır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Karmakarışık Oyunu</h4>
+                        <p>Dinletilen birden fazla kelime arasından olmayanın seçilmesi istenir. İşitsel dikkati ve Angular girusu aktif eder.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Kelime Türetme (2. Bölüm)</h4>
+                        <p>Dinletilen kelimelerin harf karşılıkları sürüklenerek kelime çarkında oluşturulur. Temporal lob ve görsel korteks birlikte çalışır.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:1.5rem; color:#22c55e;">Frontal Lob (Anlam Kurma)</h3>
+                <div class="academic-game-list">
+                    <div class="academic-game-item">
+                        <h4>Gökkuşağı Sayılar</h4>
+                        <p>Beynin sayılar ile ilgili sol yarısı ve renkler ile ilgili sağ yarısı bilişsel olarak beraber çalışarak koordinasyonu artırır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Yönümü Kaybettim</h4>
+                        <p>Yön okları, basamak değerleri ve kelimeler arasında zamana karşı anlam kurma meydan okuması. İşlemleme hızını artırır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Dilim Dilim</h4>
+                        <p>Kelimeyi hecelerine ayırma ve hece sayısına göre gruplama ile anlam kurma becerisi ve fonolojik farkındalık artar.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Hecelerden Kelime Türetme</h4>
+                        <p>Dağınık ve anlamsız görünen hecelerden anlamlı kelimeler oluşturulur. Frontal lob oldukça aktiftir.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:1.5rem; color:#3b82f6;">Angular Girus (Ses-Harf Eşleştirme)</h3>
+                <div class="academic-game-list">
+                    <div class="academic-game-item">
+                        <h4>Karmakarışık Oyunu</h4>
+                        <p>Dinletilen kelimeler arasından olmayanın seçilmesiyle ses-harf eşleme ve temporal lob aktif hale gelir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Şifre Oyunu</h4>
+                        <p>Harfleri farklı sembollerle eşleştirerek ses ve sembol bağlantısını güçlendirir.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Rengârenk Oyunu</h4>
+                        <p>Ses-sembol bağlantısını güçlendirir. İşitsel ve görsel pekiştirmeler yapılır.</p>
+                    </div>
+                    <div class="academic-game-item">
+                        <h4>Kelime Türetme (2. Bölüm)</h4>
+                        <p>Dinletilen kelimelerin harflerini birleştirerek anlam kurgulama. Angular girus çok aktiftir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>1.2. Fonolojik Farkındalık ve Beyin Devreleri</h3>
+                <p>Okuma öğrenmenin temeli <strong>fonolojik farkındalıktır</strong> — yani sesleri ayırt edebilme, birleştirebilme ve manipüle edebilme becerisi.</p>
+                <ul>
+                    <li><strong>Sol superior temporal girus (Wernicke alanı):</strong> Seslerin işlenmesi</li>
+                    <li><strong>Sol inferior frontal girus (Broca alanı):</strong> Seslerin üretilmesi</li>
+                    <li><strong>Arkuat fasikülüs:</strong> Bu iki bölge arasındaki iletişim</li>
+                </ul>
+                <p style="margin-top:0.8rem">Ses-harf ilişkisi doğru kurulmazsa, bu üç bölge arasındaki bağlantı zayıf kalır. fMRI çalışmaları, okuma güçlüğü yaşayan çocukların bu devrelerde belirgin aktivasyon eksikliği gösterdiğini ortaya koymuştur <em>(Shaywitz et al., 2002, Yale Üniversitesi)</em>.</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>1.3. Miyelinizasyon ve Zamanlama</h3>
+                <p>Sinir liflerini saran miyelin kılıf, bilgi iletim hızını belirler. 5-7 yaş aralığında <strong>Corpus callosum</strong> (iki beyin yarıküresi arasındaki köprü) hızla miyelinize olur. Bu, görsel bilgiyi (harfin şekli) işitsel bilgiyle (harfin sesi) eşleştirmeyi mümkün kılar.</p>
+                <p style="margin-top:0.8rem"><strong>Beynin iki yarım küresini aynı anda çalıştırarak miyelinleşmeyi artıran oyunlar:</strong> Gökkuşağı Sayılar, Rengârenk, Keskin Nişancı.</p>
+                <p style="margin-top:0.8rem"><strong>Görsel bilgiyi işitsel bilgi ile eşleştirme becerisini geliştiren oyunlar:</strong> Rengârenk, Başta-Ortada-Sonda, Saklı Gerçek, Hecelerden Kelime Türetme, Karmakarışık, Şifre.</p>
+            </div>
+
+            <div class="academic-highlight fade-in">
+                <p>Yanlış zamanlama veya yanlış yöntemle yapılan öğretim, miyelinizasyon süreciyle uyumsuz çalışır ve beyin, okuma eylemini bir "tehdit" olarak kodlamaya başlayabilir — bu da amigdala aktivasyonu ve korku temelli öğrenme anlamına gelir.</p>
+            </div>
+        </div>
+
+        <!-- PANEL: EĞİTİM BİLİMİ -->
+        <div class="academic-panel" id="panel-egitim">
+            <div class="academic-card fade-in">
+                <h3>2.1. Matta Etkisi (Matthew Effect)</h3>
+                <p>Eğitim bilimci <strong>Keith Stanovich (1986)</strong> tarafından ortaya konan bu kavram şunu ifade eder: <em>"Zengine daha çok verilecek, fakirden elindeki de alınacaktır."</em></p>
+                <table class="compare-table" style="margin-top:1.2rem">
+                    <tr>
+                        <th>Erken Dönemde İyi Okuyan</th>
+                        <th>Erken Dönemde Zayıf Okuyan</th>
+                    </tr>
+                    <tr><td>Daha çok okur</td><td>Okumaktan kaçınır</td></tr>
+                    <tr><td>Kelime hazinesi genişler</td><td>Kelime hazinesi daralır</td></tr>
+                    <tr><td>Anlama becerisi artar</td><td>Anlama güçlüğü derinleşir</td></tr>
+                    <tr><td>Diğer derslerde başarılı olur</td><td>Tüm derslerde zorlanır</td></tr>
+                    <tr><td>Akademik özgüven yükselir</td><td>Akademik kimlik zedelenir</td></tr>
+                </table>
+            </div>
+
+            <div class="academic-highlight fade-in">
+                <p>Aradaki makas her yıl katlanarak açılır. 3. sınıfa kadar akıcı okuyamayan bir çocuğun, ilerleyen yıllarda akademik başarısızlık yaşama olasılığı 4 kat daha fazladır (Annie E. Casey Foundation, 2010). Muhtemelen çoğu bu dönemde farkına varılan disleksi gibi öğrenme sorunları daha başında bitirilebilecekken Matta etkisi yüzünden yıllarca devam eder.</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>2.2. Akıcılık Eşiği (Fluency Threshold)</h3>
+                <p>Bir çocuğun okuduğunu anlamaya başlaması için dakikada belirli bir kelime hızına ulaşması gerekir:</p>
+                <ul>
+                    <li><strong>1. sınıf sonu:</strong> ~40-60 kelime/dakika</li>
+                    <li><strong>2. sınıf sonu:</strong> ~80-100 kelime/dakika</li>
+                    <li><strong>3. sınıf sonu:</strong> ~100-120 kelime/dakika</li>
+                </ul>
+                <p style="margin-top:0.8rem">Bu eşiğin altında kalan çocuk, bilişsel enerjisinin büyük bölümünü harfleri çözmeye harcar; anlam kurmaya kaynak kalmaz. Bu durum, <strong>"Bilişsel Yük Kuramı"</strong> (Cognitive Load Theory — Sweller, 1988) ile açıklanır.</p>
+            </div>
+
+            <div class="academic-highlight fade-in">
+                <p>Ses temelli okuma öğretiminde parçadan bütüne giden metod, beynin kelimeyi çözümlemeye çalışması nedeniyle okurken yavaşlamasına ve dikkatin dağılmasına neden olur. A-K programındaki oyunlar, güncel derslerdeki hece-kelime-cümle grupları kullanılarak ve nörobilimin öğrenme prensipleri gözetilerek hazırlandığı için görsel veri tabanı en hızlı şekilde yapılandırılarak hızlı okuma ve anlama becerilerine katkı sağlar.</p>
+            </div>
+        </div>
+
+        <!-- PANEL: KİŞİSEL GELİŞİM -->
+        <div class="academic-panel" id="panel-gelisim">
+            <div class="academic-card fade-in">
+                <h3>3.1. Akademik Benlik Kavramı</h3>
+                <p>Gelişim psikoloğu <strong>Erik Erikson</strong>'un psikososyal gelişim kuramına göre, 6-12 yaş arası <strong>"Başarıya Karşı Aşağılık Duygusu"</strong> evresine denk gelir. Bu evrede çocuk şu temel soruyu sorar: <em>"Ben yapabiliyor muyum?"</em></p>
+                <p style="margin-top:0.8rem">İlk okuma yazma, çocuğun bu soruya verdiği ilk büyük cevaptır:</p>
+                <ul>
+                    <li><strong>"Evet, yapabiliyorum"</strong> → Yetkinlik duygusu, girişimcilik, merak</li>
+                    <li><strong>"Hayır, yapamıyorum"</strong> → Aşağılık duygusu, kaçınma, öğrenilmiş çaresizlik</li>
+                </ul>
+                <p style="margin-top:0.8rem"><strong>Martin Seligman</strong>'ın öğrenilmiş çaresizlik teorisine göre, tekrarlayan başarısızlık deneyimleri, çocuğun <em>"Ne yaparsam yapayım başaramam!"</em> inancını içselleştirmesine yol açar. Bu inanç, yalnızca okuma yazmayla sınırlı kalmaz; tüm yaşam alanlarına genelleşir.</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>3.2. İç Diyalog ve Nöral Programlama</h3>
+                <p>Okuma yazma öğrenirken zorlanan ve bu süreçte yargılanan çocuk, beyninde şu tür otomatik düşünce kalıpları geliştirir:</p>
+                <ul>
+                    <li><em>"Ben aptalım."</em></li>
+                    <li><em>"Diğerleri benden daha zeki."</em></li>
+                    <li><em>"Okumak benim işim değil."</em></li>
+                </ul>
+                <p style="margin-top:0.8rem">Bu düşünceler, nöral yolaklar olarak beyne kazınır. Her tekrarlandığında güçlenir — <strong>Hebb Kuralı: "Birlikte ateşlenen nöronlar, birlikte bağlanır."</strong> Yetişkinlikte bile bu kişi, yeni bir şey öğrenirken aynı otomatik olumsuz düşünceleri deneyimleyebilir.</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <h3>3.3. Okuma ve Empati: Sosyal Beyin</h3>
+                <p><strong>Mar ve ark. (2006, York Üniversitesi)</strong> araştırmasına göre, düzenli okuyan çocuklarda <strong>"Zihin Kuramı"</strong> (Theory of Mind) — yani başkalarının düşünce ve duygularını anlama becerisi — anlamlı düzeyde daha gelişmiştir.</p>
+                <p style="margin-top:0.8rem">Okuma, <strong>default mode network</strong> (varsayılan mod ağı) aktivasyonunu artırır; bu ağ empati, hayal kurma ve öz-farkındalıkla ilişkilidir. Okuyamayan çocuk, bu sosyal-bilişsel gelişim fırsatından da mahrum kalır.</p>
+            </div>
+        </div>
+
+        <!-- PANEL: BÜTÜNLEŞİK MODEL -->
+        <div class="academic-panel" id="panel-model">
+            <div class="academic-card fade-in">
+                <h3>Kısır Döngü ve Erdemli Döngü</h3>
+                <p>İlk okuma yazma sürecinde doğru veya yanlış atılan adımlar, birbirini besleyen döngüler oluşturur:</p>
+            </div>
+            <div class="cycle-container fade-in">
+                <div class="cycle-box cycle-bad">
+                    <h3>Kısır Döngü (Yanlış Geçilen Eşik)</h3>
+                    <div class="cycle-step"><span class="cycle-arrow">1.</span> Yanlış yöntem / baskı / zamanlama hatası</div>
+                    <div class="cycle-step"><span class="cycle-arrow">2.</span> Zayıf ses-harf eşleştirmesi (nöral devre eksikliği)</div>
+                    <div class="cycle-step"><span class="cycle-arrow">3.</span> Yavaş ve hatalı okuma</div>
+                    <div class="cycle-step"><span class="cycle-arrow">4.</span> Anlama güçlüğü → Tüm derslerde başarısızlık</div>
+                    <div class="cycle-step"><span class="cycle-arrow">5.</span> Özgüven kaybı → "Ben yapamıyorum" inancı</div>
+                    <div class="cycle-step"><span class="cycle-arrow">6.</span> Okumaktan kaçınma → Daha az pratik</div>
+                    <div class="cycle-step"><span class="cycle-arrow">7.</span> Makas daha da açılır (Matta Etkisi)</div>
+                    <div class="cycle-step"><span class="cycle-arrow">8.</span> Öğrenilmiş çaresizlik → Yaşam boyu etki</div>
+                </div>
+                <div class="cycle-box cycle-good">
+                    <h3>Erdemli Döngü (Doğru Geçilen Eşik)</h3>
+                    <div class="cycle-step"><span class="cycle-arrow">1.</span> Doğru yöntem + sabır + bireysel hız</div>
+                    <div class="cycle-step"><span class="cycle-arrow">2.</span> Güçlü fonolojik farkındalık (sağlam nöral ağ)</div>
+                    <div class="cycle-step"><span class="cycle-arrow">3.</span> Akıcı ve doğru okuma</div>
+                    <div class="cycle-step"><span class="cycle-arrow">4.</span> Anlama becerisi → Tüm derslerde başarı</div>
+                    <div class="cycle-step"><span class="cycle-arrow">5.</span> Özgüven → "Ben yapabiliyorum" inancı</div>
+                    <div class="cycle-step"><span class="cycle-arrow">6.</span> Daha çok okuma isteği → Daha fazla pratik</div>
+                    <div class="cycle-step"><span class="cycle-arrow">7.</span> Kelime hazinesi, empati, hayal gücü genişler</div>
+                    <div class="cycle-step"><span class="cycle-arrow">8.</span> Yaşam boyu öğrenen birey</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL: SONUÇ -->
+        <div class="academic-panel" id="panel-sonuc">
+            <div class="academic-card fade-in">
+                <h3>Sonuç</h3>
+                <p>İlk okuma yazma, bir <strong>nörobilimsel inşaat</strong>, bir <strong>eğitimsel temel atma</strong> ve bir <strong>kimlik inşası</strong> sürecidir — hepsi aynı anda.</p>
+                <ul style="margin-top:1rem">
+                    <li><strong>Beyin açısından →</strong> Ömür boyu kullanılacak okuma devrelerinin kurulduğu tek penceredir.</li>
+                    <li><strong>Eğitim açısından →</strong> Tüm akademik başarının üzerine inşa edileceği temel taştır.</li>
+                    <li><strong>Kişisel gelişim açısından →</strong> Çocuğun "Ben öğrenebilen bir insanım" ya da "Ben yetersizim" hikâyesini yazdığı ilk sayfadır.</li>
+                </ul>
+            </div>
+
+            <div class="academic-quote fade-in">
+                <p>"Bir çocuğa okumayı öğretmek, ona harf öğretmek değildir. Ona beyniyle, dünyayla ve kendisiyle yeni bir ilişki kurma biçimi vermektir."</p>
+            </div>
+
+            <div class="academic-card fade-in">
+                <p>Bu yüzden ilk okuma yazma öğretimi; <strong>rastgele değil bilinçli</strong>, <strong>aceleci değil sabırlı</strong>, <strong>tek tip değil bireyselleştirilmiş</strong> olmalıdır. Çünkü bu eşikte yapılan her doğru hamle, bir çocuğun hayatında onlarca yıl boyunca yankılanacak bir erdemli döngünün başlangıcıdır.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="indir">
+    <div class="container fade-in">
+        <h2 class="brand-name">Hemen İndir, Eğlenceye Katıl!</h2>
+        <p>Milyonlarca oyuncunun arasına katıl ve kelimelerin büyülü dünyasını keşfet. Ücretsiz!</p>
+        <div class="store-buttons">
+            <a href="#" class="store-btn">
+                <i class="fab fa-apple"></i>
+                <div class="btn-text">
+                    <small>İndir</small>
+                    <strong>App Store</strong>
+                </div>
+            </a>
+            <a href="#" class="store-btn">
+                <i class="fab fa-google-play"></i>
+                <div class="btn-text">
+                    <small>İndir</small>
+                    <strong>Google Play</strong>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-about">
+            <a href="#" class="nav-logo" style="display:inline-flex;">
+                <div class="nav-logo-icon brand-name">AK</div>
+                <span class="brand-name" style="font-size:1.2rem;font-weight:800;color:#fff;">Arkadaşım Kelimeler</span>
+            </a>
+            <p>Türkiye'nin en eğlenceli kelime oyunu platformu. Yüzlerce bulmaca, onlarca oyun modu ve milyonlarca oyuncuyla buluşan büyük bir aile.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+                <li><a href="#ozellikler">Özellikler</a></li>
+                <li><a href="#oyunlar">Oyunlar</a></li>
+                <li><a href="#nasil-oynanir">Nasıl Oynanır</a></li>
+                <li><a href="#yorumlar">Yorumlar</a></li>
+                <li><a href="#sss">SSS</a></li>
+                <li><a href="#akademik">Akademik</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Bizi Takip Et</h4>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 Arkadaşım Kelimeler. Tüm hakları saklıdır.
+    </div>
+</footer>
+
+<script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+
+    // Intersection Observer for fade-in
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
+
+    // Counter animation
+    let countersAnimated = false;
+    const statsSection = document.getElementById('istatistikler');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersAnimated) {
+                countersAnimated = true;
+                animateCounters();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    counterObserver.observe(statsSection);
+
+    function animateCounters() {
+        document.querySelectorAll('.stat-number').forEach(el => {
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const isDecimal = el.dataset.decimal === 'true';
+            const duration = 2000;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = target * eased;
+
+                if (isDecimal) {
+                    el.textContent = current.toFixed(1) + suffix;
+                } else if (target >= 1000000) {
+                    el.textContent = (current / 1000000).toFixed(current >= target ? 0 : 1) + 'M' + suffix;
+                } else if (target >= 1000) {
+                    el.textContent = Math.floor(current / 1000) + 'K' + suffix;
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    if (isDecimal) {
+                        el.textContent = target.toFixed(1) + suffix;
+                    } else if (target >= 1000000) {
+                        el.textContent = '1M' + suffix;
+                    } else if (target >= 1000) {
+                        el.textContent = (target / 1000) + 'K' + suffix;
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                }
+            }
+            requestAnimationFrame(update);
+        });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        });
+    });
+
+    // Academic tabs
+    document.querySelectorAll('.academic-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.academic-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.academic-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            const panel = document.getElementById(tab.dataset.panel);
+            panel.classList.add('active');
+            // Re-observe fade-in elements in newly visible panel
+            panel.querySelectorAll('.fade-in').forEach(el => {
+                if (!el.classList.contains('visible')) fadeObserver.observe(el);
+            });
+        });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY + 100;
+        sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute('id');
+            const link = document.querySelector('.nav-links a[href="#' + id + '"]');
+            if (link) {
+                if (scrollY >= top && scrollY < top + height) {
+                    link.style.color = '#7c3aed';
+                } else {
+                    link.style.color = '';
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
