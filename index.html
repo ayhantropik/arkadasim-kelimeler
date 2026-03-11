@@ -405,6 +405,147 @@
             color: #666; line-height: 1.7; font-size: 0.95rem;
         }
 
+        /* SUNUM / PRESENTATION */
+        #sunum {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff; overflow: hidden;
+        }
+        #sunum .section-title { -webkit-text-fill-color: #fff; }
+        #sunum .section-subtitle { color: rgba(255,255,255,0.7); }
+        .sunum-hero-card {
+            background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.3));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px; padding: 3rem;
+            text-align: center; margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        .sunum-hero-card h3 {
+            font-size: 1.6rem; font-weight: 900; margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        .sunum-hero-card p {
+            font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.85);
+            max-width: 700px; margin: 0 auto;
+        }
+        .sunum-problems {
+            display: flex; justify-content: center; gap: 1.5rem;
+            margin-top: 1.5rem; flex-wrap: wrap;
+        }
+        .sunum-problem {
+            background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 14px; padding: 1rem 1.5rem;
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 700; font-size: 0.95rem; color: #fca5a5;
+        }
+        .sunum-ecosystem {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-bottom: 3rem;
+        }
+        .sunum-eco-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; padding: 2rem; text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .sunum-eco-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+        .sunum-eco-icon {
+            width: 70px; height: 70px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem; font-size: 2rem;
+        }
+        .sunum-eco-card:nth-child(1) .sunum-eco-icon { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+        .sunum-eco-card:nth-child(2) .sunum-eco-icon { background: linear-gradient(135deg, #f97316, #fbbf24); }
+        .sunum-eco-card:nth-child(3) .sunum-eco-icon { background: linear-gradient(135deg, #22c55e, #4ade80); }
+        .sunum-eco-card h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .sunum-eco-card .eco-subtitle { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 0.8rem; }
+        .sunum-eco-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; }
+        .sunum-features-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; margin-bottom: 3rem;
+        }
+        .sunum-feature-block {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; padding: 2rem;
+        }
+        .sunum-feature-block h4 {
+            font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .sunum-feature-block h4 .sf-icon {
+            width: 40px; height: 40px; border-radius: 12px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .sunum-feature-block ul {
+            list-style: none; padding: 0;
+        }
+        .sunum-feature-block li {
+            padding: 0.5rem 0; color: rgba(255,255,255,0.75);
+            font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .sunum-feature-block li:last-child { border-bottom: none; }
+        .sunum-feature-block li::before {
+            content: ''; display: none;
+        }
+        .sf-check {
+            color: #4ade80; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+        }
+        .sunum-compare {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; padding: 2rem; margin-bottom: 3rem;
+            overflow-x: auto;
+        }
+        .sunum-compare h4 {
+            font-size: 1.2rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center;
+        }
+        .sunum-compare-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+        }
+        .sunum-compare-table th {
+            padding: 12px 16px; font-weight: 800; font-size: 0.9rem;
+            text-align: center; border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        .sunum-compare-table th:nth-child(1) { color: #fca5a5; }
+        .sunum-compare-table th:nth-child(2) { color: #fde68a; }
+        .sunum-compare-table th:nth-child(3) { color: #4ade80; }
+        .sunum-compare-table td {
+            padding: 12px 16px; text-align: center;
+            font-size: 0.9rem; color: rgba(255,255,255,0.7);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .sunum-compare-table tr:last-child td { border-bottom: none; }
+        .sunum-result {
+            background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(59,130,246,0.15));
+            border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 24px; padding: 2.5rem; text-align: center;
+        }
+        .sunum-result h3 {
+            font-size: 1.4rem; font-weight: 900; margin-bottom: 1.5rem; color: #4ade80;
+        }
+        .sunum-result-items {
+            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+        }
+        .sunum-result-item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 1.1rem; font-weight: 700;
+        }
+        .sunum-result-item .sri-icon {
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+        }
+        @media (max-width: 768px) {
+            .sunum-ecosystem { grid-template-columns: 1fr; }
+            .sunum-features-grid { grid-template-columns: 1fr; }
+            .sunum-hero-card { padding: 2rem 1.5rem; }
+        }
+
         /* ACADEMIC */
         #akademik { background: #fff; }
         .academic-intro {
@@ -609,6 +750,7 @@
         <li><a href="#yorumlar">Yorumlar</a></li>
         <li><a href="#indir">İndir</a></li>
         <li><a href="#akademik">Akademik</a></li>
+        <li><a href="#sunum">Sunum</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
@@ -621,6 +763,7 @@
     <a href="#yorumlar">Yorumlar</a>
     <a href="#indir">İndir</a>
     <a href="#akademik">Akademik</a>
+    <a href="#sunum">Sunum</a>
 </div>
 
 <!-- HERO -->
@@ -921,6 +1064,156 @@
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">Kesinlikle! Uygulamamız aile dostu içeriğe sahiptir. Tüm kelimeler ve bulmacalar her yaş grubuna uygun olarak hazırlanmıştır. Ebeveyn kontrolleri de mevcuttur.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUNUM / PRESENTATION -->
+<section id="sunum">
+    <div class="container">
+        <h2 class="section-title fade-in">Arkadaşım Kelimeler APP</h2>
+        <p class="section-subtitle fade-in">Yapay Zeka ve Nörobilim ile İlk Okuma Yazmayı Yeniden Tanımlıyoruz</p>
+
+        <!-- Problem -->
+        <div class="sunum-hero-card fade-in">
+            <h3>"İlk okuma yazma, bir çocuğun eğitim hayatındaki en kritik eşiktir."</h3>
+            <p>Bu eşik yanlış geçilirse ciddi sonuçlar doğar. Bu sebeple öğretmen, öğrenci ve velinin elini güçlendirmek gerekir.</p>
+            <div class="sunum-problems">
+                <div class="sunum-problem"><i class="fas fa-exclamation-triangle"></i> Öğrenme zorlaşır</div>
+                <div class="sunum-problem"><i class="fas fa-exclamation-triangle"></i> Okuma yavaşlar</div>
+                <div class="sunum-problem"><i class="fas fa-exclamation-triangle"></i> Özgüven düşer</div>
+            </div>
+        </div>
+
+        <!-- Çözüm Yaklaşımı -->
+        <div class="sunum-hero-card fade-in" style="background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(59,130,246,0.2));">
+            <h3 style="color:#4ade80;">Her Çocuk Farklı Öğrenir</h3>
+            <p>Arkadaşım Kelimeler, öğrenme biçimine göre eğitimi yapılandırır. Öğretmen artık <em>"Derste ne işlendi?"</em> diye düşünmez, <strong>"Kim, nerede takıldı?"</strong> sorusunu cevaplar. Mevcut sistemi, çocukların bireysel öğrenme biçimine göre iyileştirir.</p>
+        </div>
+
+        <!-- Yapay Zeka Getirdikleri -->
+        <div class="sunum-feature-block fade-in" style="margin-bottom:2rem; border-left: 4px solid #a855f7;">
+            <h4><span class="sf-icon" style="background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;"><i class="fas fa-robot"></i></span> Yapay Zekanın Getirdikleri</h4>
+            <ul>
+                <li><span class="sf-check"><i class="fas fa-check"></i></span> Oyunla öğrenme</li>
+                <li><span class="sf-check"><i class="fas fa-check"></i></span> Bireysel hızda ilerleme</li>
+                <li><span class="sf-check"><i class="fas fa-check"></i></span> Öğretmen için ölçülebilir veri</li>
+                <li><span class="sf-check"><i class="fas fa-check"></i></span> Veli için yapılandırılmış ödev ortamı</li>
+            </ul>
+        </div>
+
+        <!-- 3 İkonlu Ekosistem -->
+        <h3 class="fade-in" style="text-align:center; color:#fff; font-size:1.4rem; font-weight:900; margin-bottom:1.5rem;">Senkron Çalışan Tek Ekosistem</h3>
+        <div class="sunum-ecosystem fade-in">
+            <div class="sunum-eco-card">
+                <div class="sunum-eco-icon"><i class="fas fa-desktop"></i></div>
+                <h4>Arkadaşım Kelimeler WEB</h4>
+                <div class="eco-subtitle">Sınıfta - Akıllı Tahta</div>
+                <p>Öğretmen kontrolünde, tahtada aktif sınıf yönetimi ile ders akışına tam uyum sağlar.</p>
+            </div>
+            <div class="sunum-eco-card">
+                <div class="sunum-eco-icon"><i class="fas fa-book-open"></i></div>
+                <h4>Kitap Seti</h4>
+                <div class="eco-subtitle">Somut Dünya</div>
+                <p>Dijital ve basılı içerik birlikte çalışır. Öğrencinin yıl boyunca yol haritası olacak içerikler.</p>
+            </div>
+            <div class="sunum-eco-card">
+                <div class="sunum-eco-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h4>Arkadaşım Kelimeler APP</h4>
+                <div class="eco-subtitle">Evde - Oyun + Ödev</div>
+                <p>Çocuk oyun oynadığını sanır, sistem öğretir ve öğrenmeyi ölçer.</p>
+            </div>
+        </div>
+
+        <!-- Özellik Blokları -->
+        <div class="sunum-features-grid">
+            <div class="sunum-feature-block fade-in">
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);color:#fff;"><i class="fas fa-chalkboard-teacher"></i></span> Öğretmen Kontrolü</h4>
+                <ul>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Ders akışına tam uyum</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Öğrenci performans raporları</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Ödev ve etkileşim takibi</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Tahtada aktif sınıf yönetimi</li>
+                </ul>
+            </div>
+            <div class="sunum-feature-block fade-in">
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#f97316,#fbbf24);color:#fff;"><i class="fas fa-gamepad"></i></span> Oyun Sistemi</h4>
+                <ul>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> 30 farklı formatta 8000+ oyun</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Yapay zeka ile otomatik zorluk ayarı</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Algı, dikkat, bellek ve muhakeme gelişimi</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Hızlı okuma ile 2x okuma performansı</li>
+                </ul>
+            </div>
+            <div class="sunum-feature-block fade-in">
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#22c55e,#4ade80);color:#fff;"><i class="fas fa-fingerprint"></i></span> Benzersiz Özellikler</h4>
+                <ul>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Bireysel hız ile ilerleme</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Otomatik analiz ve dikkat ölçümü</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Veri odaklı öğretmen raporu</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Akıllı oyun seçimi algoritması</li>
+                </ul>
+            </div>
+            <div class="sunum-feature-block fade-in">
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#ec4899,#f472b6);color:#fff;"><i class="fas fa-sync-alt"></i></span> Ekran + Kitap Dengesi</h4>
+                <ul>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Dijital + basılı içerik birlikte</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Birbiriyle haberleşen uygulamalar</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Web + Mobil senkronizasyon</li>
+                    <li><span class="sf-check"><i class="fas fa-check"></i></span> Yıl boyunca yol haritası içerikler</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Karşılaştırma Tablosu -->
+        <div class="sunum-compare fade-in">
+            <h4>Neden Arkadaşım Kelimeler?</h4>
+            <table class="sunum-compare-table">
+                <tr>
+                    <th>Klasik Yöntem</th>
+                    <th>Tekil Uygulamalar</th>
+                    <th>Arkadaşım Kelimeler</th>
+                </tr>
+                <tr>
+                    <td><span style="color:#ef4444;">&#10006;</span> Bireysel takip yok</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Ekosistem bütünlüğü yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Bütünlük + Yapay Zeka</td>
+                </tr>
+                <tr>
+                    <td><span style="color:#ef4444;">&#10006;</span> Ölçülebilir veri yok</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Öğretmen entegrasyonu yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Ölçüm + Raporlama</td>
+                </tr>
+                <tr>
+                    <td><span style="color:#ef4444;">&#10006;</span> Tek tip öğretim</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Müfredat uyumsuzluğu</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Bireyselleştirilmiş öğrenme</td>
+                </tr>
+                <tr>
+                    <td><span style="color:#ef4444;">&#10006;</span> Veli desteği sınırlı</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Veli görünürlüğü yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Yapılandırılmış ödev ortamı</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Sonuç -->
+        <div class="sunum-result fade-in">
+            <h3>Arkadaşım Kelimeler, çocuğun öğrenmeye bakışını değiştirir.</h3>
+            <div class="sunum-result-items">
+                <div class="sunum-result-item">
+                    <div class="sri-icon" style="background:rgba(124,58,237,0.2); color:#a855f7;"><i class="fas fa-child"></i></div>
+                    Öğrenci kazanır
+                </div>
+                <div class="sunum-result-item">
+                    <div class="sri-icon" style="background:rgba(249,115,22,0.2); color:#f97316;"><i class="fas fa-chalkboard-teacher"></i></div>
+                    Öğretmen güçlenir
+                </div>
+                <div class="sunum-result-item">
+                    <div class="sri-icon" style="background:rgba(34,197,94,0.2); color:#22c55e;"><i class="fas fa-chart-line"></i></div>
+                    Sistem ölçülebilir olur
                 </div>
             </div>
         </div>
@@ -1242,6 +1535,7 @@
                 <li><a href="#yorumlar">Yorumlar</a></li>
                 <li><a href="#sss">SSS</a></li>
                 <li><a href="#akademik">Akademik</a></li>
+                <li><a href="#sunum">Sunum</a></li>
             </ul>
         </div>
         <div class="footer-social">
