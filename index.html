@@ -20,6 +20,57 @@
             font-family: 'Scrambled Tofu', 'Comic Sans MS', cursive;
         }
 
+        /* BEAR LOGO */
+        .bear-logo {
+            display: inline-flex; align-items: flex-end; position: relative;
+            gap: 0;
+        }
+        .bear-logo .logo-a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            background: linear-gradient(135deg, #7c3aed, #a855f7, #f97316);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        .bear-logo .bear-img {
+            position: absolute;
+            object-fit: contain;
+            z-index: 2;
+        }
+        /* Nav size */
+        .nav-bear-logo .logo-a { font-size: 48px; }
+        .nav-bear-logo .bear-img {
+            width: 38px; height: 38px;
+            left: -8px; top: -6px;
+            transform: rotate(-8deg);
+        }
+        /* Hero size */
+        .hero-bear-logo { margin-bottom: 0.5rem; }
+        .hero-bear-logo .logo-a { font-size: 120px; }
+        .hero-bear-logo .bear-img {
+            width: 100px; height: 100px;
+            left: -20px; top: -20px;
+            transform: rotate(-10deg);
+        }
+        /* Footer size */
+        .footer-bear-logo .logo-a { font-size: 48px; }
+        .footer-bear-logo .bear-img {
+            width: 38px; height: 38px;
+            left: -8px; top: -6px;
+            transform: rotate(-8deg);
+        }
+        .footer-bear-logo .logo-a {
+            background: linear-gradient(135deg, #a855f7, #f97316);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 768px) {
+            .hero-bear-logo .logo-a { font-size: 80px; }
+            .hero-bear-logo .bear-img {
+                width: 68px; height: 68px;
+                left: -14px; top: -14px;
+            }
+        }
+
         /* NAV */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -743,8 +794,11 @@
 <!-- NAV -->
 <nav>
     <a href="#" class="nav-logo">
-        <img src="logo.svg" alt="Arkadaşım Kelimeler Logo" style="width:42px;height:42px;border-radius:12px;">
-        <span class="brand-name">Arkadaşım Kelimeler</span>
+        <div class="bear-logo nav-bear-logo">
+            <img src="bear.png" alt="Ayı maskot" class="bear-img">
+            <span class="logo-a">A</span>
+        </div>
+        <span class="brand-name">rkadaşım Kelimeler</span>
     </a>
     <ul class="nav-links">
         <li><a href="#sunum">Sunum</a></li>
@@ -778,7 +832,11 @@
     <div class="bubble" style="width:50px;height:50px;left:90%;bottom:-50px;animation-duration:10s;animation-delay:0.5s;"></div>
     <div class="hero-content">
         <div class="hero-text fade-in">
-            <h1 class="brand-name">Arkadaşım Kelimeler</h1>
+            <div class="bear-logo hero-bear-logo">
+                <img src="bear.png" alt="Ayı maskot" class="bear-img">
+                <span class="logo-a">A</span>
+            </div>
+            <h1 class="brand-name">rkadaşım Kelimeler</h1>
             <div class="slogan">✨ Eğitim ve Eğlence Aynı Yerde!</div>
             <p>İlkokula en iyi başlangıç için kitap ve teknolojiyi birleştirdik. Sınıfta dersi akıllı tahtadan takip et, kitap setiyle pekiştir ve evde tabletten oyunla tekrar et. Eğlenceli öğrenme dünyasına hoş geldin.</p>
             <div class="store-buttons">
@@ -1524,8 +1582,11 @@
     <div class="footer-grid">
         <div class="footer-about">
             <a href="#" class="nav-logo" style="display:inline-flex;">
-                <img src="logo.svg" alt="Arkadaşım Kelimeler Logo" style="width:42px;height:42px;border-radius:12px;">
-                <span class="brand-name" style="font-size:1.2rem;font-weight:800;color:#fff;">Arkadaşım Kelimeler</span>
+                <div class="bear-logo footer-bear-logo">
+                    <img src="bear.png" alt="Ayı maskot" class="bear-img">
+                    <span class="logo-a">A</span>
+                </div>
+                <span class="brand-name" style="font-size:1.2rem;font-weight:800;color:#fff;">rkadaşım Kelimeler</span>
             </a>
             <p>Türkiye'nin en eğlenceli kelime oyunu platformu. Yüzlerce bulmaca, onlarca oyun modu ve milyonlarca oyuncuyla buluşan büyük bir aile.</p>
         </div>
