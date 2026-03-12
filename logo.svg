@@ -6,7 +6,7 @@
   </defs>
 
   <!-- BIG "A" LETTER -->
-  <text x="60" y="168" font-family="'Poppins','Arial',sans-serif" font-size="180" font-weight="800" fill="#4A90E2" letter-spacing="-5">A</text>
+  <text x="60" y="168" font-family="'Comic Sans MS','Comic Sans',cursive" font-size="180" font-weight="800" fill="#4A90E2" letter-spacing="-5">A</text>
 
   <!-- BEAR - flat style, leaning on A from the left -->
   <g transform="translate(18, 42)">
@@ -54,8 +54,8 @@
   </g>
 
   <!-- "rkadaşım" text connected to A -->
-  <text x="128" y="128" font-family="'Poppins','Arial',sans-serif" font-size="42" font-weight="700" fill="#0F2A45">rkadaşım</text>
+  <text x="128" y="128" font-family="'Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#0F2A45">rkadaşım</text>
 
   <!-- "Kelimeler" text below -->
-  <text x="128" y="172" font-family="'Poppins','Arial',sans-serif" font-size="42" font-weight="700" fill="#F5A623">Kelimeler</text>
+  <text x="128" y="172" font-family="'Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#F5A623">Kelimeler</text>
 </svg>
