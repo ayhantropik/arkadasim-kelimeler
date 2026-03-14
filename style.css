@@ -765,6 +765,14 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+    .hero-logo-full {
+        display: none !important;
+    }
+    .hero-logo-mini {
+        display: block !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     /* Sections common */
     section {
