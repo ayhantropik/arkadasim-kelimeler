@@ -761,7 +761,7 @@ footer {
     .hero-text svg.hero-logo {
         max-width: 100%;
         height: auto !important;
-        max-height: 150px;
+        max-height: 220px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -880,7 +880,7 @@ footer {
     }
     .hero-text img,
     .hero-text svg.hero-logo {
-        max-height: 120px !important;
+        max-height: 180px !important;
     }
     .phone-mockup {
         width: 180px;
