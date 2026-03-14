@@ -431,31 +431,114 @@ section { padding: 5rem 2rem; }
     display: flex; align-items: center; gap: 10px;
     font-weight: 700; font-size: 0.95rem; color: #fca5a5;
 }
+/* Ecosystem Highlight Section */
+.ecosystem-highlight {
+    background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(59,130,246,0.15), rgba(34,197,94,0.15));
+    border: 2px solid rgba(168,85,247,0.4);
+    border-radius: 28px;
+    padding: 3rem 2.5rem 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    box-shadow: 0 0 40px rgba(124,58,237,0.2), 0 0 80px rgba(59,130,246,0.1);
+}
+.ecosystem-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: #fff;
+    padding: 0.4rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.4);
+}
+.ecosystem-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #c084fc, #60a5fa, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.ecosystem-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
 .sunum-ecosystem {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; margin-bottom: 3rem;
+    gap: 1.5rem; margin-bottom: 1.5rem;
 }
 .sunum-eco-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 20px; padding: 2rem; text-align: center;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
-.sunum-eco-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.1);
+.sunum-eco-card.eco-featured {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
 }
+.sunum-eco-card.eco-featured:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.14);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.eco-ribbon {
+    position: absolute;
+    top: 12px;
+    right: -28px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: #fff;
+    padding: 0.2rem 2.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transform: rotate(35deg);
+    letter-spacing: 0.5px;
+}
+.sunum-eco-card:nth-child(2) .eco-ribbon { background: linear-gradient(135deg, #f97316, #fbbf24); }
+.sunum-eco-card:nth-child(3) .eco-ribbon { background: linear-gradient(135deg, #22c55e, #4ade80); }
 .sunum-eco-icon {
-    width: 70px; height: 70px; border-radius: 20px;
+    width: 80px; height: 80px; border-radius: 22px;
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 1rem; font-size: 2rem;
+    margin: 0.5rem auto 1.2rem; font-size: 2.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .sunum-eco-card:nth-child(1) .sunum-eco-icon { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
 .sunum-eco-card:nth-child(2) .sunum-eco-icon { background: linear-gradient(135deg, #f97316, #fbbf24); }
 .sunum-eco-card:nth-child(3) .sunum-eco-icon { background: linear-gradient(135deg, #22c55e, #4ade80); }
-.sunum-eco-card h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
-.sunum-eco-card .eco-subtitle { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 0.8rem; }
+.sunum-eco-card h4 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.3rem; }
+.sunum-eco-card .eco-subtitle { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 0.8rem; font-weight: 600; }
 .sunum-eco-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6; }
+.ecosystem-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.connector-line {
+    flex: 1;
+    max-width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(168,85,247,0.5), transparent);
+}
+.connector-text {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
 .sunum-features-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem; margin-bottom: 3rem;
