@@ -6,7 +6,7 @@
   </defs>
 
   <!-- BIG "A" LETTER -->
-  <text x="60" y="168" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="180" font-weight="800" fill="#4A90E2" letter-spacing="-5">A</text>
+  <text x="60" y="168" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="180" font-weight="800" fill="#2563EB" letter-spacing="-5">A</text>
 
   <!-- BEAR - flat style, leaning on A from the left -->
   <g transform="translate(18, 42)">
@@ -14,24 +14,24 @@
     <ellipse cx="42" cy="105" rx="28" ry="32" fill="#D2A679"/>
 
     <!-- Left arm reaching toward A -->
-    <ellipse cx="65" cy="88" rx="14" ry="8" fill="#C49567" transform="rotate(-20, 65, 88)"/>
+    <ellipse cx="65" cy="88" rx="14" ry="8" fill="#8B6914" transform="rotate(-20, 65, 88)"/>
 
     <!-- Right arm down -->
-    <ellipse cx="22" cy="100" rx="12" ry="7" fill="#C49567" transform="rotate(15, 22, 100)"/>
+    <ellipse cx="22" cy="100" rx="12" ry="7" fill="#8B6914" transform="rotate(15, 22, 100)"/>
 
     <!-- Left leg -->
-    <ellipse cx="30" cy="132" rx="10" ry="7" fill="#C49567"/>
+    <ellipse cx="30" cy="132" rx="10" ry="7" fill="#8B6914"/>
     <!-- Right leg leaning -->
-    <ellipse cx="56" cy="130" rx="10" ry="7" fill="#C49567" transform="rotate(-10, 56, 130)"/>
+    <ellipse cx="56" cy="130" rx="10" ry="7" fill="#8B6914" transform="rotate(-10, 56, 130)"/>
 
     <!-- Head -->
     <circle cx="42" cy="55" r="30" fill="#D2A679"/>
 
     <!-- Ears -->
     <circle cx="18" cy="30" r="12" fill="#D2A679"/>
-    <circle cx="18" cy="30" r="7" fill="#C49567"/>
+    <circle cx="18" cy="30" r="7" fill="#8B6914"/>
     <circle cx="66" cy="30" r="12" fill="#D2A679"/>
-    <circle cx="66" cy="30" r="7" fill="#C49567"/>
+    <circle cx="66" cy="30" r="7" fill="#8B6914"/>
 
     <!-- Face - muzzle -->
     <ellipse cx="42" cy="64" rx="16" ry="12" fill="#E8CBA7"/>
