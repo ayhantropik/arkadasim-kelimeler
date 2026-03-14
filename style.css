@@ -773,6 +773,17 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+    .nav-logo-full {
+        display: none !important;
+    }
+    .nav-logo-mini {
+        display: block !important;
+    }
+    .phone-mockup {
+        transform: scale(1.25);
+        transform-origin: top center;
+        margin-bottom: 40px;
+    }
 
     /* Sections common */
     section {
