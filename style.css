@@ -1,4 +1,21 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Bear wave animation */
+@keyframes bear-wave {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(-30deg); }
+    30% { transform: rotate(10deg); }
+    45% { transform: rotate(-25deg); }
+    60% { transform: rotate(5deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+.bear-wave-arm {
+    transform-origin: 55px 88px;
+}
+.bear-logo-wave.waving .bear-wave-arm {
+    animation: bear-wave 1.2s ease-in-out;
+}
 html { scroll-behavior: smooth; }
 body {
     font-family: 'Nunito', sans-serif;
