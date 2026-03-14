@@ -766,12 +766,11 @@ footer {
         margin-right: auto;
     }
     .hero-logo-full {
-        display: none !important;
+        display: block !important;
+        max-height: 280px;
     }
     .hero-logo-mini {
-        display: block !important;
-        margin-left: auto;
-        margin-right: auto;
+        display: none !important;
     }
     .nav-logo-full {
         display: none !important;
@@ -899,7 +898,7 @@ footer {
     }
     .hero-text img,
     .hero-text svg.hero-logo {
-        max-height: 180px !important;
+        max-height: 240px !important;
     }
     .phone-mockup {
         width: 180px;
