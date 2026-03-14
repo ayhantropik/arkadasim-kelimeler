@@ -236,6 +236,8 @@ section { padding: 5rem 2rem; }
 .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #f97316, #fbbf24); }
 .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
 .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #22c55e, #4ade80); }
+.feature-card:nth-child(7) .feature-icon { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+.feature-card:nth-child(8) .feature-icon { background: linear-gradient(135deg, #d946ef, #e879f9); }
 .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
 .feature-card p { color: #777; font-size: 0.95rem; line-height: 1.6; }
 
