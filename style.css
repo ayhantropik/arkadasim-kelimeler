@@ -550,18 +550,26 @@ section { padding: 5rem 2rem; }
 }
 .ecosystem-badge {
     position: absolute;
-    top: -16px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    background: linear-gradient(135deg, #7c3aed, #a855f7, #6d28d9);
     color: #fff;
-    padding: 0.4rem 1.5rem;
+    padding: 0.6rem 2rem;
     border-radius: 30px;
-    font-size: 0.85rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(124,58,237,0.4);
+    box-shadow: 0 4px 20px rgba(124,58,237,0.5), 0 0 40px rgba(168,85,247,0.3);
+    animation: badge-bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes badge-bounce {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    25% { transform: translateX(-50%) scale(1.06); }
+    50% { transform: translateX(-50%) scale(1) translateY(-4px); }
+    75% { transform: translateX(-50%) scale(1.04); }
 }
 .ecosystem-title {
     text-align: center;
