@@ -147,8 +147,8 @@ nav {
 }
 .trio-cycle {
     position: relative;
-    width: 340px;
-    height: 340px;
+    width: 400px;
+    height: 400px;
 }
 .trio-arrows {
     position: absolute;
@@ -171,11 +171,11 @@ nav {
     gap: 8px;
     z-index: 2;
 }
-.trio-top { top: -10px; left: 50%; transform: translateX(-50%); }
-.trio-right { bottom: 10px; right: -10px; }
-.trio-left { bottom: 10px; left: -10px; }
+.trio-top { top: -20px; left: 50%; transform: translateX(-50%); }
+.trio-right { bottom: 0px; right: -20px; }
+.trio-left { bottom: 0px; left: -20px; }
 .trio-icon-wrap {
-    width: 90px; height: 90px;
+    width: 120px; height: 120px;
     border-radius: 24px;
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
@@ -189,7 +189,7 @@ nav {
 .trio-book { background: linear-gradient(135deg, #f97316, #fbbf24); animation-delay: 0s; }
 .trio-app { background: linear-gradient(135deg, #7c3aed, #a855f7); animation-delay: 1s; }
 .trio-web { background: linear-gradient(135deg, #3b82f6, #60a5fa); animation-delay: 2s; }
-.trio-svg-icon { width: 70px; height: 70px; }
+.trio-svg-icon { width: 90px; height: 90px; }
 @keyframes trio-float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -197,7 +197,7 @@ nav {
 .trio-label {
     color: #fff;
     font-weight: 800;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     text-align: center;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
     animation: trio-label-glow 2s ease-in-out infinite alternate;
@@ -210,7 +210,7 @@ nav {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px; height: 80px;
+    width: 100px; height: 100px;
     z-index: 1;
     animation: trio-pulse 2.5s ease-in-out infinite;
 }
@@ -224,10 +224,10 @@ nav {
     .hero-text h1 { font-size: 3rem; }
     .hero-text p { margin-left: auto; margin-right: auto; }
     .store-buttons { justify-content: center; }
-    .trio-cycle { width: 280px; height: 280px; }
-    .trio-icon-wrap { width: 72px; height: 72px; border-radius: 20px; }
-    .trio-svg-icon { width: 56px; height: 56px; }
-    .trio-center-logo { width: 65px; height: 65px; }
+    .trio-cycle { width: 320px; height: 320px; }
+    .trio-icon-wrap { width: 95px; height: 95px; border-radius: 22px; }
+    .trio-svg-icon { width: 72px; height: 72px; }
+    .trio-center-logo { width: 80px; height: 80px; }
 }
 
 /* SECTIONS COMMON */
@@ -1057,11 +1057,11 @@ footer {
     .hero-text svg.hero-logo {
         max-height: 240px !important;
     }
-    .trio-cycle { width: 240px; height: 240px; }
-    .trio-icon-wrap { width: 64px; height: 64px; border-radius: 18px; }
-    .trio-svg-icon { width: 48px; height: 48px; }
-    .trio-label { font-size: 0.75rem; }
-    .trio-center-logo { width: 55px; height: 55px; }
+    .trio-cycle { width: 270px; height: 270px; }
+    .trio-icon-wrap { width: 80px; height: 80px; border-radius: 20px; }
+    .trio-svg-icon { width: 60px; height: 60px; }
+    .trio-label { font-size: 0.85rem; }
+    .trio-center-logo { width: 65px; height: 65px; }
     .store-btn {
         padding: 10px 18px;
         border-radius: 12px;
