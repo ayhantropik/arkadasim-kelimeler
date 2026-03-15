@@ -502,12 +502,51 @@ section { padding: 5rem 2rem; }
 /* Ecosystem Highlight Section */
 .ecosystem-highlight {
     background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(59,130,246,0.15), rgba(34,197,94,0.15));
-    border: 2px solid rgba(168,85,247,0.4);
+    border: 2px solid rgba(168,85,247,0.5);
     border-radius: 28px;
     padding: 3rem 2.5rem 2rem;
     margin-bottom: 3rem;
     position: relative;
-    box-shadow: 0 0 40px rgba(124,58,237,0.2), 0 0 80px rgba(59,130,246,0.1);
+    box-shadow:
+        0 0 30px rgba(124,58,237,0.3),
+        0 0 60px rgba(168,85,247,0.25),
+        0 0 100px rgba(59,130,246,0.2),
+        0 0 150px rgba(34,197,94,0.15),
+        0 8px 40px rgba(0,0,0,0.3),
+        inset 0 0 60px rgba(124,58,237,0.08);
+    animation: ecosystem-glow 3s ease-in-out infinite alternate;
+}
+@keyframes ecosystem-glow {
+    0% {
+        box-shadow:
+            0 0 30px rgba(124,58,237,0.3),
+            0 0 60px rgba(168,85,247,0.25),
+            0 0 100px rgba(59,130,246,0.2),
+            0 0 150px rgba(34,197,94,0.15),
+            0 8px 40px rgba(0,0,0,0.3),
+            inset 0 0 60px rgba(124,58,237,0.08);
+        border-color: rgba(168,85,247,0.5);
+    }
+    50% {
+        box-shadow:
+            0 0 40px rgba(59,130,246,0.35),
+            0 0 80px rgba(96,165,250,0.3),
+            0 0 120px rgba(168,85,247,0.25),
+            0 0 180px rgba(34,197,94,0.2),
+            0 8px 40px rgba(0,0,0,0.3),
+            inset 0 0 80px rgba(59,130,246,0.1);
+        border-color: rgba(96,165,250,0.6);
+    }
+    100% {
+        box-shadow:
+            0 0 35px rgba(34,197,94,0.3),
+            0 0 70px rgba(74,222,128,0.25),
+            0 0 110px rgba(124,58,237,0.2),
+            0 0 160px rgba(59,130,246,0.15),
+            0 8px 40px rgba(0,0,0,0.3),
+            inset 0 0 70px rgba(34,197,94,0.08);
+        border-color: rgba(74,222,128,0.5);
+    }
 }
 .ecosystem-badge {
     position: absolute;
