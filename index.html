@@ -74,14 +74,20 @@
             <div class="trio-cycle">
                 <!-- Connecting arrows -->
                 <svg class="trio-arrows" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M200 50 Q340 50 320 180" stroke="url(#arrow1)" stroke-width="4" stroke-dasharray="12 6" fill="none" opacity="0.8"/>
-                    <path d="M320 200 Q290 330 200 320" stroke="url(#arrow2)" stroke-width="4" stroke-dasharray="12 6" fill="none" opacity="0.8"/>
-                    <path d="M180 320 Q80 290 80 180" stroke="url(#arrow3)" stroke-width="4" stroke-dasharray="12 6" fill="none" opacity="0.8"/>
                     <defs>
                         <linearGradient id="arrow1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
                         <linearGradient id="arrow2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#22c55e"/></linearGradient>
                         <linearGradient id="arrow3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#a855f7"/></linearGradient>
+                        <filter id="glow-line"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     </defs>
+                    <!-- Glow layer -->
+                    <path d="M200 50 Q340 50 320 180" stroke="url(#arrow1)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
+                    <path d="M320 200 Q290 330 200 320" stroke="url(#arrow2)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
+                    <path d="M180 320 Q80 290 80 180" stroke="url(#arrow3)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
+                    <!-- Main dashed lines -->
+                    <path d="M200 50 Q340 50 320 180" stroke="url(#arrow1)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
+                    <path d="M320 200 Q290 330 200 320" stroke="url(#arrow2)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
+                    <path d="M180 320 Q80 290 80 180" stroke="url(#arrow3)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
                 </svg>
                 <!-- Mobil App -->
                 <div class="trio-item trio-top">
