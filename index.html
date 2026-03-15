@@ -70,18 +70,70 @@
                 </a>
             </div>
         </div>
-        <div class="phone-mockup fade-in">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <div class="app-icon" style="padding:0;overflow:hidden;"><svg viewBox="-5 15 250 180" style="width:100%;height:100%;border-radius:20px;" role="img"><text x="60" y="168" font-family="'Scrambled Tofu','Comic Sans MS',cursive" font-size="180" font-weight="800" fill="#2563EB" letter-spacing="-5">A</text><g transform="translate(18,42)"><ellipse cx="42" cy="105" rx="28" ry="32" fill="#D2A679"/><ellipse cx="65" cy="88" rx="14" ry="8" fill="#8B6914" transform="rotate(-20,65,88)"/><ellipse cx="22" cy="100" rx="12" ry="7" fill="#8B6914" transform="rotate(15,22,100)"/><ellipse cx="30" cy="132" rx="10" ry="7" fill="#8B6914"/><ellipse cx="56" cy="130" rx="10" ry="7" fill="#8B6914" transform="rotate(-10,56,130)"/><circle cx="42" cy="55" r="30" fill="#D2A679"/><circle cx="18" cy="30" r="12" fill="#D2A679"/><circle cx="18" cy="30" r="7" fill="#8B6914"/><circle cx="66" cy="30" r="12" fill="#D2A679"/><circle cx="66" cy="30" r="7" fill="#8B6914"/><ellipse cx="42" cy="64" rx="16" ry="12" fill="#E8CBA7"/><circle cx="32" cy="50" r="4.5" fill="#0F2A45"/><circle cx="52" cy="50" r="4.5" fill="#0F2A45"/><circle cx="33.5" cy="48.5" r="1.5" fill="#fff"/><circle cx="53.5" cy="48.5" r="1.5" fill="#fff"/><ellipse cx="42" cy="60" rx="5" ry="3.5" fill="#0F2A45"/></g></svg></div>
-                <div class="app-title brand-name">Arkadaşım Kelimeler</div>
-                <div class="game-grid">
-                    <div class="game-tile">🔍</div>
-                    <div class="game-tile">🔀</div>
-                    <div class="game-tile">🧩</div>
-                    <div class="game-tile">🔗</div>
-                    <div class="game-tile">💡</div>
-                    <div class="game-tile">📝</div>
+        <div class="hero-trio fade-in">
+            <div class="trio-cycle">
+                <!-- Connecting arrows -->
+                <svg class="trio-arrows" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M200 50 Q320 50 310 180" stroke="url(#arrow1)" stroke-width="2.5" stroke-dasharray="8 4" fill="none"/>
+                    <path d="M310 200 Q280 320 200 310" stroke="url(#arrow2)" stroke-width="2.5" stroke-dasharray="8 4" fill="none"/>
+                    <path d="M180 310 Q90 280 90 180" stroke="url(#arrow3)" stroke-width="2.5" stroke-dasharray="8 4" fill="none"/>
+                    <defs>
+                        <linearGradient id="arrow1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+                        <linearGradient id="arrow2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#22c55e"/></linearGradient>
+                        <linearGradient id="arrow3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#a855f7"/></linearGradient>
+                    </defs>
+                </svg>
+                <!-- Kitap Seti -->
+                <div class="trio-item trio-top">
+                    <div class="trio-icon-wrap trio-book">
+                        <svg viewBox="0 0 80 80" class="trio-svg-icon">
+                            <rect x="12" y="10" width="56" height="60" rx="6" fill="#f97316"/>
+                            <rect x="18" y="16" width="44" height="48" rx="4" fill="#fbbf24"/>
+                            <rect x="24" y="24" width="32" height="4" rx="2" fill="#fff"/>
+                            <rect x="24" y="32" width="24" height="3" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+                            <rect x="24" y="39" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+                            <circle cx="40" cy="54" r="7" fill="#fff" opacity="0.3"/>
+                            <text x="40" y="58" text-anchor="middle" font-size="10" fill="#f97316">📖</text>
+                        </svg>
+                    </div>
+                    <div class="trio-label">Kitap Seti</div>
+                </div>
+                <!-- Mobil App -->
+                <div class="trio-item trio-right">
+                    <div class="trio-icon-wrap trio-app">
+                        <svg viewBox="0 0 80 80" class="trio-svg-icon">
+                            <rect x="18" y="6" width="44" height="68" rx="10" fill="#7c3aed"/>
+                            <rect x="22" y="14" width="36" height="48" rx="4" fill="#a855f7"/>
+                            <circle cx="40" cy="68" r="3" fill="rgba(255,255,255,0.4)"/>
+                            <rect x="32" y="9" width="16" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+                            <rect x="28" y="22" width="10" height="10" rx="3" fill="#f97316"/>
+                            <rect x="42" y="22" width="10" height="10" rx="3" fill="#22c55e"/>
+                            <rect x="28" y="36" width="10" height="10" rx="3" fill="#3b82f6"/>
+                            <rect x="42" y="36" width="10" height="10" rx="3" fill="#ec4899"/>
+                        </svg>
+                    </div>
+                    <div class="trio-label">Mobil App</div>
+                </div>
+                <!-- Web Programı -->
+                <div class="trio-item trio-left">
+                    <div class="trio-icon-wrap trio-web">
+                        <svg viewBox="0 0 80 80" class="trio-svg-icon">
+                            <rect x="8" y="14" width="64" height="44" rx="6" fill="#3b82f6"/>
+                            <rect x="12" y="22" width="56" height="32" rx="3" fill="#60a5fa"/>
+                            <rect x="30" y="58" width="20" height="4" rx="2" fill="#94a3b8"/>
+                            <rect x="24" y="62" width="32" height="3" rx="1.5" fill="#94a3b8"/>
+                            <circle cx="40" cy="38" r="8" fill="rgba(255,255,255,0.3)"/>
+                            <rect x="18" y="26" width="14" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+                            <rect x="18" y="32" width="10" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+                            <rect x="48" y="26" width="14" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+                            <rect x="48" y="32" width="10" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+                        </svg>
+                    </div>
+                    <div class="trio-label">Web Programı</div>
+                </div>
+                <!-- Center logo -->
+                <div class="trio-center-logo">
+                    <svg viewBox="-5 15 250 180" style="width:100%;height:100%;" role="img"><text x="60" y="168" font-family="'Scrambled Tofu','Comic Sans MS',cursive" font-size="180" font-weight="800" fill="#2563EB" letter-spacing="-5">A</text><g transform="translate(18,42)"><ellipse cx="42" cy="105" rx="28" ry="32" fill="#D2A679"/><ellipse cx="65" cy="88" rx="14" ry="8" fill="#8B6914" transform="rotate(-20,65,88)"/><ellipse cx="22" cy="100" rx="12" ry="7" fill="#8B6914" transform="rotate(15,22,100)"/><ellipse cx="30" cy="132" rx="10" ry="7" fill="#8B6914"/><ellipse cx="56" cy="130" rx="10" ry="7" fill="#8B6914" transform="rotate(-10,56,130)"/><circle cx="42" cy="55" r="30" fill="#D2A679"/><circle cx="18" cy="30" r="12" fill="#D2A679"/><circle cx="18" cy="30" r="7" fill="#8B6914"/><circle cx="66" cy="30" r="12" fill="#D2A679"/><circle cx="66" cy="30" r="7" fill="#8B6914"/><ellipse cx="42" cy="64" rx="16" ry="12" fill="#E8CBA7"/><circle cx="32" cy="50" r="4.5" fill="#0F2A45"/><circle cx="52" cy="50" r="4.5" fill="#0F2A45"/><circle cx="33.5" cy="48.5" r="1.5" fill="#fff"/><circle cx="53.5" cy="48.5" r="1.5" fill="#fff"/><ellipse cx="42" cy="60" rx="5" ry="3.5" fill="#0F2A45"/></g></svg>
                 </div>
             </div>
         </div>
