@@ -353,6 +353,7 @@ section { padding: 5rem 2rem; }
 .step:nth-child(1) .step-number { background: linear-gradient(135deg, #7c3aed, #a855f7); }
 .step:nth-child(2) .step-number { background: linear-gradient(135deg, #f97316, #fbbf24); }
 .step:nth-child(3) .step-number { background: linear-gradient(135deg, #22c55e, #4ade80); }
+.step:nth-child(4) .step-number { background: linear-gradient(135deg, #e11d48, #f43f5e); }
 .step h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
 .step p { color: #777; font-size: 0.95rem; line-height: 1.6; }
 .step-icon { font-size: 2.5rem; margin-bottom: 1rem; }
