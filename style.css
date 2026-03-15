@@ -162,7 +162,7 @@ nav {
     filter: drop-shadow(0 0 6px rgba(255,255,255,0.8)) drop-shadow(0 0 14px rgba(168,85,247,0.6)) drop-shadow(0 0 24px rgba(59,130,246,0.4));
 }
 @keyframes trio-dash {
-    to { stroke-dashoffset: 42; }
+    to { stroke-dashoffset: -42; }
 }
 .trio-item {
     position: absolute;
