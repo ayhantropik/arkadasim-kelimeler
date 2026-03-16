@@ -57,8 +57,8 @@
   </g>
 
   <!-- "rkadaşım" text connected to A -->
-  <text x="128" y="128" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#0F2A45">rkadaşım</text>
+  <text x="115" y="128" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#0F2A45">rkadaşım</text>
 
   <!-- "Kelimeler" text below -->
-  <text x="128" y="172" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#F5A623">Kelimeler</text>
+  <text x="115" y="172" font-family="'Scrambled Tofu','Comic Sans MS','Comic Sans',cursive" font-size="42" font-weight="700" fill="#F5A623">Kelimeler</text>
 </svg>

@@ -951,6 +951,18 @@ footer {
    ====================================================== */
 
 /* Tablet breakpoint: 1024px */
+/* Tablet large (12.4 inch etc) */
+@media (max-width: 1280px) {
+    .hero-content {
+        gap: 2rem;
+    }
+    .trio-cycle { width: 340px; height: 340px; }
+    .hero-text { min-width: 280px; }
+    .hero-text svg.hero-logo {
+        max-height: 200px !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .nav-links {
         gap: 1rem;
@@ -962,7 +974,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
     .hero-content {
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    .hero-text { min-width: 260px; }
+    .trio-cycle { width: 300px; height: 300px; }
+    .hero-text svg.hero-logo {
+        max-height: 180px !important;
     }
 }
 
