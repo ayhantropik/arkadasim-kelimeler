@@ -104,7 +104,7 @@ nav {
                 radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);
 }
 .hero-content {
-    display: flex; align-items: flex-start; gap: 4rem;
+    display: flex; align-items: center; gap: 4rem;
     max-width: 1200px; width: 100%; position: relative; z-index: 1;
     flex-wrap: wrap; justify-content: center;
 }
@@ -988,9 +988,6 @@ footer {
     /* Hero adjustments */
     .hero {
         padding: 90px 1.5rem 3rem;
-    }
-    .hero-content {
-        align-items: center;
     }
     .hero-text {
         min-width: unset;
