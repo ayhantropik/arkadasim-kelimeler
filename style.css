@@ -958,7 +958,7 @@ footer {
     }
     .trio-cycle { width: 340px; height: 340px; }
     .hero-text { min-width: 280px; }
-    .hero-text svg.hero-logo {
+    .hero-text img.hero-logo {
         max-height: 200px !important;
     }
 }
@@ -978,7 +978,7 @@ footer {
     }
     .hero-text { min-width: 260px; }
     .trio-cycle { width: 300px; height: 300px; }
-    .hero-text svg.hero-logo {
+    .hero-text img.hero-logo {
         max-height: 180px !important;
     }
 }
@@ -992,26 +992,12 @@ footer {
     .hero-text {
         min-width: unset;
     }
-    .hero-text img,
-    .hero-text svg.hero-logo {
+    .hero-text img.hero-logo {
         max-width: 100%;
         height: auto !important;
-        max-height: 220px;
+        max-height: 280px;
         margin-left: auto;
         margin-right: auto;
-    }
-    .hero-logo-full {
-        display: block !important;
-        max-height: 280px;
-    }
-    .hero-logo-mini {
-        display: none !important;
-    }
-    .nav-logo-full {
-        display: none !important;
-    }
-    .nav-logo-mini {
-        display: block !important;
     }
     .hero-trio {
         margin-top: 1rem;
@@ -1129,8 +1115,7 @@ footer {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
-    .hero-text img,
-    .hero-text svg.hero-logo {
+    .hero-text img.hero-logo {
         max-height: 240px !important;
     }
     .trio-cycle { width: 270px; height: 270px; }
