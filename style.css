@@ -157,7 +157,7 @@ nav {
     z-index: 0;
 }
 .flow-arrow {
-    filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+    filter: none;
 }
 .trio-item {
     position: absolute;
