@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/scrambled-tofu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -78,14 +78,44 @@
                         <linearGradient id="arrow3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#a855f7"/></linearGradient>
                         <filter id="glow-line"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     </defs>
-                    <!-- Glow layer (reversed direction) -->
+                    <!-- Glow layer -->
                     <path d="M320 180 Q340 50 200 50" stroke="url(#arrow1)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
                     <path d="M200 320 Q290 330 320 200" stroke="url(#arrow2)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
                     <path d="M80 180 Q80 290 180 320" stroke="url(#arrow3)" stroke-width="10" fill="none" opacity="0.3" filter="url(#glow-line)"/>
-                    <!-- Main dashed lines (reversed direction) -->
-                    <path d="M320 180 Q340 50 200 50" stroke="url(#arrow1)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
-                    <path d="M200 320 Q290 330 320 200" stroke="url(#arrow2)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
-                    <path d="M80 180 Q80 290 180 320" stroke="url(#arrow3)" stroke-width="5" stroke-dasharray="14 7" fill="none" opacity="1"/>
+                    <!-- Thin base line -->
+                    <path d="M320 180 Q340 50 200 50" stroke="url(#arrow1)" stroke-width="2" fill="none" opacity="0.4"/>
+                    <path d="M200 320 Q290 330 320 200" stroke="url(#arrow2)" stroke-width="2" fill="none" opacity="0.4"/>
+                    <path d="M80 180 Q80 290 180 320" stroke="url(#arrow3)" stroke-width="2" fill="none" opacity="0.4"/>
+                    <!-- Animated arrows on path 1 (Kitap Seti → Mobil Oyun) -->
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#a855f7" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M320,180 Q340,50 200,50"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#8b5cf6" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M320,180 Q340,50 200,50"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#6366f1" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M320,180 Q340,50 200,50"/>
+                    </polygon>
+                    <!-- Animated arrows on path 2 (Akıllı Tahta → Kitap Seti) -->
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#3b82f6" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M200,320 Q290,330 320,200"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#22d3ee" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M200,320 Q290,330 320,200"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#22c55e" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M200,320 Q290,330 320,200"/>
+                    </polygon>
+                    <!-- Animated arrows on path 3 (Mobil Oyun → Akıllı Tahta) -->
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#22c55e" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M80,180 Q80,290 180,320"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#a855f7" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M80,180 Q80,290 180,320"/>
+                    </polygon>
+                    <polygon points="-8,-6 8,0 -8,6" class="flow-arrow" fill="#8b5cf6" opacity="0.9" filter="url(#glow-line)">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M80,180 Q80,290 180,320"/>
+                    </polygon>
                 </svg>
                 <!-- Mobil App -->
                 <div class="trio-item trio-top">
