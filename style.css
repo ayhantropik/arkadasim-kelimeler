@@ -201,6 +201,10 @@ nav {
     transition: transform 0.3s, box-shadow 0.3s;
     animation: trio-float 3s ease-in-out infinite;
 }
+a.trio-icon-wrap {
+    text-decoration: none;
+    cursor: pointer;
+}
 .trio-icon-wrap:hover {
     transform: scale(1.15) !important;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.3);
