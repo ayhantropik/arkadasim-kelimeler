@@ -997,7 +997,7 @@ footer {
     .trio-cycle { width: 340px; height: 340px; }
     .hero-text { min-width: 280px; }
     .hero-text img.hero-logo {
-        max-height: 200px !important;
+        max-height: 267px !important;
     }
 }
 
@@ -1017,7 +1017,7 @@ footer {
     .hero-text { min-width: 260px; }
     .trio-cycle { width: 300px; height: 300px; }
     .hero-text img.hero-logo {
-        max-height: 180px !important;
+        max-height: 240px !important;
     }
 }
 
@@ -1042,7 +1042,7 @@ footer {
     .hero-text img.hero-logo {
         max-width: 100%;
         height: auto !important;
-        max-height: 280px;
+        max-height: 373px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1167,7 +1167,7 @@ footer {
         margin-bottom: 1.5rem;
     }
     .hero-text img.hero-logo {
-        max-height: 240px !important;
+        max-height: 320px !important;
     }
     .trio-cycle { width: 300px; height: 420px; }
     .trio-icon-wrap { width: 80px; height: 80px; border-radius: 20px; }
