@@ -128,7 +128,7 @@
                         <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M310,230 L240,95"/>
                         <g>
                             <animateTransform attributeName="transform" type="scale" values="1;1.35;1" dur="0.8s" repeatCount="indefinite"/>
-                            <text text-anchor="middle" dy="8" font-size="24">🎊</text>
+                            <text text-anchor="middle" dy="8" font-size="24">👏</text>
                         </g>
                         <g>
                             <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
@@ -204,7 +204,7 @@
                         <animateMotion dur="4s" repeatCount="indefinite" begin="2.67s" path="M240,95 L80,230"/>
                         <g>
                             <animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,-2;0,-8;0,0" dur="0.6s" repeatCount="indefinite"/>
-                            <text text-anchor="middle" dy="8" font-size="24">🎊</text>
+                            <text text-anchor="middle" dy="8" font-size="24">👏</text>
                         </g>
                         <g>
                             <animate attributeName="opacity" values="0;1;0" dur="1.4s" repeatCount="indefinite"/>
@@ -1195,6 +1195,15 @@
 </footer>
 
 <script>
+    // Show flow icons after page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.querySelectorAll('.flow-icon').forEach(function(el) {
+                el.style.display = '';
+            });
+        }, 300);
+    });
+
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
