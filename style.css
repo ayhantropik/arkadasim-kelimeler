@@ -158,7 +158,10 @@ nav {
     overflow: hidden;
 }
 .flow-icon {
-    display: none;
+    visibility: hidden;
+}
+.flow-icon.visible {
+    visibility: visible;
 }
 .trio-item {
     position: absolute;
