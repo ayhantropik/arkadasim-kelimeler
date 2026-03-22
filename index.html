@@ -76,36 +76,45 @@
                     <path d="M120 280 L300 280" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
                     <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
                     <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
-                    <!-- Animated arrows path 1: Akıllı Tahta → Kitap Seti -->
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M120,280 L300,280"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M120,280 L300,280"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M120,280 L300,280"/>
-                    </polygon>
-                    <!-- Animated arrows path 2: Kitap Seti → Mobil Oyun -->
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M310,230 L240,95"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M310,230 L240,95"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M310,230 L240,95"/>
-                    </polygon>
-                    <!-- Animated arrows path 3: Mobil Oyun → Akıllı Tahta (döngü) -->
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M240,95 L80,230"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M240,95 L80,230"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M240,95 L80,230"/>
-                    </polygon>
+                    <!-- Path 1: Akıllı Tahta → Kitap Seti -->
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M120,280 L300,280"/>
+                        <text class="bounce-icon" text-anchor="middle" dy="8" font-size="22">🧠</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1.6s" path="M120,280 L300,280"/>
+                        <text class="bounce-icon bounce-delay-1" text-anchor="middle" dy="8" font-size="22">📚</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s" path="M120,280 L300,280"/>
+                        <text class="bounce-icon bounce-delay-2" text-anchor="middle" dy="8" font-size="22">🎮</text>
+                    </g>
+                    <!-- Path 2: Kitap Seti → Mobil Oyun -->
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M310,230 L240,95"/>
+                        <text class="bounce-icon" text-anchor="middle" dy="8" font-size="22">🎊</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1.6s" path="M310,230 L240,95"/>
+                        <text class="bounce-icon bounce-delay-1" text-anchor="middle" dy="8" font-size="22">😊</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s" path="M310,230 L240,95"/>
+                        <text class="bounce-icon bounce-delay-2" text-anchor="middle" dy="8" font-size="22">🧠</text>
+                    </g>
+                    <!-- Path 3: Mobil Oyun → Akıllı Tahta (döngü) -->
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M240,95 L80,230"/>
+                        <text class="bounce-icon" text-anchor="middle" dy="8" font-size="22">📚</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1.6s" path="M240,95 L80,230"/>
+                        <text class="bounce-icon bounce-delay-1" text-anchor="middle" dy="8" font-size="22">🎮</text>
+                    </g>
+                    <g class="flow-icon">
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3.2s" path="M240,95 L80,230"/>
+                        <text class="bounce-icon bounce-delay-2" text-anchor="middle" dy="8" font-size="22">🎊</text>
+                    </g>
                 </svg>
                 <!-- Mobil App -->
                 <div class="trio-item trio-top">
