@@ -79,39 +79,39 @@
                         <filter id="glow-line"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     </defs>
                     <!-- Thin base line (no glow) -->
-                    <!-- Black dashed base lines -->
-                    <path d="M290 150 Q330 50 220 70" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
-                    <path d="M150 270 Q250 310 290 170" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
-                    <path d="M170 110 Q50 180 110 250" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
-                    <!-- Animated arrows on path 1 (Kitap Seti → Mobil Oyun) -->
+                    <!-- Black dashed base lines: Akıllı Tahta → Kitap Seti → Mobil Oyun → Akıllı Tahta -->
+                    <path d="M120 280 Q200 350 300 310" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
+                    <path d="M310 220 Q340 80 220 70" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
+                    <path d="M170 70 Q40 120 70 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7"/>
+                    <!-- Animated arrows path 1: Akıllı Tahta → Kitap Seti (altından giriş) -->
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M290,150 Q330,50 220,70"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M120,280 Q200,350 300,310"/>
                     </polygon>
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M290,150 Q330,50 220,70"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M120,280 Q200,350 300,310"/>
                     </polygon>
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M290,150 Q330,50 220,70"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M120,280 Q200,350 300,310"/>
                     </polygon>
-                    <!-- Animated arrows on path 2 (Akıllı Tahta → Kitap Seti) -->
+                    <!-- Animated arrows path 2: Kitap Seti → Mobil Oyun -->
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M150,270 Q250,310 290,170"/>
-                    </polygon>
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M150,270 Q250,310 290,170"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M310,220 Q340,80 220,70"/>
                     </polygon>
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M150,270 Q250,310 290,170"/>
-                    </polygon>
-                    <!-- Animated arrows on path 3 (Mobil Oyun → Akıllı Tahta) -->
-                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M170,110 Q50,180 110,250"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M310,220 Q340,80 220,70"/>
                     </polygon>
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M170,110 Q50,180 110,250"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M310,220 Q340,80 220,70"/>
+                    </polygon>
+                    <!-- Animated arrows path 3: Mobil Oyun → Akıllı Tahta (döngü) -->
+                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" path="M170,70 Q40,120 70,230"/>
                     </polygon>
                     <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
-                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M170,110 Q50,180 110,250"/>
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="1s" path="M170,70 Q40,120 70,230"/>
+                    </polygon>
+                    <polygon points="-12,-9 12,0 -12,9" class="flow-arrow" fill="#FFD700" opacity="1">
+                        <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="2s" path="M170,70 Q40,120 70,230"/>
                     </polygon>
                 </svg>
                 <!-- Mobil App -->
