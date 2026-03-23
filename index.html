@@ -77,7 +77,49 @@
                     <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <!-- Logo bear + A in center of triangle -->
-                    <image href="logo-bear.png" x="137" y="145" width="140" height="71" />
+                    <g>
+                        <image href="logo-bear.png" x="137" y="145" width="140" height="71" />
+                        <!-- Reading eye movement: subtle left-right sway -->
+                        <g>
+                            <animateTransform attributeName="transform" type="translate"
+                                values="0,0;2,0;4,0;3,0;1,0;0,0;0,0;0,0"
+                                dur="3s" repeatCount="indefinite"/>
+                            <!-- Left eye pupil -->
+                            <ellipse cx="172" cy="170" rx="1.8" ry="2" fill="#1a1a1a">
+                                <animate attributeName="cx" values="171;173;175;173;171;171;171" dur="3s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <!-- Right eye pupil -->
+                            <ellipse cx="183" cy="170" rx="1.8" ry="2" fill="#1a1a1a">
+                                <animate attributeName="cx" values="182;184;186;184;182;182;182" dur="3s" repeatCount="indefinite"/>
+                            </ellipse>
+                        </g>
+                        <!-- Page turn animation -->
+                        <g transform="translate(170,190)">
+                            <!-- Page flipping from right to left -->
+                            <path d="M0,0 Q4,-3 8,0 L8,8 Q4,5 0,8 Z" fill="#fff8e8" stroke="#e0c080" stroke-width="0.3" opacity="0">
+                                <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
+                                <animateTransform attributeName="transform" type="rotate" values="0 0 4;0 0 4;0 0 4;0 0 4;0 0 4;0 0 4;-40 8 4;-90 8 4;-90 8 4;0 0 4" dur="5s" repeatCount="indefinite"/>
+                            </path>
+                            <!-- Second page (slightly delayed) -->
+                            <path d="M0,0 Q4,-2 7,0 L7,7 Q4,5 0,7 Z" fill="#fff0d0" stroke="#d4a860" stroke-width="0.3" opacity="0">
+                                <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;0;0;0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+                                <animateTransform attributeName="transform" type="rotate" values="0 0 3.5;0 0 3.5;0 0 3.5;0 0 3.5;0 0 3.5;0 0 3.5;-40 7 3.5;-90 7 3.5;-90 7 3.5;0 0 3.5" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+                            </path>
+                        </g>
+                        <!-- Blink animation -->
+                        <g>
+                            <!-- Left eyelid -->
+                            <ellipse cx="172" cy="168" rx="4" ry="0" fill="#c87c28" opacity="0">
+                                <animate attributeName="ry" values="0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0" dur="4s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0" dur="4s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <!-- Right eyelid -->
+                            <ellipse cx="183" cy="168" rx="4" ry="0" fill="#c87c28" opacity="0">
+                                <animate attributeName="ry" values="0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0" dur="4s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0" dur="4s" repeatCount="indefinite"/>
+                            </ellipse>
+                        </g>
+                    </g>
                     <!-- Path 1: Akıllı Tahta → Kitap Seti (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
                         <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M120,280 L300,280"/>
