@@ -150,8 +150,8 @@ img.hero-logo {
 }
 .trio-cycle {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 420px;
+    height: 480px;
     overflow: hidden;
 }
 .trio-arrows {
@@ -179,7 +179,7 @@ img.hero-logo {
     z-index: 2;
 }
 .trio-top {
-    top: -20px; left: 50%; transform: translateX(-50%);
+    top: 30px; left: 50%; transform: translateX(-50%);
     flex-direction: row-reverse;
     align-items: center;
     gap: 14px;
@@ -197,8 +197,8 @@ img.hero-logo {
     text-align: right;
     max-width: 180px;
 }
-.trio-right { bottom: 0px; right: -20px; }
-.trio-left { bottom: 0px; left: -20px; }
+.trio-right { bottom: 10px; right: -30px; }
+.trio-left { bottom: 10px; left: -30px; }
 .trio-icon-wrap {
     width: 120px; height: 120px;
     flex-shrink: 0;
@@ -268,7 +268,7 @@ a.trio-icon-wrap {
     .trio-svg-icon { width: 72px; height: 72px; }
     .trio-center-logo { width: 80px; height: 80px; }
     .trio-top {
-        top: -10px;
+        top: 30px;
         flex-direction: row-reverse !important;
         flex-wrap: nowrap !important;
         align-items: center;
@@ -1005,7 +1005,7 @@ footer {
     .hero-content {
         gap: 2rem;
     }
-    .trio-cycle { width: 340px; height: 340px; }
+    .trio-cycle { width: 360px; height: 420px; }
     .hero-text { min-width: 280px; }
     .hero-text img.hero-logo {
         max-height: 267px !important;
@@ -1026,7 +1026,7 @@ footer {
         gap: 1.5rem;
     }
     .hero-text { min-width: 260px; }
-    .trio-cycle { width: 300px; height: 300px; }
+    .trio-cycle { width: 320px; height: 380px; }
     .hero-text img.hero-logo {
         max-height: 240px !important;
     }
@@ -1186,7 +1186,7 @@ footer {
     .trio-label { font-size: 0.8rem; }
     .trio-desc { font-size: 0.65rem; max-width: 110px; }
     .trio-top {
-        top: -5px;
+        top: 25px;
         flex-direction: row-reverse !important;
         flex-wrap: nowrap !important;
         align-items: center;

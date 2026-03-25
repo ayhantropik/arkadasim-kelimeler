@@ -72,12 +72,12 @@
             <div class="trio-cycle">
                 <!-- Connecting arrows -->
                 <svg class="trio-arrows" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Black dashed base lines (üçgen): Akıllı Tahta → Kitap Seti → Mobil Oyun → Akıllı Tahta -->
-                    <path d="M120 280 L300 280" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
-                    <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
-                    <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
+                    <!-- Black dashed base lines (eşkenar üçgen): Akıllı Tahta → Kitap Seti → Mobil Oyun → Akıllı Tahta -->
+                    <path d="M95 281 L305 281" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
+                    <path d="M305 281 L200 99" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
+                    <path d="M200 99 L95 281" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <!-- Glow circle behind bear -->
-                    <circle id="bear-glow" cx="210" cy="200" r="55" fill="url(#bearGlow)" opacity="0"/>
+                    <circle id="bear-glow" cx="200" cy="195" r="55" fill="url(#bearGlow)" opacity="0"/>
                     <defs>
                         <radialGradient id="bearGlow">
                             <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
@@ -86,20 +86,20 @@
                     </defs>
                     <!-- Logo bear in center of triangle -->
                     <g id="bear-group">
-                        <image href="bear-new.png" x="170" y="120" width="80" height="120" />
+                        <image href="bear-new.png" x="160" y="115" width="80" height="120" />
                         <!-- Visible page turn sheets flying from book area -->
                         <rect id="page1" x="185" y="195" width="22" height="16" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="1" opacity="0"/>
                         <rect id="page2" x="185" y="195" width="20" height="15" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="1" opacity="0"/>
                         <rect id="page3" x="185" y="195" width="18" height="14" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="1" opacity="0"/>
                     </g>
                     <!-- Floating sparkles from book (outside bear-group so not affected by its transform) -->
-                    <text id="sparkle1" x="215" y="170" font-size="14" opacity="0">✨</text>
-                    <text id="sparkle2" x="175" y="160" font-size="12" opacity="0">⭐</text>
-                    <text id="sparkle3" x="230" y="155" font-size="13" opacity="0">💫</text>
-                    <text id="sparkle4" x="195" y="150" font-size="11" opacity="0">📖</text>
+                    <text id="sparkle1" x="205" y="165" font-size="14" opacity="0">✨</text>
+                    <text id="sparkle2" x="165" y="155" font-size="12" opacity="0">⭐</text>
+                    <text id="sparkle3" x="220" y="150" font-size="13" opacity="0">💫</text>
+                    <text id="sparkle4" x="185" y="145" font-size="11" opacity="0">📖</text>
                     <!-- Path 1: Akıllı Tahta → Kitap Seti (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M120,280 L300,280"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M95,281 L305,281"/>
                         <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,-2;0,-8;0,0" dur="0.6s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">🧠</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
@@ -107,7 +107,7 @@
                             <text text-anchor="middle" font-size="7">✨</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M120,280 L300,280"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M95,281 L305,281"/>
                         <g><animateTransform attributeName="transform" type="translate" values="-3,0;3,0;-2,0;2,0;0,0" dur="0.4s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">📚</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.4s" repeatCount="indefinite" begin="0.6s"/>
@@ -115,7 +115,7 @@
                             <text text-anchor="middle" font-size="7">✨</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M120,280 L300,280"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M95,281 L305,281"/>
                         <g><animateTransform attributeName="transform" type="scale" values="1;1.35;1" dur="0.8s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">🎮</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
@@ -123,7 +123,7 @@
                             <text text-anchor="middle" font-size="7">⭐</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M120,280 L300,280"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M95,281 L305,281"/>
                         <g>
                             <text x="-8" dy="6" font-size="14" font-weight="bold" fill="#FFB3BA" font-family="'Nunito', sans-serif">o<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0s"/></text>
                             <text x="0" dy="6" font-size="14" font-weight="bold" fill="#BAFFC9" font-family="'Nunito', sans-serif">k<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0.15s"/></text>
@@ -135,7 +135,7 @@
                     </g>
                     <!-- Path 2: Kitap Seti → Mobil Oyun (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M310,230 L240,95"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M305,281 L200,99"/>
                         <g><animateTransform attributeName="transform" type="scale" values="1;1.35;1" dur="0.8s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">👏</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
@@ -143,7 +143,7 @@
                             <text text-anchor="middle" font-size="7">✨</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M310,230 L240,95"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M305,281 L200,99"/>
                         <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,-2;0,-8;0,0" dur="0.6s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">😊</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.2s"/>
@@ -151,7 +151,7 @@
                             <text text-anchor="middle" font-size="6">✨</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M310,230 L240,95"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M305,281 L200,99"/>
                         <g><animateTransform attributeName="transform" type="translate" values="-3,0;3,0;-2,0;2,0;0,0" dur="0.4s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">🧠</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
@@ -159,7 +159,7 @@
                             <text text-anchor="middle" font-size="7">⭐</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M310,230 L240,95"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M305,281 L200,99"/>
                         <g>
                             <text x="-8" dy="6" font-size="14" font-weight="bold" fill="#FFB3BA" font-family="'Nunito', sans-serif">o<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0s"/></text>
                             <text x="0" dy="6" font-size="14" font-weight="bold" fill="#BAFFC9" font-family="'Nunito', sans-serif">k<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0.15s"/></text>
@@ -171,7 +171,7 @@
                     </g>
                     <!-- Path 3: Mobil Oyun → Akıllı Tahta (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M240,95 L80,230"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M200,99 L95,281"/>
                         <g><animateTransform attributeName="transform" type="translate" values="-3,0;3,0;-2,0;2,0;0,0" dur="0.4s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">📚</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
@@ -179,7 +179,7 @@
                             <text text-anchor="middle" font-size="7">✨</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M240,95 L80,230"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M200,99 L95,281"/>
                         <g><animateTransform attributeName="transform" type="scale" values="1;1.35;1" dur="0.8s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">🎮</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
@@ -187,7 +187,7 @@
                             <text text-anchor="middle" font-size="7">⭐</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M240,95 L80,230"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M200,99 L95,281"/>
                         <g><animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,-2;0,-8;0,0" dur="0.6s" repeatCount="indefinite"/>
                             <text text-anchor="middle" dy="6" font-size="18">👏</text></g>
                         <g><animate attributeName="opacity" values="0;1;0" dur="1.4s" repeatCount="indefinite"/>
@@ -195,7 +195,7 @@
                             <text text-anchor="middle" font-size="7">⭐</text></g>
                     </g>
                     <g class="flow-icon">
-                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M240,95 L80,230"/>
+                        <animateMotion dur="4s" repeatCount="indefinite" begin="3s" path="M200,99 L95,281"/>
                         <g>
                             <text x="-8" dy="6" font-size="14" font-weight="bold" fill="#FFB3BA" font-family="'Nunito', sans-serif">o<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0s"/></text>
                             <text x="0" dy="6" font-size="14" font-weight="bold" fill="#BAFFC9" font-family="'Nunito', sans-serif">k<animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="0.5s" repeatCount="indefinite" begin="0.15s"/></text>
@@ -1368,7 +1368,7 @@
     });
 
     // --- Reading head sway using CSS transforms (works on SVG in modern browsers) ---
-    gsap.set("#bear-group", { transformOrigin: "210px 180px" });
+    gsap.set("#bear-group", { transformOrigin: "200px 175px" });
     var readTl = gsap.timeline({ repeat: -1 });
     readTl
         .to("#bear-group", { x: 8, y: -5, rotation: -4, duration: 1.0, ease: "sine.inOut" })
@@ -1407,7 +1407,7 @@
     sparkleAnim("#sparkle4", 198, 153, 103, 1.3, 4.0);
 
     // --- Breathing scale pulse using CSS scale ---
-    gsap.set("#bear-group image", { transformOrigin: "210px 180px" });
+    gsap.set("#bear-group image", { transformOrigin: "200px 175px" });
     gsap.to("#bear-group image", {
         scale: 1.06,
         duration: 1.8,
