@@ -76,20 +76,27 @@
                     <path d="M120 280 L300 280" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
+                    <!-- Glow circle behind bear -->
+                    <circle id="bear-glow" cx="207" cy="180" r="50" fill="url(#bearGlow)" opacity="0"/>
+                    <defs>
+                        <radialGradient id="bearGlow">
+                            <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
                     <!-- Logo bear + A in center of triangle -->
-                    <g id="bear-group" transform-origin="207 180">
+                    <g id="bear-group">
                         <image href="logo-bear.png" x="137" y="145" width="140" height="71" />
                         <!-- Visible page turn sheets flying from book area -->
-                        <g id="pages-container">
-                            <rect id="page1" x="195" y="188" width="18" height="14" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="0.8" opacity="0"/>
-                            <rect id="page2" x="195" y="188" width="16" height="12" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="0.8" opacity="0"/>
-                            <rect id="page3" x="195" y="188" width="14" height="11" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="0.8" opacity="0"/>
-                        </g>
-                        <!-- Floating sparkles from book -->
-                        <text id="sparkle1" x="215" y="175" font-size="8" opacity="0">✨</text>
-                        <text id="sparkle2" x="190" y="170" font-size="6" opacity="0">⭐</text>
-                        <text id="sparkle3" x="225" y="168" font-size="7" opacity="0">💫</text>
+                        <rect id="page1" x="200" y="190" width="22" height="16" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="1" opacity="0"/>
+                        <rect id="page2" x="200" y="190" width="20" height="15" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="1" opacity="0"/>
+                        <rect id="page3" x="200" y="190" width="18" height="14" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="1" opacity="0"/>
                     </g>
+                    <!-- Floating sparkles from book (outside bear-group so not affected by its transform) -->
+                    <text id="sparkle1" x="220" y="175" font-size="14" opacity="0">✨</text>
+                    <text id="sparkle2" x="180" y="165" font-size="12" opacity="0">⭐</text>
+                    <text id="sparkle3" x="230" y="160" font-size="13" opacity="0">💫</text>
+                    <text id="sparkle4" x="200" y="155" font-size="11" opacity="0">📖</text>
                     <!-- Path 1: Akıllı Tahta → Kitap Seti (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
                         <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M120,280 L300,280"/>
@@ -1347,52 +1354,60 @@
 </script>
 
 <script>
-// GSAP Bear Reading Animation - Visible & Charming
+// GSAP Bear Reading Animation - Bold & Obvious
 (function() {
     gsap.defaults({ overwrite: "auto" });
 
-    // --- Reading head sway (left-right like scanning a book) ---
+    // --- Pulsing glow behind bear ---
+    gsap.to("#bear-glow", {
+        attr: { opacity: 0.8, r: 60 },
+        duration: 1.5,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1
+    });
+
+    // --- Reading head sway (very visible rocking motion) ---
     var readTl = gsap.timeline({ repeat: -1 });
     readTl
-        .to("#bear-group", { attr: { transform: "translate(3, -2) rotate(-2 207 180)" }, duration: 1.2, ease: "sine.inOut" })
-        .to("#bear-group", { attr: { transform: "translate(-3, -1) rotate(2 207 180)" }, duration: 1.4, ease: "sine.inOut" })
-        .to("#bear-group", { attr: { transform: "translate(2, -3) rotate(-1 207 180)" }, duration: 1.0, ease: "sine.inOut" })
-        .to("#bear-group", { attr: { transform: "translate(0, 0) rotate(0 207 180)" }, duration: 0.8, ease: "sine.inOut" })
-        .to({}, { duration: 0.3 });
+        .to("#bear-group", { attr: { transform: "translate(8, -5) rotate(-4 207 180)" }, duration: 1.0, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(-8, -3) rotate(4 207 180)" }, duration: 1.2, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(5, -7) rotate(-2 207 180)" }, duration: 0.8, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(0, 0) rotate(0 207 180)" }, duration: 0.6, ease: "power2.out" })
+        .to({}, { duration: 0.5 });
 
-    // --- Page turn animation (visible sheets flying from book) ---
+    // --- Page turn animation (large visible sheets flying up-left from book) ---
     function pageTurn(pageId, delay) {
         var el = document.querySelector(pageId);
         if (!el) return;
-        var tl = gsap.timeline({ repeat: -1, repeatDelay: 2.5, delay: delay });
-        tl
-            .set(el, { attr: { opacity: 0, x: 195, y: 188, transform: "" } })
-            .to(el, { attr: { opacity: 0.9 }, duration: 0.2, ease: "power1.in" })
-            .to(el, { attr: { x: 175, y: 165, opacity: 0.7, transform: "rotate(-30 195 188)" }, duration: 0.5, ease: "power2.out" })
-            .to(el, { attr: { x: 160, y: 145, opacity: 0, transform: "rotate(-60 195 188)" }, duration: 0.4, ease: "power3.in" });
-        return tl;
+        gsap.timeline({ repeat: -1, repeatDelay: 1.8, delay: delay })
+            .set(el, { attr: { opacity: 0, x: 200, y: 190, transform: "rotate(0 200 190)" } })
+            .to(el, { attr: { opacity: 1 }, duration: 0.15, ease: "power1.in" })
+            .to(el, { attr: { x: 170, y: 155, opacity: 0.8, transform: "rotate(-40 200 190)" }, duration: 0.5, ease: "power2.out" })
+            .to(el, { attr: { x: 145, y: 125, opacity: 0, transform: "rotate(-80 200 190)" }, duration: 0.5, ease: "power3.in" });
     }
     pageTurn("#page1", 0);
-    pageTurn("#page2", 1.5);
-    pageTurn("#page3", 3.0);
+    pageTurn("#page2", 1.2);
+    pageTurn("#page3", 2.4);
 
-    // --- Sparkle animations (floating up from book) ---
-    function sparkleAnim(id, startX, startY, endX, endY, delay) {
+    // --- Sparkle animations (large, floating up from book area) ---
+    function sparkleAnim(id, startX, startY, endY, dur, delay) {
         var el = document.querySelector(id);
         if (!el) return;
-        gsap.timeline({ repeat: -1, repeatDelay: 3, delay: delay })
+        gsap.timeline({ repeat: -1, repeatDelay: 2.5, delay: delay })
             .set(el, { attr: { opacity: 0, x: startX, y: startY } })
-            .to(el, { attr: { opacity: 1, y: startY - 10 }, duration: 0.4, ease: "power1.out" })
-            .to(el, { attr: { opacity: 0, x: endX, y: endY }, duration: 0.8, ease: "power1.in" });
+            .to(el, { attr: { opacity: 1, y: startY - 15 }, duration: dur * 0.35, ease: "power1.out" })
+            .to(el, { attr: { opacity: 0, y: endY }, duration: dur * 0.65, ease: "power1.in" });
     }
-    sparkleAnim("#sparkle1", 215, 178, 222, 148, 0.5);
-    sparkleAnim("#sparkle2", 190, 173, 180, 143, 2.0);
-    sparkleAnim("#sparkle3", 225, 170, 235, 140, 3.5);
+    sparkleAnim("#sparkle1", 220, 178, 130, 1.4, 0.3);
+    sparkleAnim("#sparkle2", 185, 170, 120, 1.6, 1.5);
+    sparkleAnim("#sparkle3", 235, 165, 115, 1.5, 2.8);
+    sparkleAnim("#sparkle4", 200, 160, 110, 1.3, 4.0);
 
-    // --- Gentle scale pulse (breathing effect) ---
+    // --- Breathing scale pulse ---
     gsap.to("#bear-group image", {
-        attr: { width: 143, x: 135.5 },
-        duration: 2,
+        attr: { width: 148, x: 133 },
+        duration: 1.8,
         ease: "sine.inOut",
         yoyo: true,
         repeat: -1
