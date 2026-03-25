@@ -77,22 +77,18 @@
                     <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <!-- Logo bear + A in center of triangle -->
-                    <g id="bear-group">
+                    <g id="bear-group" transform-origin="207 180">
                         <image href="logo-bear.png" x="137" y="145" width="140" height="71" />
-                        <!-- Eye pupils for reading -->
-                        <g id="bear-eyes">
-                            <ellipse id="eye-left" cx="172" cy="170" rx="1.8" ry="2" fill="#1a1a1a"/>
-                            <ellipse id="eye-right" cx="183" cy="170" rx="1.8" ry="2" fill="#1a1a1a"/>
+                        <!-- Visible page turn sheets flying from book area -->
+                        <g id="pages-container">
+                            <rect id="page1" x="195" y="188" width="18" height="14" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="0.8" opacity="0"/>
+                            <rect id="page2" x="195" y="188" width="16" height="12" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="0.8" opacity="0"/>
+                            <rect id="page3" x="195" y="188" width="14" height="11" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="0.8" opacity="0"/>
                         </g>
-                        <!-- Pages for turning animation -->
-                        <g transform="translate(170,190)">
-                            <path id="page1" d="M0,0 Q4,-3 8,0 L8,8 Q4,5 0,8 Z" fill="#fff8e8" stroke="#e0c080" stroke-width="0.3" opacity="0"/>
-                            <path id="page2" d="M0,0 Q4,-2 7,0 L7,7 Q4,5 0,7 Z" fill="#fff0d0" stroke="#d4a860" stroke-width="0.3" opacity="0"/>
-                            <path id="page3" d="M0,0 Q3,-2 6,0 L6,6 Q3,4 0,6 Z" fill="#ffe8b8" stroke="#c89840" stroke-width="0.3" opacity="0"/>
-                        </g>
-                        <!-- Eyelids for blink -->
-                        <ellipse id="eyelid-left" cx="172" cy="168" rx="4" ry="0" fill="#c87c28" opacity="0"/>
-                        <ellipse id="eyelid-right" cx="183" cy="168" rx="4" ry="0" fill="#c87c28" opacity="0"/>
+                        <!-- Floating sparkles from book -->
+                        <text id="sparkle1" x="215" y="175" font-size="8" opacity="0">✨</text>
+                        <text id="sparkle2" x="190" y="170" font-size="6" opacity="0">⭐</text>
+                        <text id="sparkle3" x="225" y="168" font-size="7" opacity="0">💫</text>
                     </g>
                     <!-- Path 1: Akıllı Tahta → Kitap Seti (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
@@ -1351,50 +1347,52 @@
 </script>
 
 <script>
-// GSAP Bear Reading Animation
+// GSAP Bear Reading Animation - Visible & Charming
 (function() {
     gsap.defaults({ overwrite: "auto" });
 
-    // --- Eye reading movement (left-right scan) ---
-    var eyeReadTl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
-    eyeReadTl
-        .to("#eye-left", { attr: { cx: 173.5 }, duration: 0.6, ease: "power1.inOut" })
-        .to("#eye-right", { attr: { cx: 184.5 }, duration: 0.6, ease: "power1.inOut" }, "<")
-        .to("#eye-left", { attr: { cx: 175 }, duration: 0.8, ease: "sine.inOut" })
-        .to("#eye-right", { attr: { cx: 186 }, duration: 0.8, ease: "sine.inOut" }, "<")
-        .to("#eye-left", { attr: { cx: 172 }, duration: 0.5, ease: "power2.out" })
-        .to("#eye-right", { attr: { cx: 183 }, duration: 0.5, ease: "power2.out" }, "<")
-        .to({}, { duration: 0.8 });
+    // --- Reading head sway (left-right like scanning a book) ---
+    var readTl = gsap.timeline({ repeat: -1 });
+    readTl
+        .to("#bear-group", { attr: { transform: "translate(3, -2) rotate(-2 207 180)" }, duration: 1.2, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(-3, -1) rotate(2 207 180)" }, duration: 1.4, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(2, -3) rotate(-1 207 180)" }, duration: 1.0, ease: "sine.inOut" })
+        .to("#bear-group", { attr: { transform: "translate(0, 0) rotate(0 207 180)" }, duration: 0.8, ease: "sine.inOut" })
+        .to({}, { duration: 0.3 });
 
-    // --- Blink animation ---
-    var blinkTl = gsap.timeline({ repeat: -1, repeatDelay: 2.5 });
-    blinkTl
-        .to("#eyelid-left, #eyelid-right", { attr: { ry: 4, opacity: 1 }, duration: 0.08, ease: "power2.in" })
-        .to("#eyelid-left, #eyelid-right", { attr: { ry: 0, opacity: 0 }, duration: 0.08, ease: "power2.out" })
-        .to({}, { duration: 0.15 })
-        .to("#eyelid-left, #eyelid-right", { attr: { ry: 4, opacity: 1 }, duration: 0.08, ease: "power2.in" })
-        .to("#eyelid-left, #eyelid-right", { attr: { ry: 0, opacity: 0 }, duration: 0.08, ease: "power2.out" });
-
-    // --- Page turn animation (SVG-native using attr) ---
-    function pageTurn(pageId, pivotX, pivotY, delay) {
+    // --- Page turn animation (visible sheets flying from book) ---
+    function pageTurn(pageId, delay) {
         var el = document.querySelector(pageId);
-        var tl = gsap.timeline({ repeat: -1, repeatDelay: 3, delay: delay });
+        if (!el) return;
+        var tl = gsap.timeline({ repeat: -1, repeatDelay: 2.5, delay: delay });
         tl
-            .set(el, { attr: { opacity: 0, transform: "rotate(0 " + pivotX + " " + pivotY + ")" } })
-            .to(el, { attr: { opacity: 1 }, duration: 0.15, ease: "power1.in" })
-            .to(el, { attr: { transform: "rotate(-120 " + pivotX + " " + pivotY + ")" }, duration: 0.6, ease: "power2.inOut" })
-            .to(el, { attr: { transform: "rotate(-160 " + pivotX + " " + pivotY + ")", opacity: 0 }, duration: 0.3, ease: "power3.in" });
+            .set(el, { attr: { opacity: 0, x: 195, y: 188, transform: "" } })
+            .to(el, { attr: { opacity: 0.9 }, duration: 0.2, ease: "power1.in" })
+            .to(el, { attr: { x: 175, y: 165, opacity: 0.7, transform: "rotate(-30 195 188)" }, duration: 0.5, ease: "power2.out" })
+            .to(el, { attr: { x: 160, y: 145, opacity: 0, transform: "rotate(-60 195 188)" }, duration: 0.4, ease: "power3.in" });
         return tl;
     }
+    pageTurn("#page1", 0);
+    pageTurn("#page2", 1.5);
+    pageTurn("#page3", 3.0);
 
-    pageTurn("#page1", 8, 4, 0);
-    pageTurn("#page2", 7, 3.5, 1.8);
-    pageTurn("#page3", 6, 3, 3.6);
+    // --- Sparkle animations (floating up from book) ---
+    function sparkleAnim(id, startX, startY, endX, endY, delay) {
+        var el = document.querySelector(id);
+        if (!el) return;
+        gsap.timeline({ repeat: -1, repeatDelay: 3, delay: delay })
+            .set(el, { attr: { opacity: 0, x: startX, y: startY } })
+            .to(el, { attr: { opacity: 1, y: startY - 10 }, duration: 0.4, ease: "power1.out" })
+            .to(el, { attr: { opacity: 0, x: endX, y: endY }, duration: 0.8, ease: "power1.in" });
+    }
+    sparkleAnim("#sparkle1", 215, 178, 222, 148, 0.5);
+    sparkleAnim("#sparkle2", 190, 173, 180, 143, 2.0);
+    sparkleAnim("#sparkle3", 225, 170, 235, 140, 3.5);
 
-    // --- Subtle head bob while reading ---
-    gsap.to("#bear-group", {
-        attr: { transform: "translate(0, -1.5)" },
-        duration: 1.2,
+    // --- Gentle scale pulse (breathing effect) ---
+    gsap.to("#bear-group image", {
+        attr: { width: 143, x: 135.5 },
+        duration: 2,
         ease: "sine.inOut",
         yoyo: true,
         repeat: -1
