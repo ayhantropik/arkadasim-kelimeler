@@ -1203,6 +1203,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
     // Show flow icons after page load
     window.addEventListener('load', function() {
@@ -1415,6 +1416,103 @@
         yoyo: true,
         repeat: -1
     });
+})();
+</script>
+<script>
+// GSAP Section Title Animations - fun & playful for kids
+(function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var titles = document.querySelectorAll('.section-title');
+    // Different animation for each title
+    var animations = [
+        // 1. Özellikler - bounce drop from above
+        function(el) {
+            gsap.from(el, {
+                y: -80, scale: 0.3, opacity: 0, rotation: -10,
+                duration: 1, ease: "bounce.out",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 2. Oyunlarımız - spin in from small
+        function(el) {
+            gsap.from(el, {
+                scale: 0, rotation: 720, opacity: 0,
+                duration: 1.2, ease: "back.out(1.7)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 3. Sistem Nasıl Çalışır? - elastic slide from left
+        function(el) {
+            gsap.from(el, {
+                x: -300, opacity: 0, skewX: 20,
+                duration: 1.2, ease: "elastic.out(1, 0.5)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 4. Rakamlarla Biz - pop up with wobble
+        function(el) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+            tl.from(el, { y: 100, scale: 0, opacity: 0, duration: 0.6, ease: "back.out(2)" })
+              .to(el, { rotation: 5, duration: 0.15, ease: "power1.inOut" })
+              .to(el, { rotation: -5, duration: 0.15, ease: "power1.inOut" })
+              .to(el, { rotation: 3, duration: 0.1, ease: "power1.inOut" })
+              .to(el, { rotation: 0, duration: 0.1, ease: "power1.out" });
+        },
+        // 5. Kullanıcılarımız Ne Diyor? - flip in 3D
+        function(el) {
+            gsap.set(el, { transformPerspective: 600 });
+            gsap.from(el, {
+                rotationX: -90, y: 50, opacity: 0,
+                duration: 1, ease: "back.out(1.5)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 6. Sıkça Sorulan Sorular - typewriter / slide from right
+        function(el) {
+            gsap.from(el, {
+                x: 300, opacity: 0, skewX: -15, scale: 0.5,
+                duration: 1, ease: "elastic.out(1, 0.6)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 7. Arkadaşım Kelimeler (Sunum) - rainbow scale pulse
+        function(el) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+            tl.from(el, { scale: 3, opacity: 0, rotation: -15, duration: 0.8, ease: "power3.out" })
+              .to(el, { scale: 1.1, duration: 0.2, ease: "power1.inOut" })
+              .to(el, { scale: 1, duration: 0.3, ease: "bounce.out" });
+        },
+        // 8. Bilimsel Temel - elegant rise with fade
+        function(el) {
+            gsap.set(el, { transformPerspective: 800 });
+            gsap.from(el, {
+                y: 60, rotationY: 90, opacity: 0,
+                duration: 1.2, ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        }
+    ];
+
+    titles.forEach(function(title, i) {
+        if (animations[i]) {
+            animations[i](title);
+        }
+    });
+
+    // Also animate the CTA title "Hemen İndir, Eğlenceye Katıl!"
+    var ctaTitle = document.querySelector('#indir .section-title');
+    if (ctaTitle) {
+        gsap.from(ctaTitle, {
+            y: -60, scale: 0.5, opacity: 0, rotation: 8,
+            duration: 1, ease: "bounce.out",
+            scrollTrigger: { trigger: ctaTitle, start: "top 85%" }
+        });
+    }
 })();
 </script>
 </body>
