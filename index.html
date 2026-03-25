@@ -77,26 +77,26 @@
                     <path d="M310 230 L240 95" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <path d="M240 95 L80 230" stroke="#000" stroke-width="4" stroke-dasharray="14 8" fill="none" opacity="0.7" />
                     <!-- Glow circle behind bear -->
-                    <circle id="bear-glow" cx="207" cy="180" r="50" fill="url(#bearGlow)" opacity="0"/>
+                    <circle id="bear-glow" cx="210" cy="200" r="55" fill="url(#bearGlow)" opacity="0"/>
                     <defs>
                         <radialGradient id="bearGlow">
                             <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
                             <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
                         </radialGradient>
                     </defs>
-                    <!-- Logo bear + A in center of triangle -->
+                    <!-- Logo bear in center of triangle -->
                     <g id="bear-group">
-                        <image href="logo-bear.png" x="137" y="145" width="140" height="71" />
+                        <image href="bear-new.png" x="170" y="120" width="80" height="120" />
                         <!-- Visible page turn sheets flying from book area -->
-                        <rect id="page1" x="200" y="190" width="22" height="16" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="1" opacity="0"/>
-                        <rect id="page2" x="200" y="190" width="20" height="15" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="1" opacity="0"/>
-                        <rect id="page3" x="200" y="190" width="18" height="14" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="1" opacity="0"/>
+                        <rect id="page1" x="185" y="195" width="22" height="16" rx="2" fill="#fff8e8" stroke="#e0c080" stroke-width="1" opacity="0"/>
+                        <rect id="page2" x="185" y="195" width="20" height="15" rx="2" fill="#fff0d0" stroke="#d4a860" stroke-width="1" opacity="0"/>
+                        <rect id="page3" x="185" y="195" width="18" height="14" rx="2" fill="#ffe8b8" stroke="#c89840" stroke-width="1" opacity="0"/>
                     </g>
                     <!-- Floating sparkles from book (outside bear-group so not affected by its transform) -->
-                    <text id="sparkle1" x="220" y="175" font-size="14" opacity="0">✨</text>
-                    <text id="sparkle2" x="180" y="165" font-size="12" opacity="0">⭐</text>
-                    <text id="sparkle3" x="230" y="160" font-size="13" opacity="0">💫</text>
-                    <text id="sparkle4" x="200" y="155" font-size="11" opacity="0">📖</text>
+                    <text id="sparkle1" x="215" y="170" font-size="14" opacity="0">✨</text>
+                    <text id="sparkle2" x="175" y="160" font-size="12" opacity="0">⭐</text>
+                    <text id="sparkle3" x="230" y="155" font-size="13" opacity="0">💫</text>
+                    <text id="sparkle4" x="195" y="150" font-size="11" opacity="0">📖</text>
                     <!-- Path 1: Akıllı Tahta → Kitap Seti (4 ikon, eşit aralık) -->
                     <g class="flow-icon">
                         <animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M120,280 L300,280"/>
@@ -1368,7 +1368,7 @@
     });
 
     // --- Reading head sway using CSS transforms (works on SVG in modern browsers) ---
-    gsap.set("#bear-group", { transformOrigin: "207px 180px" });
+    gsap.set("#bear-group", { transformOrigin: "210px 180px" });
     var readTl = gsap.timeline({ repeat: -1 });
     readTl
         .to("#bear-group", { x: 8, y: -5, rotation: -4, duration: 1.0, ease: "sine.inOut" })
@@ -1401,13 +1401,13 @@
             .to(el, { attr: { opacity: 1, y: startY - 15 }, duration: dur * 0.35, ease: "power1.out" })
             .to(el, { attr: { opacity: 0, y: endY }, duration: dur * 0.65, ease: "power1.in" });
     }
-    sparkleAnim("#sparkle1", 220, 178, 130, 1.4, 0.3);
-    sparkleAnim("#sparkle2", 185, 170, 120, 1.6, 1.5);
-    sparkleAnim("#sparkle3", 235, 165, 115, 1.5, 2.8);
-    sparkleAnim("#sparkle4", 200, 160, 110, 1.3, 4.0);
+    sparkleAnim("#sparkle1", 215, 173, 125, 1.4, 0.3);
+    sparkleAnim("#sparkle2", 178, 165, 115, 1.6, 1.5);
+    sparkleAnim("#sparkle3", 232, 158, 108, 1.5, 2.8);
+    sparkleAnim("#sparkle4", 198, 153, 103, 1.3, 4.0);
 
     // --- Breathing scale pulse using CSS scale ---
-    gsap.set("#bear-group image", { transformOrigin: "207px 180px" });
+    gsap.set("#bear-group image", { transformOrigin: "210px 180px" });
     gsap.to("#bear-group image", {
         scale: 1.06,
         duration: 1.8,
