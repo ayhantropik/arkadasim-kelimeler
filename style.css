@@ -152,6 +152,7 @@ img.hero-logo {
     position: relative;
     width: 400px;
     height: 400px;
+    overflow: hidden;
 }
 .trio-arrows {
     position: absolute;
