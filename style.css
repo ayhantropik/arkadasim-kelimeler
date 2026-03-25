@@ -162,9 +162,12 @@ img.hero-logo {
 }
 .flow-icon {
     visibility: hidden;
+    opacity: 0;
 }
 .flow-icon.visible {
     visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 .trio-item {
     position: absolute;
