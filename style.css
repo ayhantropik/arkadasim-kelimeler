@@ -269,18 +269,18 @@ a.trio-icon-wrap {
     .trio-center-logo { width: 80px; height: 80px; }
     .trio-top {
         top: -10px;
-        flex-direction: column;
+        flex-direction: row-reverse;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
     }
     .trio-top .trio-text-right {
-        align-items: center;
+        align-items: flex-end;
     }
     .trio-top .trio-text-right .trio-label {
-        text-align: center;
+        text-align: right;
     }
     .trio-top .trio-text-right .trio-desc {
-        text-align: center;
+        text-align: right;
     }
     .trio-right { bottom: 20px; right: -10px; }
     .trio-left { bottom: 20px; left: -10px; }
@@ -1186,18 +1186,18 @@ footer {
     .trio-desc { font-size: 0.65rem; max-width: 110px; }
     .trio-top {
         top: -5px;
-        flex-direction: column;
+        flex-direction: row-reverse;
         align-items: center;
-        gap: 6px;
+        gap: 10px;
     }
     .trio-top .trio-text-right {
-        align-items: center;
+        align-items: flex-end;
     }
     .trio-top .trio-text-right .trio-label {
-        text-align: center;
+        text-align: right;
     }
     .trio-top .trio-text-right .trio-desc {
-        text-align: center;
+        text-align: right;
     }
     .trio-right { bottom: 20px; right: -5px; }
     .trio-left { bottom: 20px; left: -5px; }
