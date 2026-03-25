@@ -152,7 +152,8 @@ img.hero-logo {
     position: relative;
     width: 420px;
     height: 480px;
-    overflow: hidden;
+    overflow: visible;
+    flex-shrink: 0;
 }
 .trio-arrows {
     position: absolute;
@@ -179,23 +180,23 @@ img.hero-logo {
     z-index: 2;
 }
 .trio-top {
-    top: 30px; left: 50%; transform: translateX(-50%);
-    flex-direction: row-reverse;
+    top: 20px; left: 50%; transform: translateX(-50%);
+    flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 6px;
 }
 .trio-text-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
+    align-items: center;
+    gap: 2px;
 }
 .trio-text-right .trio-label {
-    text-align: right;
+    text-align: center;
 }
 .trio-text-right .trio-desc {
-    text-align: right;
-    max-width: 180px;
+    text-align: center;
+    max-width: 160px;
 }
 .trio-right { bottom: 10px; right: -30px; }
 .trio-left { bottom: 10px; left: -30px; }
@@ -268,20 +269,19 @@ a.trio-icon-wrap {
     .trio-svg-icon { width: 72px; height: 72px; }
     .trio-center-logo { width: 80px; height: 80px; }
     .trio-top {
-        top: 30px;
-        flex-direction: row-reverse !important;
-        flex-wrap: nowrap !important;
+        top: 15px;
+        flex-direction: column !important;
         align-items: center;
-        gap: 10px;
+        gap: 4px;
     }
     .trio-top .trio-text-right {
-        align-items: flex-end;
+        align-items: center;
     }
     .trio-top .trio-text-right .trio-label {
-        text-align: right;
+        text-align: center;
     }
     .trio-top .trio-text-right .trio-desc {
-        text-align: right;
+        text-align: center;
     }
     .trio-right { bottom: 20px; right: -10px; }
     .trio-left { bottom: 20px; left: -10px; }
@@ -1186,20 +1186,20 @@ footer {
     .trio-label { font-size: 0.8rem; }
     .trio-desc { font-size: 0.65rem; max-width: 110px; }
     .trio-top {
-        top: 25px;
-        flex-direction: row-reverse !important;
-        flex-wrap: nowrap !important;
+        top: 10px;
+        flex-direction: column !important;
         align-items: center;
-        gap: 8px;
+        gap: 3px;
     }
     .trio-top .trio-text-right {
-        align-items: flex-end;
+        align-items: center;
     }
     .trio-top .trio-text-right .trio-label {
-        text-align: right;
+        text-align: center;
     }
     .trio-top .trio-text-right .trio-desc {
-        text-align: right;
+        text-align: center;
+        max-width: 100px;
     }
     .trio-right { bottom: 20px; right: -5px; }
     .trio-left { bottom: 20px; left: -5px; }
