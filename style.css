@@ -73,9 +73,10 @@ nav {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-6px); }
 .mobile-menu {
-    display: none; position: fixed; top: 70px; left: 0; right: 0;
+    display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
     background: #fff; padding: 1rem 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow-y: auto; z-index: 999;
     flex-direction: column; gap: 1rem;
     z-index: 999;
 }
@@ -180,7 +181,7 @@ img.hero-logo {
     z-index: 2;
 }
 .trio-top {
-    top: 20px; left: 50%; transform: translateX(-50%);
+    top: 10px; left: 50%; transform: translateX(-50%);
     flex-direction: column;
     align-items: center;
     gap: 6px;
@@ -1008,7 +1009,7 @@ footer {
     .trio-cycle { width: 360px; height: 420px; }
     .hero-text { min-width: 280px; }
     .hero-text img.hero-logo {
-        max-height: 267px !important;
+        max-height: 170px !important;
     }
 }
 
@@ -1027,8 +1028,14 @@ footer {
     }
     .hero-text { min-width: 260px; }
     .trio-cycle { width: 320px; height: 380px; }
+    .trio-icon-wrap { width: 95px; height: 95px; border-radius: 20px; }
+    .trio-svg-icon { width: 70px; height: 70px; }
+    .trio-label { font-size: 0.9rem; }
+    .trio-desc { font-size: 0.7rem; max-width: 120px; }
+    .trio-right { right: -20px; }
+    .trio-left { left: -20px; }
     .hero-text img.hero-logo {
-        max-height: 240px !important;
+        max-height: 150px !important;
     }
 }
 
@@ -1053,7 +1060,7 @@ footer {
     .hero-text img.hero-logo {
         max-width: 100%;
         height: auto !important;
-        max-height: 373px;
+        max-height: 220px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1104,22 +1111,26 @@ footer {
         padding: 1.5rem 1rem;
     }
     .sunum-compare-table {
-        min-width: 500px;
+        min-width: 0;
+        width: 100%;
+    }
+    .sunum-compare-table th,
+    .sunum-compare-table td {
+        padding: 10px 8px;
+        font-size: 0.78rem;
+        word-break: break-word;
     }
 
     /* Academic tabs horizontal scroll */
     .academic-tabs {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-        padding-bottom: 0.5rem;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
     }
     .academic-tab {
         flex-shrink: 0;
-        padding: 10px 18px;
-        font-size: 0.85rem;
+        padding: 8px 14px;
+        font-size: 0.8rem;
     }
 
     /* Sunum result items */
@@ -1178,7 +1189,7 @@ footer {
         margin-bottom: 1.5rem;
     }
     .hero-text img.hero-logo {
-        max-height: 320px !important;
+        max-height: 180px !important;
     }
     .trio-cycle { width: 300px; height: 420px; }
     .trio-icon-wrap { width: 80px; height: 80px; border-radius: 20px; }
@@ -1354,12 +1365,14 @@ footer {
         border-radius: 14px;
     }
     .sunum-compare-table {
-        min-width: 450px;
+        min-width: 0;
+        width: 100%;
     }
     .sunum-compare-table th,
     .sunum-compare-table td {
-        padding: 8px 10px;
-        font-size: 0.8rem;
+        padding: 6px 5px;
+        font-size: 0.72rem;
+        word-break: break-word;
     }
     .sunum-result {
         padding: 1.5rem 1rem;
