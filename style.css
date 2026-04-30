@@ -94,12 +94,13 @@ nav {
 /* HERO */
 img.hero-logo {
     filter: drop-shadow(0.5px 0 0 white) drop-shadow(-0.5px 0 0 white) drop-shadow(0 0.5px 0 white) drop-shadow(0 -0.5px 0 white);
+    margin-top: -40px;
 }
 .hero {
     min-height: 100vh;
     background: linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #f97316 50%, #22c55e 75%, #3b82f6 100%);
     display: flex; align-items: center; justify-content: center;
-    padding: 100px 2rem 4rem;
+    padding: 70px 2rem 4rem;
     position: relative; overflow: hidden;
 }
 .hero::before {
