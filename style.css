@@ -1522,3 +1522,132 @@ footer {
         padding-top: 1.5rem;
     }
 }
+
+/* =========================================================
+   STICKER DESIGN SYSTEM  — derived from the bear badge logo
+   chunky rounded lettering · dark keyline outlines ·
+   stitched ribbon banners · candy buttons · logo palette
+   ========================================================= */
+:root{
+    --ink:#20160c;          /* logo keyline (#19120A sampled) */
+    --orange:#EF7E28;       /* Arkadaşım "A" */
+    --sky:#33BEE0;          /* bright cyan scene */
+    --sky-deep:#2E7BA6;     /* Kelimeler ribbon blue (#32759F sampled) */
+    --grass:#57B24A;        /* grass */
+    --grape:#8E4FA8;        /* "m" */
+    --sun:#F9B233;          /* sunny yellow */
+    --cream:#EAF7FC;        /* sky-tinted page bg */
+    --chunk:0 6px 0 rgba(32,22,12,.12);
+}
+
+/* Rounded display face on every heading + brand element */
+h1,h2,h3,h4,
+.section-title,.brand-name,.nav-logo span,
+.feature-card h3,.game-card h3,.step h3,.testimonial-name,
+.stat-number,.trio-label,.ecosystem-title,.eco-subtitle,.slogan{
+    font-family:'Baloo 2','Nunito',sans-serif;
+}
+
+/* ---- Sticker section headings: colored fill + dark keyline + lift ---- */
+.section-title{
+    font-weight:800; letter-spacing:.4px;
+    background:none;
+    color:var(--orange);
+    -webkit-text-fill-color:var(--orange);
+    -webkit-text-stroke:3px var(--ink);
+    paint-order:stroke fill;
+    text-shadow:0 5px 0 rgba(32,22,12,.18);
+}
+#istatistikler .section-title{
+    color:var(--sun); -webkit-text-fill-color:var(--sun);
+}
+.section-subtitle{ color:#6b5a4a; font-weight:600; }
+
+/* CTA headline as white sticker text (echoes the "Kelimeler" ribbon word) */
+.brand-name{
+    color:#fff; -webkit-text-fill-color:#fff;
+    -webkit-text-stroke:3px var(--ink);
+    paint-order:stroke fill;
+    text-shadow:0 5px 0 rgba(32,22,12,.28);
+}
+
+/* Sky-tinted alternating sections */
+#ozellikler,#nasil-oynanir,#sss{ background:var(--cream); }
+
+/* ---- Sticker cards ---- */
+.feature-card,.game-card,.testimonial-card,.faq-item{
+    border:2.5px solid var(--ink);
+    border-radius:22px;
+    box-shadow:var(--chunk);
+}
+.feature-card:hover,.game-card:hover,.testimonial-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 0 rgba(32,22,12,.14);
+    border-color:var(--ink);
+}
+.feature-card h3,.game-card h3,.step h3,.testimonial-name{ color:var(--ink); }
+
+/* Icon tiles + step circles get the keyline */
+.feature-icon,.step-number{
+    border:2.5px solid var(--ink);
+    box-shadow:0 5px 0 rgba(32,22,12,.16);
+}
+
+/* Stat cards live on the purple band → light keyline instead of ink */
+.stat-card{
+    border:2px solid rgba(255,255,255,.45);
+    border-radius:22px;
+    box-shadow:0 6px 0 rgba(0,0,0,.16);
+}
+
+/* ---- Candy buttons: solid fill, ink outline, chunky bottom edge ---- */
+.store-btn{
+    background:var(--sun); color:var(--ink);
+    border:2.5px solid var(--ink);
+    border-radius:999px;
+    box-shadow:0 5px 0 var(--ink);
+    backdrop-filter:none;
+    font-family:'Baloo 2',sans-serif; font-weight:700;
+}
+.store-btn:hover{ transform:translateY(-2px); background:var(--sun); box-shadow:0 8px 0 var(--ink); }
+.store-btn:active{ transform:translateY(3px); box-shadow:0 2px 0 var(--ink); }
+.store-btn .btn-text small{ color:var(--ink); opacity:.75; }
+.store-btn i{ color:var(--ink); }
+.store-buttons .store-btn:nth-of-type(2){ background:var(--sky); }
+
+/* ---- Stitched ribbon device (the signature) ---- */
+.slogan,.difficulty,.eco-ribbon{
+    position:relative; display:inline-block;
+    font-family:'Baloo 2',sans-serif; font-weight:700;
+    color:#fff; background:var(--sky-deep);
+    border:2.5px solid var(--ink); border-radius:8px;
+    padding:7px 22px;
+    box-shadow:0 4px 0 rgba(32,22,12,.2);
+}
+.slogan::after,.difficulty::after,.eco-ribbon::after{
+    content:''; position:absolute; inset:4px;
+    border:1.5px dashed rgba(255,255,255,.6);
+    border-radius:4px; pointer-events:none;
+}
+.slogan{ margin:0 0 1.3rem; text-shadow:none; }
+.difficulty{ padding:5px 16px; box-shadow:0 3px 0 rgba(32,22,12,.2); }
+.difficulty.easy{ background:var(--grass); color:#fff; }
+.difficulty.medium{ background:var(--sun); color:var(--ink); }
+.difficulty.hard{ background:#e5533d; color:#fff; }
+
+@media (prefers-reduced-motion: reduce){
+    .store-btn,.feature-card,.game-card,.testimonial-card{ transition:none; }
+}
+
+/* ---- Hero trio app-icon tiles → sticker look (ink keyline + chunky shadow) ---- */
+.trio-icon-wrap{
+    border:3px solid var(--ink);
+    box-shadow:0 8px 0 rgba(32,22,12,.22);
+}
+.trio-icon-wrap:hover{
+    box-shadow:0 12px 0 rgba(32,22,12,.28) !important;
+}
+.trio-label{
+    text-shadow:0 2px 0 rgba(32,22,12,.35);
+    animation:none;               /* drop the glow flicker for a cleaner sticker read */
+}
