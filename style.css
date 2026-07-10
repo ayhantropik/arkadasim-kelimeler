@@ -53,6 +53,43 @@ nav {
     background: linear-gradient(135deg, #7c3aed, #f97316);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
+.nav-bear {
+    height: 48px; width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+}
+.nav-logo:hover .nav-bear { transform: rotate(-8deg) scale(1.06); }
+
+/* Bear mascot decorations across sections */
+.section-bear {
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.22));
+}
+.section-bear.peek-right { right: 3%; bottom: 0; width: 190px; }
+.section-bear.peek-left { left: 3%; bottom: 0; width: 170px; transform: scaleX(-1); }
+.cta-bear {
+    position: absolute;
+    right: 5%; bottom: 0;
+    width: 230px;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 14px 26px rgba(0,0,0,0.3));
+    animation: badge-float 6s ease-in-out infinite;
+}
+@media (max-width: 768px) {
+    .nav-logo span { font-size: 1.05rem; }
+    .nav-bear { height: 40px; }
+    .section-bear.peek-right { width: 120px; }
+    .section-bear.peek-left { width: 110px; }
+    .cta-bear { width: 130px; right: 2%; opacity: 0.95; }
+}
+@media (max-width: 420px) {
+    .section-bear { display: none; }
+    .cta-bear { width: 100px; }
+}
 .nav-links {
     display: flex; gap: 2rem; list-style: none; align-items: center;
 }
@@ -93,8 +130,16 @@ nav {
 
 /* HERO */
 img.hero-logo {
-    filter: drop-shadow(0.5px 0 0 white) drop-shadow(-0.5px 0 0 white) drop-shadow(0 0.5px 0 white) drop-shadow(0 -0.5px 0 white);
-    margin-top: -40px;
+    filter: drop-shadow(0 10px 22px rgba(0,0,0,0.28));
+    margin-top: -20px;
+    animation: badge-float 5s ease-in-out infinite;
+}
+@keyframes badge-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    img.hero-logo { animation: none; }
 }
 .hero {
     min-height: 100vh;
@@ -384,7 +429,7 @@ section { padding: 5rem 2rem; }
 }
 
 /* HOW TO PLAY */
-#nasil-oynanir { background: #f8f7ff; }
+#nasil-oynanir { background: #f8f7ff; position: relative; overflow: hidden; }
 .steps {
     display: flex; gap: 2rem; justify-content: center;
     flex-wrap: wrap; margin-top: 2rem;
@@ -931,6 +976,8 @@ section { padding: 5rem 2rem; }
     background: linear-gradient(135deg, #f97316, #ec4899, #7c3aed);
     color: #fff; text-align: center;
     padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
 }
 #indir h2 {
     font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem;
