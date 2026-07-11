@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/scrambled-tofu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 
@@ -197,23 +197,18 @@
                     </div>
                     <a href="#bilissel-oyunlar" class="trio-icon-wrap trio-app">
                         <svg viewBox="0 0 80 80" class="trio-svg-icon">
-                            <defs>
-                                <linearGradient id="tabletGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9b6dff"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
-                                <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-                            </defs>
-                            <!-- Tablet gövde -->
-                            <rect x="14" y="6" width="52" height="68" rx="10" fill="url(#tabletGrad)"/>
-                            <rect x="14" y="6" width="52" height="34" rx="10" fill="rgba(255,255,255,0.1)"/>
-                            <!-- Ekran -->
-                            <rect x="20" y="14" width="40" height="48" rx="6" fill="url(#screenGrad)"/>
-                            <!-- Ekranda sevimli A harfi -->
-                            <text x="40" y="46" text-anchor="middle" font-size="28" font-weight="900" fill="#6d28d9" font-family="'Nunito',sans-serif">A</text>
-                            <!-- Ekranda küçük yıldızlar -->
-                            <text x="28" y="24" font-size="8" fill="#fbbf24">★</text>
-                            <text x="50" y="28" font-size="6" fill="#f97316">★</text>
-                            <text x="46" y="56" font-size="7" fill="#fbbf24">★</text>
-                            <!-- Home butonu -->
-                            <circle cx="40" cy="70" r="3" fill="rgba(255,255,255,0.35)"/>
+                            <!-- Sticker tablet: ink keyline, saturated fills -->
+                            <g stroke="#20160c" stroke-width="2.6" stroke-linejoin="round">
+                                <rect x="16" y="5" width="48" height="70" rx="13" fill="#8b5cf6"/>
+                                <rect x="22" y="13" width="36" height="47" rx="7" fill="#ede9fe"/>
+                                <circle cx="40" cy="68" r="3" fill="#ede9fe"/>
+                            </g>
+                            <!-- Chunky orange A (echoes the logo "A") -->
+                            <text x="40" y="49" text-anchor="middle" font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" font-size="32" fill="#EF7E28" stroke="#20160c" stroke-width="2" paint-order="stroke" stroke-linejoin="round">A</text>
+                            <!-- Outlined stars -->
+                            <text x="26" y="25" font-size="12" fill="#F9B233" stroke="#20160c" stroke-width="0.9" paint-order="stroke">★</text>
+                            <text x="49" y="29" font-size="9" fill="#33BEE0" stroke="#20160c" stroke-width="0.9" paint-order="stroke">★</text>
+                            <text x="49" y="56" font-size="10" fill="#57B24A" stroke="#20160c" stroke-width="0.9" paint-order="stroke">★</text>
                         </svg>
                     </a>
                 </div>
@@ -221,32 +216,21 @@
                 <div class="trio-item trio-right">
                     <a href="#ekosistem" class="trio-icon-wrap trio-book">
                         <svg viewBox="0 0 80 80" class="trio-svg-icon">
-                            <defs>
-                                <linearGradient id="book1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#ea580c"/></linearGradient>
-                                <linearGradient id="book2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/></linearGradient>
-                                <linearGradient id="book3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
-                                <linearGradient id="book4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
-                            </defs>
-                            <!-- Kitap rafı -->
-                            <rect x="8" y="64" width="64" height="6" rx="3" fill="rgba(255,255,255,0.25)"/>
-                            <!-- Kitap 1 - Turuncu -->
-                            <rect x="12" y="18" width="14" height="48" rx="4" fill="url(#book1)"/>
-                            <rect x="14" y="22" width="10" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-                            <text x="19" y="50" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">A</text>
-                            <!-- Kitap 2 - Yeşil -->
-                            <rect x="24" y="14" width="14" height="52" rx="4" fill="url(#book2)"/>
-                            <rect x="26" y="18" width="10" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-                            <text x="31" y="46" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">B</text>
-                            <!-- Kitap 3 - Mavi -->
-                            <rect x="36" y="12" width="14" height="54" rx="4" fill="url(#book3)"/>
-                            <rect x="38" y="16" width="10" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-                            <text x="43" y="44" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">C</text>
-                            <!-- Kitap 4 - Mor -->
-                            <rect x="48" y="16" width="14" height="50" rx="4" fill="url(#book4)"/>
-                            <rect x="50" y="20" width="10" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-                            <text x="55" y="48" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">Ç</text>
-                            <!-- Küçük yıldız -->
-                            <text x="64" y="14" font-size="8" fill="#fbbf24">★</text>
+                            <!-- Sticker book stack: ink keyline, logo-letter colours -->
+                            <g stroke="#20160c" stroke-width="2.4" stroke-linejoin="round">
+                                <rect x="8" y="62" width="64" height="9" rx="3.5" fill="#E7C79A"/>
+                                <rect x="13" y="20" width="14" height="43" rx="4" fill="#EF7E28"/>
+                                <rect x="26" y="15" width="14" height="48" rx="4" fill="#57B24A"/>
+                                <rect x="39" y="12" width="14" height="51" rx="4" fill="#33BEE0"/>
+                                <rect x="51" y="17" width="14" height="46" rx="4" fill="#8E4FA8"/>
+                            </g>
+                            <g font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" text-anchor="middle" fill="#fff" stroke="#20160c" stroke-width="1.1" paint-order="stroke" stroke-linejoin="round">
+                                <text x="20" y="47" font-size="13">A</text>
+                                <text x="33" y="43" font-size="13">B</text>
+                                <text x="46" y="41" font-size="13">C</text>
+                                <text x="58" y="45" font-size="13">Ç</text>
+                            </g>
+                            <text x="66" y="15" font-size="11" fill="#F9B233" stroke="#20160c" stroke-width="0.9" paint-order="stroke">★</text>
                         </svg>
                     </a>
                     <div class="trio-label">Zengin Pdf Arşivi</div>
@@ -256,27 +240,21 @@
                 <div class="trio-item trio-left">
                     <a href="#ekosistem" class="trio-icon-wrap trio-web">
                         <svg viewBox="0 0 80 80" class="trio-svg-icon">
-                            <defs>
-                                <linearGradient id="boardGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
-                                <linearGradient id="boardScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#93c5fd"/></linearGradient>
-                            </defs>
-                            <!-- Ekran gövde -->
-                            <rect x="6" y="10" width="68" height="46" rx="8" fill="url(#boardGrad)"/>
-                            <rect x="6" y="10" width="68" height="23" rx="8" fill="rgba(255,255,255,0.1)"/>
-                            <!-- Ekran iç -->
-                            <rect x="12" y="16" width="56" height="34" rx="5" fill="url(#boardScreen)"/>
-                            <!-- Ekranda interaktif içerik -->
-                            <text x="40" y="38" text-anchor="middle" font-size="18" font-weight="900" fill="#1d4ed8" font-family="'Nunito',sans-serif">ABC</text>
-                            <text x="24" y="26" font-size="7" fill="#f97316">★</text>
-                            <text x="54" y="26" font-size="7" fill="#22c55e">★</text>
-                            <rect x="24" y="42" width="14" height="3" rx="1.5" fill="#f97316" opacity="0.6"/>
-                            <rect x="42" y="42" width="14" height="3" rx="1.5" fill="#22c55e" opacity="0.6"/>
-                            <!-- Stand -->
-                            <rect x="30" y="56" width="20" height="5" rx="2.5" fill="#94a3b8"/>
-                            <rect x="24" y="61" width="32" height="5" rx="2.5" fill="#94a3b8"/>
-                            <!-- Dokunma noktası -->
-                            <circle cx="56" cy="32" r="4" fill="#fbbf24" opacity="0.6"/>
-                            <circle cx="56" cy="32" r="2" fill="#fbbf24"/>
+                            <!-- Sticker smart board: ink keyline -->
+                            <g stroke="#20160c" stroke-width="2.5" stroke-linejoin="round">
+                                <rect x="34" y="52" width="12" height="8" fill="#2E7BA6"/>
+                                <rect x="22" y="59" width="36" height="7" rx="3.5" fill="#2E7BA6"/>
+                                <rect x="6" y="9" width="68" height="46" rx="8" fill="#3B82F6"/>
+                                <rect x="12" y="15" width="56" height="34" rx="5" fill="#EAF7FC"/>
+                            </g>
+                            <!-- Colourful ABC -->
+                            <g font-family="'Baloo 2','Nunito',sans-serif" font-weight="800" text-anchor="middle" stroke="#20160c" stroke-width="1.6" paint-order="stroke" stroke-linejoin="round" font-size="20">
+                                <text x="26" y="39" fill="#EF7E28">A</text>
+                                <text x="40" y="39" fill="#57B24A">B</text>
+                                <text x="54" y="39" fill="#8E4FA8">C</text>
+                            </g>
+                            <text x="20" y="26" font-size="9" fill="#F9B233" stroke="#20160c" stroke-width="0.8" paint-order="stroke">★</text>
+                            <text x="60" y="26" font-size="9" fill="#33BEE0" stroke="#20160c" stroke-width="0.8" paint-order="stroke">★</text>
                         </svg>
                     </a>
                     <div class="trio-label">Akıllı Tahta Programı</div>

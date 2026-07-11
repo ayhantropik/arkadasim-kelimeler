@@ -1651,3 +1651,16 @@ h1,h2,h3,h4,
     text-shadow:0 2px 0 rgba(32,22,12,.35);
     animation:none;               /* drop the glow flicker for a cleaner sticker read */
 }
+
+/* ---- Presentation (dark) section icon tiles → sticker look ----
+   Light keyline on dark bg (same rule as the stat cards) + chunky lift */
+.sf-icon,.sunum-eco-icon,.sri-icon{
+    border:2.5px solid rgba(255,255,255,.9);
+    box-shadow:0 5px 0 rgba(0,0,0,.4);
+}
+.sri-icon{ border-width:2.5px; }
+/* the big "Ekosistem" pill gets a sticker keyline too */
+.ecosystem-badge{
+    border:2.5px solid rgba(255,255,255,.9);
+    box-shadow:0 5px 0 rgba(0,0,0,.35);
+}
