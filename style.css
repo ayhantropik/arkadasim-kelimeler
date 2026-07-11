@@ -1026,6 +1026,12 @@ footer {
     padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
     color: #666; font-size: 0.9rem;
 }
+.footer-address {
+    color: rgba(255,255,255,0.6); font-size: 0.85rem; font-weight: 600;
+    line-height: 1.5; margin: 0 auto 0.8rem; max-width: 640px;
+}
+.footer-address i { color: var(--sky); margin-right: 6px; }
+.footer-bottom strong { color: rgba(255,255,255,0.85); font-family: 'Baloo 2','Nunito',sans-serif; }
 @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; }
     .section-title { font-size: 2rem; }
