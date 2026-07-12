@@ -1671,9 +1671,9 @@ h1,h2,h3,h4,
     box-shadow:0 5px 0 rgba(0,0,0,.55);
 }
 
-/* Keep the two bottom trio items symmetrical: anchor both from the top so
-   their icons and labels line up no matter how long the captions wrap */
-.trio-cycle .trio-left, .trio-cycle .trio-right { bottom: auto; top: 182px; }
-@media (max-width: 768px){
-    .trio-cycle .trio-left, .trio-cycle .trio-right { top: 182px; }
+/* Keep the two bottom trio items symmetrical AND on the dashed triangle:
+   both captions share a fixed 2-line layout height so neither item grows;
+   any longer text overflows downward without shifting the icon. */
+.trio-cycle .trio-left .trio-desc, .trio-cycle .trio-right .trio-desc {
+    height: 2.7em; overflow: visible;
 }
