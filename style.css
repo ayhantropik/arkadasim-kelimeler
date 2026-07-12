@@ -1543,7 +1543,7 @@ footer {
     --grape:#8E4FA8;        /* "m" */
     --sun:#F9B233;          /* sunny yellow */
     --cream:#EAF7FC;        /* sky-tinted page bg */
-    --chunk:0 6px 0 rgba(32,22,12,.12);
+    --chunk:0 6px 0 var(--ink);
 }
 
 /* Rounded display face on every heading + brand element */
@@ -1588,7 +1588,7 @@ h1,h2,h3,h4,
 }
 .feature-card:hover,.game-card:hover,.testimonial-card:hover{
     transform:translateY(-6px);
-    box-shadow:0 12px 0 rgba(32,22,12,.14);
+    box-shadow:0 10px 0 var(--ink);
     border-color:var(--ink);
 }
 .feature-card h3,.game-card h3,.step h3,.testimonial-name{ color:var(--ink); }
@@ -1596,14 +1596,14 @@ h1,h2,h3,h4,
 /* Icon tiles + step circles get the keyline */
 .feature-icon,.step-number{
     border:2.5px solid var(--ink);
-    box-shadow:0 5px 0 rgba(32,22,12,.16);
+    box-shadow:0 5px 0 var(--ink);
 }
 
 /* Stat cards live on the purple band → light keyline instead of ink */
 .stat-card{
     border:2px solid rgba(255,255,255,.45);
     border-radius:22px;
-    box-shadow:0 6px 0 rgba(0,0,0,.16);
+    box-shadow:0 6px 0 rgba(0,0,0,.55);
 }
 
 /* ---- Candy buttons: solid fill, ink outline, chunky bottom edge ---- */
@@ -1628,7 +1628,7 @@ h1,h2,h3,h4,
     color:#fff; background:var(--sky-deep);
     border:2.5px solid var(--ink); border-radius:8px;
     padding:7px 22px;
-    box-shadow:0 4px 0 rgba(32,22,12,.2);
+    box-shadow:0 4px 0 var(--ink);
 }
 .slogan::after,.difficulty::after,.eco-ribbon::after{
     content:''; position:absolute; inset:4px;
@@ -1636,7 +1636,7 @@ h1,h2,h3,h4,
     border-radius:4px; pointer-events:none;
 }
 .slogan{ margin:0 0 1.3rem; text-shadow:none; }
-.difficulty{ padding:5px 16px; box-shadow:0 3px 0 rgba(32,22,12,.2); }
+.difficulty{ padding:5px 16px; box-shadow:0 3px 0 var(--ink); }
 .difficulty.easy{ background:var(--grass); color:#fff; }
 .difficulty.medium{ background:var(--sun); color:var(--ink); }
 .difficulty.hard{ background:#e5533d; color:#fff; }
@@ -1648,10 +1648,10 @@ h1,h2,h3,h4,
 /* ---- Hero trio app-icon tiles → sticker look (ink keyline + chunky shadow) ---- */
 .trio-icon-wrap{
     border:3px solid var(--ink);
-    box-shadow:0 8px 0 rgba(32,22,12,.22);
+    box-shadow:0 8px 0 var(--ink);
 }
 .trio-icon-wrap:hover{
-    box-shadow:0 12px 0 rgba(32,22,12,.28) !important;
+    box-shadow:0 12px 0 var(--ink) !important;
 }
 .trio-label{
     text-shadow:0 2px 0 rgba(32,22,12,.35);
@@ -1662,11 +1662,11 @@ h1,h2,h3,h4,
    Light keyline on dark bg (same rule as the stat cards) + chunky lift */
 .sf-icon,.sunum-eco-icon,.sri-icon{
     border:2.5px solid rgba(255,255,255,.9);
-    box-shadow:0 5px 0 rgba(0,0,0,.4);
+    box-shadow:0 5px 0 rgba(0,0,0,.6);
 }
 .sri-icon{ border-width:2.5px; }
 /* the big "Ekosistem" pill gets a sticker keyline too */
 .ecosystem-badge{
     border:2.5px solid rgba(255,255,255,.9);
-    box-shadow:0 5px 0 rgba(0,0,0,.35);
+    box-shadow:0 5px 0 rgba(0,0,0,.55);
 }
