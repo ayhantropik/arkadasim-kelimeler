@@ -3,43 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arkadaşım Kelimeler — akıllı tahta programı, zengin PDF arşivi ve mobil oyun uygulamasıyla ilk okuma yazmayı eğlenceli hale getiren tek ekosistem.">
-    <meta name="theme-color" content="#dceeff">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Arkadaşım Kelimeler - Kelimelerin Eğlenceli Dünyası!</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/scrambled-tofu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="eski-tasarim.css?v=21">
 </head>
 <body>
 
-<div class="nav-backdrop" aria-hidden="true"></div>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-        <span>40.000 interaktif ekran</span><span>&#9679;</span><span>3000+ PDF sayfası</span><span>&#9679;</span><span>30 formatta 8000+ oyun</span><span>&#9679;</span><span>Sınıfta, evde, kitapta &mdash; tek ekosistem</span><span>&#9679;</span>
-        <span>40.000 interaktif ekran</span><span>&#9679;</span><span>3000+ PDF sayfası</span><span>&#9679;</span><span>30 formatta 8000+ oyun</span><span>&#9679;</span><span>Sınıfta, evde, kitapta &mdash; tek ekosistem</span><span>&#9679;</span>
-    </div>
-</div>
-
 <!-- NAV -->
 <nav>
-    <a href="#hero" class="nav-logo">
-        <img src="bear-mascot.png?v=3" alt="" class="nav-bear" aria-hidden="true" width="46" height="46">
+    <a href="#" class="nav-logo">
+        <img src="bear-mascot.png?v=3" alt="" class="nav-bear" aria-hidden="true" width="55" height="48" style="height:48px;width:auto;">
         <span>Arkadaşım Kelimeler</span>
     </a>
     <ul class="nav-links">
         <li><a href="#ozellikler">Özellikler</a></li>
         <li><a href="#oyunlar">Oyunlar</a></li>
-        <li><a href="#nasil-oynanir">Nasıl Çalışır</a></li>
+        <li><a href="#nasil-oynanir">Sistem Nasıl Çalışır?</a></li>
         <li><a href="#yorumlar">Yorumlar</a></li>
         <li><a href="#sunum">Sunum</a></li>
-        <li><a href="#akademik">Bilimsel</a></li>
+        <li><a href="#akademik">Bilimsel Sunum</a></li>
+        <li><a href="#indir">İndir</a></li>
     </ul>
-    <a href="#indir" class="btn btn-primary btn-sm nav-cta">İndir</a>
-    <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
     </button>
 </nav>
@@ -48,7 +38,6 @@
     <a href="#oyunlar">Oyunlar</a>
     <a href="#nasil-oynanir">Sistem Nasıl Çalışır?</a>
     <a href="#yorumlar">Yorumlar</a>
-    <a href="#sss">SSS</a>
     <a href="#sunum">Sunum</a>
     <a href="#akademik">Bilimsel Sunum</a>
     <a href="#indir">İndir</a>
@@ -56,33 +45,16 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-    <svg class="hero-ribbon" viewBox="-200 0 1900 620" fill="none" aria-hidden="true">
-        <defs>
-            <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="n"/>
-                <feColorMatrix in="n" type="saturate" values="0" result="d"/>
-                <feComponentTransfer in="d" result="d2"><feFuncA type="linear" slope="0.34"/></feComponentTransfer>
-                <feComposite in="d2" in2="SourceAlpha" operator="in" result="grainMasked"/>
-                <feBlend in="SourceGraphic" in2="grainMasked" mode="multiply"/>
-            </filter>
-        </defs>
-        <g filter="url(#grain)">
-            <path d="M-60 452 C 210 452, 250 150, 470 150 S 720 452, 940 452 S 1230 140, 1420 190 C 1560 220, 1620 300, 1660 300"
-                  stroke="#000" stroke-width="120" fill="none" stroke-linecap="round"/>
-            <path d="M-60 452 C 210 452, 250 150, 470 150 S 720 452, 940 452 S 1230 140, 1420 190 C 1560 220, 1620 300, 1660 300"
-                  stroke="#4da2ff" stroke-width="118" fill="none" stroke-linecap="round"/>
-        </g>
-    </svg>
-    <span class="sticker sticker-rocket" aria-hidden="true">🚀</span>
-    <span class="sticker sticker-coin" aria-hidden="true">🪙</span>
-    <span class="sticker sticker-check" aria-hidden="true">✅</span>
-    <span class="sticker sticker-wallet" aria-hidden="true">🎒</span>
+    <div class="bubble" style="width:80px;height:80px;left:10%;bottom:-80px;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="bubble" style="width:40px;height:40px;left:30%;bottom:-40px;animation-duration:9s;animation-delay:2s;"></div>
+    <div class="bubble" style="width:60px;height:60px;left:55%;bottom:-60px;animation-duration:14s;animation-delay:1s;"></div>
+    <div class="bubble" style="width:90px;height:90px;left:75%;bottom:-90px;animation-duration:11s;animation-delay:3s;"></div>
+    <div class="bubble" style="width:50px;height:50px;left:90%;bottom:-50px;animation-duration:10s;animation-delay:0.5s;"></div>
     <div class="hero-content">
         <div class="hero-text fade-in">
-            <img src="logo.png?v=11" alt="Arkadaşım Kelimeler" class="hero-logo">
-            <div class="slogan">Eğitim ve eğlence aynı yerde</div>
-            <h1>İlkokula<br>en iyi başlangıç</h1>
-            <p>Fiziksel materyal ve teknolojiyi birleştirdik. Sınıfta dersi MEB'in İlk Okuma Yazma kitapları ve akıllı tahta programımızdan takip et, ders kitaplarına destek olan zengin PDF arşiviyle çalış ve mobil uygulamadaki binlerce oyunla potansiyelini geliştir.</p>
+            <img src="logo.png?v=11" alt="Arkadaşım Kelimeler" class="hero-logo" style="height:240px;width:auto;max-width:100%;margin-bottom:0.5rem;display:block;">
+            <div class="slogan">✨ Eğitim ve Eğlence Aynı Yerde!</div>
+            <p>İlkokula en iyi başlangıç için fiziksel materyal ve teknolojiyi birleştirdik. Sınıfta dersi MEB'in İlk Okuma Yazma kitapları ve akıllı tahta programımızdan takip et, ders kitaplarına destek olan zengin PDF arşiviyle çalış ve mobil uygulamadaki binlerce oyunla potansiyelini geliştir. Eğlenceli öğrenme dünyasına hoş geldin.</p>
             <div class="store-buttons">
                 <a href="#" class="store-btn">
                     <i class="fab fa-apple"></i>
@@ -294,7 +266,7 @@
 </section>
 
 <!-- FEATURES -->
-<section id="ozellikler" class="band-white">
+<section id="ozellikler">
     <div class="container">
         <h2 class="section-title fade-in">Özellikler</h2>
         <p class="section-subtitle fade-in">Türkiye'nin ilk ve tek tam yapılandırılmış İlk Okuma-Yazma Öğretimine hoş geldin! Kelime oyunlarını seviyorsan, öğrenirken gelişmek ve ömür boyu kullanacağın bilişsel yetenekler kazanmak istiyorsan doğru yerdesin! İşte seni bekleyen harika özellikler.</p>
@@ -349,7 +321,7 @@
 </section>
 
 <!-- GAMES -->
-<section id="oyunlar" class="band-sky">
+<section id="oyunlar">
     <div class="container">
         <h2 class="section-title fade-in">Oyunlarımız</h2>
         <p class="section-subtitle fade-in">Platformumuzda seni bekleyen birbirinden eğlenceli kelime oyunlarını keşfet!</p>
@@ -479,10 +451,10 @@
 </section>
 
 <!-- HOW TO PLAY -->
-<section id="nasil-oynanir" class="band-gray">
+<section id="nasil-oynanir">
     <div class="container">
         <h2 class="section-title fade-in">Sistem Nasıl Çalışır?</h2>
-        <p class="section-subtitle fade-in">Dört kolay adımda eğlenceye katıl!</p>
+        <p class="section-subtitle fade-in">Üç kolay adımda eğlenceye katıl!</p>
         <div class="steps">
             <div class="step fade-in">
                 <div class="step-number">1</div>
@@ -581,10 +553,11 @@
             </div>
         </div>
     </div>
+    <img src="bear-mascot.png?v=3" alt="" aria-hidden="true" class="section-bear peek-left">
 </section>
 
 <!-- STATS -->
-<section id="istatistikler" class="band-white">
+<section id="istatistikler">
     <div class="container">
         <h2 class="section-title fade-in">Rakamlarla Biz</h2>
         <p class="section-subtitle fade-in">Milyonlarca oyuncunun tercihi olmaktan gurur duyuyoruz.</p>
@@ -614,7 +587,7 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="yorumlar" class="band-lavender">
+<section id="yorumlar">
     <div class="container">
         <h2 class="section-title fade-in">Kullanıcılarımız Ne Diyor?</h2>
         <p class="section-subtitle fade-in">Milyonlarca mutlu kullanıcıdan bazıları...</p>
@@ -648,7 +621,7 @@
 </section>
 
 <!-- FAQ -->
-<section id="sss" class="band-white">
+<section id="sss">
     <div class="container">
         <h2 class="section-title fade-in">Sıkça Sorulan Sorular</h2>
         <p class="section-subtitle fade-in">Merak ettiklerin burada!</p>
@@ -694,7 +667,7 @@
 </section>
 
 <!-- SUNUM / PRESENTATION -->
-<section id="sunum" class="band-sky">
+<section id="sunum">
     <div class="container">
         <h2 class="section-title fade-in">Arkadaşım Kelimeler</h2>
         <p class="section-subtitle fade-in">Yapay Zeka ve Nörobilim ile İlk Okuma Yazmayı Yeniden Tanımlıyoruz</p>
@@ -704,22 +677,22 @@
             <h3>"İlk okuma yazma, bir çocuğun eğitim hayatındaki en kritik eşiktir."</h3>
             <p>Bu kritik eşik yanlış geçilirse bireydeki öğrenme alışkanlıkları hatalı bir yöne evrilir.</p>
             <div class="sunum-problems">
-                <div class="sunum-problem"><i class="fas fa-times"></i> Öğrenme zorlaşır</div>
-                <div class="sunum-problem"><i class="fas fa-times"></i> Okuma yavaşlar</div>
-                <div class="sunum-problem"><i class="fas fa-times"></i> Özgüven düşer</div>
+                <div class="sunum-problem"><i class="fas fa-times" style="font-size:1.4em;"></i> Öğrenme zorlaşır</div>
+                <div class="sunum-problem"><i class="fas fa-times" style="font-size:1.4em;"></i> Okuma yavaşlar</div>
+                <div class="sunum-problem"><i class="fas fa-times" style="font-size:1.4em;"></i> Özgüven düşer</div>
             </div>
         </div>
 
         <!-- Çözüm Yaklaşımı -->
-        <div class="sunum-hero-card accent fade-in">
-            <h3>Her Çocuk Farklı Öğrenir</h3>
+        <div class="sunum-hero-card fade-in" style="background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(59,130,246,0.2));">
+            <h3 style="color:#4ade80;">Her Çocuk Farklı Öğrenir</h3>
             <p>Arkadaşım Kelimeler eğitimi bireyin öğrenme biçimine göre yapılandırır. Öğretmen artık <em>"Derste ne işlendi?"</em> diye düşünmez, <strong>"Kim, nerede takıldı?"</strong> sorusunu cevaplar. Bireysel hız ilkesi..</p>
         </div>
 
         <!-- Yapay Zeka Getirdikleri -->
-        <div class="sunum-feature-block center fade-in">
-            <h4><span class="sf-icon"><i class="fas fa-robot"></i></span> Yapay Zekanın Getirdikleri</h4>
-            <ul>
+        <div class="sunum-feature-block fade-in" style="margin-bottom:2rem; border-left: none; text-align:center;">
+            <h4 style="justify-content:center;"><span class="sf-icon" style="background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;"><i class="fas fa-robot"></i></span> Yapay Zekanın Getirdikleri</h4>
+            <ul style="display:inline-block; text-align:left;">
                 <li><span class="sf-check"><i class="fas fa-check"></i></span> Oyunla öğrenme</li>
                 <li><span class="sf-check"><i class="fas fa-check"></i></span> Bireysel hızda ilerleme</li>
                 <li><span class="sf-check"><i class="fas fa-check"></i></span> Öğretmen için ölçülebilir veri</li>
@@ -729,7 +702,7 @@
 
         <!-- 3 İkonlu Ekosistem -->
         <div id="ekosistem" class="ecosystem-highlight fade-in">
-            <div class="ecosystem-badge">Temel Yaklaşım</div>
+            <div class="ecosystem-badge">⭐⭐ TEMEL YAKLAŞIM ⭐⭐</div>
             <h3 class="ecosystem-title">Senkron Çalışan Tek Ekosistem</h3>
             <p class="ecosystem-subtitle">Sınıf, ev ve kitap bir arada — öğrenme hiç durmaz!</p>
             <div class="sunum-ecosystem">
@@ -757,7 +730,7 @@
             </div>
             <div class="ecosystem-connector">
                 <span class="connector-line"></span>
-                <span class="connector-text">Hepsi senkron çalışır</span>
+                <span class="connector-text">🔄 Hepsi senkron çalışır</span>
                 <span class="connector-line"></span>
             </div>
         </div>
@@ -765,7 +738,7 @@
         <!-- Özellik Blokları -->
         <div class="sunum-features-grid">
             <div class="sunum-feature-block fade-in">
-                <h4><span class="sf-icon"><i class="fas fa-chalkboard-teacher"></i></span> Öğretmen Kontrolü</h4>
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);color:#fff;"><i class="fas fa-chalkboard-teacher"></i></span> Öğretmen Kontrolü</h4>
                 <ul>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Ders akışına tam uyumlu 40.000 interaktif ekran</li>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Öğrenci performans raporları</li>
@@ -774,7 +747,7 @@
                 </ul>
             </div>
             <div class="sunum-feature-block fade-in">
-                <h4><span class="sf-icon"><i class="fas fa-gamepad"></i></span> Oyun Sistemi</h4>
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#f97316,#fbbf24);color:#fff;"><i class="fas fa-gamepad"></i></span> Oyun Sistemi</h4>
                 <ul>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> 30 farklı formatta 8000+ oyun</li>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Yapay zeka ile otomatik zorluk ayarı</li>
@@ -783,7 +756,7 @@
                 </ul>
             </div>
             <div class="sunum-feature-block fade-in">
-                <h4><span class="sf-icon"><i class="fas fa-fingerprint"></i></span> Benzersiz Özellikler</h4>
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#22c55e,#4ade80);color:#fff;"><i class="fas fa-fingerprint"></i></span> Benzersiz Özellikler</h4>
                 <ul>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Bireysel hız ile ilerleme</li>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Otomatik analiz ve dikkat ölçümü</li>
@@ -792,7 +765,7 @@
                 </ul>
             </div>
             <div class="sunum-feature-block fade-in">
-                <h4><span class="sf-icon"><i class="fas fa-sync-alt"></i></span> Ekran + Kitap Dengesi</h4>
+                <h4><span class="sf-icon" style="background:linear-gradient(135deg,#ec4899,#f472b6);color:#fff;"><i class="fas fa-sync-alt"></i></span> Ekran + Kitap Dengesi</h4>
                 <ul>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Dijital + basılı içerik birlikte</li>
                     <li><span class="sf-check"><i class="fas fa-check"></i></span> Birbiriyle haberleşen uygulamalar</li>
@@ -805,33 +778,33 @@
         <!-- Karşılaştırma Tablosu -->
         <div class="sunum-compare fade-in">
             <h4>Neden Arkadaşım Kelimeler?</h4>
-            <div class="table-scroll"><table class="sunum-compare-table">
+            <table class="sunum-compare-table">
                 <tr>
                     <th>Klasik Yöntem</th>
                     <th>Tekil Uygulamalar</th>
                     <th>Arkadaşım Kelimeler</th>
                 </tr>
                 <tr>
-                    <td><span class="mark-no">&#10006;</span> Bireysel takip yok</td>
-                    <td><span class="mark-no">&#10006;</span> Ekosistem bütünlüğü yok</td>
-                    <td><span class="mark-yes">&#10004;</span> Bütünlük + Yapay Zeka</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Bireysel takip yok</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Ekosistem bütünlüğü yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Bütünlük + Yapay Zeka</td>
                 </tr>
                 <tr>
-                    <td><span class="mark-no">&#10006;</span> Ölçülebilir veri yok</td>
-                    <td><span class="mark-no">&#10006;</span> Öğretmen entegrasyonu yok</td>
-                    <td><span class="mark-yes">&#10004;</span> Ölçüm + Raporlama</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Ölçülebilir veri yok</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Öğretmen entegrasyonu yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Ölçüm + Raporlama</td>
                 </tr>
                 <tr>
-                    <td><span class="mark-no">&#10006;</span> Tek tip öğretim</td>
-                    <td><span class="mark-no">&#10006;</span> Müfredat uyumsuzluğu</td>
-                    <td><span class="mark-yes">&#10004;</span> Bireyselleştirilmiş öğrenme</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Tek tip öğretim</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Müfredat uyumsuzluğu</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Bireyselleştirilmiş öğrenme</td>
                 </tr>
                 <tr>
-                    <td><span class="mark-no">&#10006;</span> Veli desteği sınırlı</td>
-                    <td><span class="mark-no">&#10006;</span> Veli görünürlüğü yok</td>
-                    <td><span class="mark-yes">&#10004;</span> Yapılandırılmış ödev ortamı</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Veli desteği sınırlı</td>
+                    <td><span style="color:#ef4444;">&#10006;</span> Veli görünürlüğü yok</td>
+                    <td><span style="color:#4ade80;">&#10004;</span> Yapılandırılmış ödev ortamı</td>
                 </tr>
-            </table></div>
+            </table>
         </div>
 
         <!-- Sonuç -->
@@ -839,19 +812,19 @@
             <h3>Arkadaşım Kelimeler, çocuğun öğrenmeye bakışını değiştirir.</h3>
             <div class="sunum-result-items">
                 <div class="sunum-result-item">
-                    <div class="sri-icon"><i class="fas fa-child"></i></div>
+                    <div class="sri-icon" style="background:rgba(124,58,237,0.2); color:#a855f7;"><i class="fas fa-child"></i></div>
                     Öğrenci kazanır
                 </div>
                 <div class="sunum-result-item">
-                    <div class="sri-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="sri-icon" style="background:rgba(249,115,22,0.2); color:#f97316;"><i class="fas fa-chalkboard-teacher"></i></div>
                     Öğretmen güçlenir
                 </div>
                 <div class="sunum-result-item">
-                    <div class="sri-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="sri-icon" style="background:rgba(34,197,94,0.2); color:#22c55e;"><i class="fas fa-chart-line"></i></div>
                     Sistem ölçülebilir olur
                 </div>
                 <div class="sunum-result-item">
-                    <div class="sri-icon"><i class="fas fa-heart"></i></div>
+                    <div class="sri-icon" style="background:rgba(236,72,153,0.2); color:#ec4899;"><i class="fas fa-heart"></i></div>
                     Velilerin yükü azalır
                 </div>
             </div>
@@ -860,7 +833,7 @@
 </section>
 
 <!-- ACADEMIC -->
-<section id="akademik" class="band-white">
+<section id="akademik">
     <div class="container">
         <h2 class="section-title fade-in">Bilimsel Temel</h2>
         <p class="section-subtitle fade-in">İlk Okuma Yazma: Bir Çocuğun Eğitim Hayatındaki En Kritik Eşik</p>
@@ -878,8 +851,8 @@
             <div class="academic-card fade-in">
                 <h3>1.1. Kritik Dönem ve Nöroplastisite</h3>
                 <p>İlk okuma yazma öğrenimi, genellikle 5-7 yaş aralığında başlar. Bu dönem, nörobilimde <strong>"kritik dönem"</strong> (critical period) olarak adlandırılan beynin belirli becerileri öğrenmeye en açık olduğu zaman dilimidir.</p>
-                <p>Bu dönemde beyin saniyede yaklaşık <strong>700-1000 yeni sinaptik bağlantı</strong> kurar. Görsel korteks (harf tanıma), temporal lob (ses işleme), frontal lob (anlam kurma), angular girus (ses-harf eşleştirme) arasında yoğun bir nöral ağ inşası gerçekleşir.</p>
-                <p>Fransız nörobilimci <strong>Stanislas Dehaene</strong>'in ortaya koyduğu <strong>"Nöronal Geri Dönüşüm Hipotezi"</strong>ne göre, beyin esasen okuma için değil, yüz tanıma ve nesne tanıma için tasarlanmıştır. Beyinde yüz ve nesne tanıma için ayrılmış bölgeler (özellikle sol fusiform girus — "Visual Word Form Area") okuma işlevi için yeniden yapılandırılır.</p>
+                <p style="margin-top:0.8rem">Bu dönemde beyin saniyede yaklaşık <strong>700-1000 yeni sinaptik bağlantı</strong> kurar. Görsel korteks (harf tanıma), temporal lob (ses işleme), frontal lob (anlam kurma), angular girus (ses-harf eşleştirme) arasında yoğun bir nöral ağ inşası gerçekleşir.</p>
+                <p style="margin-top:0.8rem">Fransız nörobilimci <strong>Stanislas Dehaene</strong>'in ortaya koyduğu <strong>"Nöronal Geri Dönüşüm Hipotezi"</strong>ne göre, beyin esasen okuma için değil, yüz tanıma ve nesne tanıma için tasarlanmıştır. Beyinde yüz ve nesne tanıma için ayrılmış bölgeler (özellikle sol fusiform girus — "Visual Word Form Area") okuma işlevi için yeniden yapılandırılır.</p>
             </div>
 
             <div class="academic-highlight fade-in">
@@ -890,7 +863,7 @@
                 <h3>A-K Projesinde 4 Bilişsel Alanı Destekleyen Oyunlar</h3>
                 <p>Bu kritik dönemde optimal koşulları desteklemek için yapılandırılmış <strong>30 formatta 8.000'in üzerinde oyun</strong> bulunmaktadır.</p>
 
-                <h3 class="sub">Görsel Korteks (Harf Tanıma)</h3>
+                <h3 style="margin-top:1.5rem; color:#7c3aed;">Görsel Korteks (Harf Tanıma)</h3>
                 <div class="academic-game-list">
                     <div class="academic-game-item">
                         <h4>Çiftini Bul</h4>
@@ -922,7 +895,7 @@
                     </div>
                 </div>
 
-                <h3 class="sub">Temporal Lob (Ses İşleme)</h3>
+                <h3 style="margin-top:1.5rem; color:#f97316;">Temporal Lob (Ses İşleme)</h3>
                 <div class="academic-game-list">
                     <div class="academic-game-item">
                         <h4>Tonlama Oyunu</h4>
@@ -942,7 +915,7 @@
                     </div>
                 </div>
 
-                <h3 class="sub">Frontal Lob (Anlam Kurma)</h3>
+                <h3 style="margin-top:1.5rem; color:#22c55e;">Frontal Lob (Anlam Kurma)</h3>
                 <div class="academic-game-list">
                     <div class="academic-game-item">
                         <h4>Gökkuşağı Sayılar</h4>
@@ -962,7 +935,7 @@
                     </div>
                 </div>
 
-                <h3 class="sub">Angular Girus (Ses-Harf Eşleştirme)</h3>
+                <h3 style="margin-top:1.5rem; color:#3b82f6;">Angular Girus (Ses-Harf Eşleştirme)</h3>
                 <div class="academic-game-list">
                     <div class="academic-game-item">
                         <h4>Karmakarışık Oyunu</h4>
@@ -991,14 +964,14 @@
                     <li><strong>Sol inferior frontal girus (Broca alanı):</strong> Seslerin üretilmesi</li>
                     <li><strong>Arkuat fasikülüs:</strong> Bu iki bölge arasındaki iletişim</li>
                 </ul>
-                <p>Ses-harf ilişkisi doğru kurulmazsa, bu üç bölge arasındaki bağlantı zayıf kalır. fMRI çalışmaları, okuma güçlüğü yaşayan çocukların bu devrelerde belirgin aktivasyon eksikliği gösterdiğini ortaya koymuştur <em>(Shaywitz et al., 2002, Yale Üniversitesi)</em>.</p>
+                <p style="margin-top:0.8rem">Ses-harf ilişkisi doğru kurulmazsa, bu üç bölge arasındaki bağlantı zayıf kalır. fMRI çalışmaları, okuma güçlüğü yaşayan çocukların bu devrelerde belirgin aktivasyon eksikliği gösterdiğini ortaya koymuştur <em>(Shaywitz et al., 2002, Yale Üniversitesi)</em>.</p>
             </div>
 
             <div class="academic-card fade-in">
                 <h3>1.3. Miyelinizasyon ve Zamanlama</h3>
                 <p>Sinir liflerini saran miyelin kılıf, bilgi iletim hızını belirler. 5-7 yaş aralığında <strong>Corpus callosum</strong> (iki beyin yarıküresi arasındaki köprü) hızla miyelinize olur. Bu, görsel bilgiyi (harfin şekli) işitsel bilgiyle (harfin sesi) eşleştirmeyi mümkün kılar.</p>
-                <p><strong>Beynin iki yarım küresini aynı anda çalıştırarak miyelinleşmeyi artıran oyunlar:</strong> Gökkuşağı Sayılar, Rengârenk, Keskin Nişancı.</p>
-                <p><strong>Görsel bilgiyi işitsel bilgi ile eşleştirme becerisini geliştiren oyunlar:</strong> Rengârenk, Başta-Ortada-Sonda, Saklı Gerçek, Hecelerden Kelime Türetme, Karmakarışık, Şifre.</p>
+                <p style="margin-top:0.8rem"><strong>Beynin iki yarım küresini aynı anda çalıştırarak miyelinleşmeyi artıran oyunlar:</strong> Gökkuşağı Sayılar, Rengârenk, Keskin Nişancı.</p>
+                <p style="margin-top:0.8rem"><strong>Görsel bilgiyi işitsel bilgi ile eşleştirme becerisini geliştiren oyunlar:</strong> Rengârenk, Başta-Ortada-Sonda, Saklı Gerçek, Hecelerden Kelime Türetme, Karmakarışık, Şifre.</p>
             </div>
 
             <div class="academic-highlight fade-in">
@@ -1011,7 +984,7 @@
             <div class="academic-card fade-in">
                 <h3>2.1. Keith Stanovich</h3>
                 <p>Eğitim bilimci <strong>Keith Stanovich (1986)</strong> tarafından ortaya konan bu kavram şunu ifade eder: <em>"Zengine daha çok verilecek, fakirden elindeki de alınacaktır."</em></p>
-                <div class="table-scroll"><table class="compare-table">
+                <table class="compare-table" style="margin-top:1.2rem">
                     <tr>
                         <th>Erken Dönemde İyi Okuyan</th>
                         <th>Erken Dönemde Zayıf Okuyan</th>
@@ -1021,7 +994,7 @@
                     <tr><td>Anlama becerisi artar</td><td>Anlama güçlüğü derinleşir</td></tr>
                     <tr><td>Diğer derslerde başarılı olur</td><td>Tüm derslerde zorlanır</td></tr>
                     <tr><td>Akademik özgüven yükselir</td><td>Akademik kimlik zedelenir</td></tr>
-                </table></div>
+                </table>
             </div>
 
             <div class="academic-highlight fade-in">
@@ -1036,7 +1009,7 @@
                     <li><strong>2. sınıf sonu:</strong> ~80-100 kelime/dakika</li>
                     <li><strong>3. sınıf sonu:</strong> ~100-120 kelime/dakika</li>
                 </ul>
-                <p>Bu eşiğin altında kalan çocuk, bilişsel enerjisinin büyük bölümünü harfleri çözmeye harcar; anlam kurmaya kaynak kalmaz. Bu durum, <strong>"Bilişsel Yük Kuramı"</strong> (Cognitive Load Theory — Sweller, 1988) ile açıklanır.</p>
+                <p style="margin-top:0.8rem">Bu eşiğin altında kalan çocuk, bilişsel enerjisinin büyük bölümünü harfleri çözmeye harcar; anlam kurmaya kaynak kalmaz. Bu durum, <strong>"Bilişsel Yük Kuramı"</strong> (Cognitive Load Theory — Sweller, 1988) ile açıklanır.</p>
             </div>
 
             <div class="academic-highlight fade-in">
@@ -1049,12 +1022,12 @@
             <div class="academic-card fade-in">
                 <h3>3.1. Akademik Benlik Kavramı</h3>
                 <p>Gelişim psikoloğu <strong>Erik Erikson</strong>'un psikososyal gelişim kuramına göre, 6-12 yaş arası <strong>"Başarıya Karşı Aşağılık Duygusu"</strong> evresine denk gelir. Bu evrede çocuk şu temel soruyu sorar: <em>"Ben yapabiliyor muyum?"</em></p>
-                <p>İlk okuma yazma, çocuğun bu soruya verdiği ilk büyük cevaptır:</p>
+                <p style="margin-top:0.8rem">İlk okuma yazma, çocuğun bu soruya verdiği ilk büyük cevaptır:</p>
                 <ul>
                     <li><strong>"Evet, yapabiliyorum"</strong> → Yetkinlik duygusu, girişimcilik, merak</li>
                     <li><strong>"Hayır, yapamıyorum"</strong> → Aşağılık duygusu, kaçınma, öğrenilmiş çaresizlik</li>
                 </ul>
-                <p><strong>Martin Seligman</strong>'ın öğrenilmiş çaresizlik teorisine göre, tekrarlayan başarısızlık deneyimleri, çocuğun <em>"Ne yaparsam yapayım başaramam!"</em> inancını içselleştirmesine yol açar. Bu inanç, yalnızca okuma yazmayla sınırlı kalmaz; tüm yaşam alanlarına genelleşir.</p>
+                <p style="margin-top:0.8rem"><strong>Martin Seligman</strong>'ın öğrenilmiş çaresizlik teorisine göre, tekrarlayan başarısızlık deneyimleri, çocuğun <em>"Ne yaparsam yapayım başaramam!"</em> inancını içselleştirmesine yol açar. Bu inanç, yalnızca okuma yazmayla sınırlı kalmaz; tüm yaşam alanlarına genelleşir.</p>
             </div>
 
             <div class="academic-card fade-in">
@@ -1065,13 +1038,13 @@
                     <li><em>"Diğerleri benden daha zeki."</em></li>
                     <li><em>"Okumak benim işim değil."</em></li>
                 </ul>
-                <p>Bu düşünceler, nöral yolaklar olarak beyne kazınır. Her tekrarlandığında güçlenir — <strong>Hebb Kuralı: "Birlikte ateşlenen nöronlar, birlikte bağlanır."</strong> Yetişkinlikte bile bu kişi, yeni bir şey öğrenirken aynı otomatik olumsuz düşünceleri deneyimleyebilir.</p>
+                <p style="margin-top:0.8rem">Bu düşünceler, nöral yolaklar olarak beyne kazınır. Her tekrarlandığında güçlenir — <strong>Hebb Kuralı: "Birlikte ateşlenen nöronlar, birlikte bağlanır."</strong> Yetişkinlikte bile bu kişi, yeni bir şey öğrenirken aynı otomatik olumsuz düşünceleri deneyimleyebilir.</p>
             </div>
 
             <div class="academic-card fade-in">
                 <h3>3.3. Okuma ve Empati: Sosyal Beyin</h3>
                 <p><strong>Mar ve ark. (2006, York Üniversitesi)</strong> araştırmasına göre, düzenli okuyan çocuklarda <strong>"Zihin Kuramı"</strong> (Theory of Mind) — yani başkalarının düşünce ve duygularını anlama becerisi — anlamlı düzeyde daha gelişmiştir.</p>
-                <p>Okuma, <strong>default mode network</strong> (varsayılan mod ağı) aktivasyonunu artırır; bu ağ empati, hayal kurma ve öz-farkındalıkla ilişkilidir. Okuyamayan çocuk, bu sosyal-bilişsel gelişim fırsatından da mahrum kalır.</p>
+                <p style="margin-top:0.8rem">Okuma, <strong>default mode network</strong> (varsayılan mod ağı) aktivasyonunu artırır; bu ağ empati, hayal kurma ve öz-farkındalıkla ilişkilidir. Okuyamayan çocuk, bu sosyal-bilişsel gelişim fırsatından da mahrum kalır.</p>
             </div>
         </div>
 
@@ -1112,7 +1085,7 @@
             <div class="academic-card fade-in">
                 <h3>Sonuç</h3>
                 <p>İlk okuma yazma, bir <strong>nörobilimsel inşaat</strong>, bir <strong>eğitimsel temel atma</strong> ve bir <strong>kimlik inşası</strong> sürecidir — hepsi aynı anda.</p>
-                <ul>
+                <ul style="margin-top:1rem">
                     <li><strong>Beyin açısından →</strong> Ömür boyu kullanılacak okuma devrelerinin kurulduğu tek penceredir.</li>
                     <li><strong>Eğitim açısından →</strong> Tüm akademik başarının üzerine inşa edileceği temel taştır.</li>
                     <li><strong>Kişisel gelişim açısından →</strong> Çocuğun "Ben öğrenebilen bir insanım" ya da "Ben yetersizim" hikâyesini yazdığı ilk sayfadır.</li>
@@ -1133,7 +1106,7 @@
 <!-- CTA -->
 <section id="indir">
     <div class="container fade-in">
-        <h2 class="brand-name">Hemen indir, eğlenceye katıl!</h2>
+        <h2 class="brand-name">Hemen İndir, Eğlenceye Katıl!</h2>
         <p>Milyonlarca oyuncunun arasına katıl ve kelimelerin büyülü dünyasını keşfet. Ücretsiz!</p>
         <div class="store-buttons">
             <a href="#" class="store-btn">
@@ -1152,13 +1125,16 @@
             </a>
         </div>
     </div>
+    <img src="bear-mascot.png?v=3" alt="" aria-hidden="true" class="cta-bear">
 </section>
 
 <!-- FOOTER -->
 <footer>
     <div class="footer-grid">
         <div class="footer-about">
-            <a href="#hero"><img src="logo.png?v=11" alt="Arkadaşım Kelimeler Logo"></a>
+            <a href="#" class="nav-logo" style="display:inline-flex;">
+                <img src="logo.png?v=11" alt="Arkadaşım Kelimeler Logo" style="height:76px;width:auto;">
+            </a>
             <p>Türkiye'nin en eğlenceli kelime oyunu platformu. Yüzlerce bulmaca, onlarca oyun modu ve milyonlarca oyuncuyla buluşan büyük bir aile.</p>
         </div>
         <div class="footer-links">
@@ -1189,128 +1165,260 @@
     </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-(function () {
-    'use strict';
-
-    // Flow icons on the hero cycle appear after load
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            document.querySelectorAll('.flow-icon').forEach(function (el) {
+    // Show flow icons after page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.querySelectorAll('.flow-icon').forEach(function(el) {
                 el.classList.add('visible');
             });
-        }, 600);
+        }, 800);
     });
 
     // Hamburger menu
-    var hamburger = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', function () {
-        var open = hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active', open);
-        hamburger.setAttribute('aria-expanded', String(open));
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
     });
-    mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 
-    // Fade-in on scroll
-    var fadeObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
+    // Intersection Observer for fade-in
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 fadeObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el); });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
 
-    // Counters
-    var countersAnimated = false;
-    var statsSection = document.getElementById('istatistikler');
-    if (statsSection) {
-        var counterObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting && !countersAnimated) {
-                    countersAnimated = true;
-                    animateCounters();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-        counterObserver.observe(statsSection);
-    }
+    // Bear wave animation on scroll
+    const bearLogos = document.querySelectorAll('.bear-logo-wave');
+    const bearObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('waving');
+                void entry.target.offsetWidth;
+                entry.target.classList.add('waving');
+            }
+        });
+    }, { threshold: 0.3 });
+    bearLogos.forEach(el => bearObserver.observe(el));
 
-    function format(value, target, suffix, isDecimal, done) {
-        if (isDecimal) return value.toFixed(1) + suffix;
-        if (target >= 1000000) return done ? '1M' + suffix : (value / 1000000).toFixed(1) + 'M' + suffix;
-        if (target >= 1000) return (done ? target / 1000 : Math.floor(value / 1000)) + 'K' + suffix;
-        return Math.floor(done ? target : value) + suffix;
-    }
+    // Counter animation
+    let countersAnimated = false;
+    const statsSection = document.getElementById('istatistikler');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersAnimated) {
+                countersAnimated = true;
+                animateCounters();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    counterObserver.observe(statsSection);
 
     function animateCounters() {
-        document.querySelectorAll('.stat-number').forEach(function (el) {
-            var target = parseFloat(el.dataset.target);
-            var suffix = el.dataset.suffix || '';
-            var isDecimal = el.dataset.decimal === 'true';
-            var duration = 1800;
-            var start = performance.now();
+        document.querySelectorAll('.stat-number').forEach(el => {
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const isDecimal = el.dataset.decimal === 'true';
+            const duration = 2000;
+            const start = performance.now();
 
             function update(now) {
-                var progress = Math.min((now - start) / duration, 1);
-                var eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = format(target * eased, target, suffix, isDecimal, progress === 1);
-                if (progress < 1) requestAnimationFrame(update);
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = target * eased;
+
+                if (isDecimal) {
+                    el.textContent = current.toFixed(1) + suffix;
+                } else if (target >= 1000000) {
+                    el.textContent = (current / 1000000).toFixed(current >= target ? 0 : 1) + 'M' + suffix;
+                } else if (target >= 1000) {
+                    el.textContent = Math.floor(current / 1000) + 'K' + suffix;
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    if (isDecimal) {
+                        el.textContent = target.toFixed(1) + suffix;
+                    } else if (target >= 1000000) {
+                        el.textContent = '1M' + suffix;
+                    } else if (target >= 1000) {
+                        el.textContent = (target / 1000) + 'K' + suffix;
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                }
             }
             requestAnimationFrame(update);
         });
     }
 
     // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(function (q) {
-        q.addEventListener('click', function () {
-            var item = q.parentElement;
-            var wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
             if (!wasActive) item.classList.add('active');
         });
     });
 
     // Academic tabs
-    document.querySelectorAll('.academic-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            document.querySelectorAll('.academic-tab').forEach(function (t) { t.classList.remove('active'); });
-            document.querySelectorAll('.academic-panel').forEach(function (p) { p.classList.remove('active'); });
+    document.querySelectorAll('.academic-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.academic-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.academic-panel').forEach(p => p.classList.remove('active'));
             tab.classList.add('active');
-            var panel = document.getElementById(tab.dataset.panel);
+            const panel = document.getElementById(tab.dataset.panel);
             panel.classList.add('active');
-            panel.querySelectorAll('.fade-in').forEach(function (el) {
+            // Re-observe fade-in elements in newly visible panel
+            panel.querySelectorAll('.fade-in').forEach(el => {
                 if (!el.classList.contains('visible')) fadeObserver.observe(el);
             });
         });
     });
 
     // Active nav link on scroll
-    var sections = document.querySelectorAll('section[id]');
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-            var scrollY = window.scrollY + 120;
-            sections.forEach(function (sec) {
-                var link = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
-                if (!link) return;
-                var inView = scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight;
-                link.classList.toggle('active', inView);
-            });
-            ticking = false;
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY + 100;
+        sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute('id');
+            const link = document.querySelector('.nav-links a[href="#' + id + '"]');
+            if (link) {
+                if (scrollY >= top && scrollY < top + height) {
+                    link.style.color = '#7c3aed';
+                } else {
+                    link.style.color = '';
+                }
+            }
         });
-    }, { passive: true });
+    });
+</script>
+
+<script>
+// GSAP Bear Reading Animation
+(function() {
+    gsap.defaults({ overwrite: "auto" });
+
+})();
+</script>
+<script>
+// GSAP Section Title Animations - fun & playful for kids
+(function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    var titles = document.querySelectorAll('.section-title');
+    // Different animation for each title
+    var animations = [
+        // 1. Özellikler - bounce drop from above
+        function(el) {
+            gsap.from(el, {
+                y: -80, scale: 0.3, opacity: 0, rotation: -10,
+                duration: 1, ease: "bounce.out",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 2. Oyunlarımız - spin in from small
+        function(el) {
+            gsap.from(el, {
+                scale: 0, rotation: 720, opacity: 0,
+                duration: 1.2, ease: "back.out(1.7)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 3. Sistem Nasıl Çalışır? - elastic slide from left
+        function(el) {
+            gsap.from(el, {
+                x: -300, opacity: 0, skewX: 20,
+                duration: 1.2, ease: "elastic.out(1, 0.5)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 4. Rakamlarla Biz - pop up with wobble
+        function(el) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+            tl.from(el, { y: 100, scale: 0, opacity: 0, duration: 0.6, ease: "back.out(2)" })
+              .to(el, { rotation: 5, duration: 0.15, ease: "power1.inOut" })
+              .to(el, { rotation: -5, duration: 0.15, ease: "power1.inOut" })
+              .to(el, { rotation: 3, duration: 0.1, ease: "power1.inOut" })
+              .to(el, { rotation: 0, duration: 0.1, ease: "power1.out" });
+        },
+        // 5. Kullanıcılarımız Ne Diyor? - flip in 3D
+        function(el) {
+            gsap.set(el, { transformPerspective: 600 });
+            gsap.from(el, {
+                rotationX: -90, y: 50, opacity: 0,
+                duration: 1, ease: "back.out(1.5)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 6. Sıkça Sorulan Sorular - typewriter / slide from right
+        function(el) {
+            gsap.from(el, {
+                x: 300, opacity: 0, skewX: -15, scale: 0.5,
+                duration: 1, ease: "elastic.out(1, 0.6)",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        },
+        // 7. Arkadaşım Kelimeler (Sunum) - rainbow scale pulse
+        function(el) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+            tl.from(el, { scale: 3, opacity: 0, rotation: -15, duration: 0.8, ease: "power3.out" })
+              .to(el, { scale: 1.1, duration: 0.2, ease: "power1.inOut" })
+              .to(el, { scale: 1, duration: 0.3, ease: "bounce.out" });
+        },
+        // 8. Bilimsel Temel - elegant rise with fade
+        function(el) {
+            gsap.set(el, { transformPerspective: 800 });
+            gsap.from(el, {
+                y: 60, rotationY: 90, opacity: 0,
+                duration: 1.2, ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        }
+    ];
+
+    titles.forEach(function(title, i) {
+        if (animations[i]) {
+            animations[i](title);
+        }
+    });
+
+    // Also animate the CTA title "Hemen İndir, Eğlenceye Katıl!"
+    var ctaTitle = document.querySelector('#indir .section-title');
+    if (ctaTitle) {
+        gsap.from(ctaTitle, {
+            y: -60, scale: 0.5, opacity: 0, rotation: 8,
+            duration: 1, ease: "bounce.out",
+            scrollTrigger: { trigger: ctaTitle, start: "top 85%" }
+        });
+    }
 })();
 </script>
 </body>

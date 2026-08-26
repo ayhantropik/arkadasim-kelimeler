@@ -4,30 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arkadaşım Kelimeler — akıllı tahta programı, zengin PDF arşivi ve mobil oyun uygulamasıyla ilk okuma yazmayı eğlenceli hale getiren tek ekosistem.">
-    <meta name="theme-color" content="#dceeff">
+    <meta name="theme-color" content="#58cc02">
     <title>Arkadaşım Kelimeler - Kelimelerin Eğlenceli Dünyası!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="tasarim-a.css?v=33">
 </head>
 <body>
-
-<div class="nav-backdrop" aria-hidden="true"></div>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-        <span>40.000 interaktif ekran</span><span>&#9679;</span><span>3000+ PDF sayfası</span><span>&#9679;</span><span>30 formatta 8000+ oyun</span><span>&#9679;</span><span>Sınıfta, evde, kitapta &mdash; tek ekosistem</span><span>&#9679;</span>
-        <span>40.000 interaktif ekran</span><span>&#9679;</span><span>3000+ PDF sayfası</span><span>&#9679;</span><span>30 formatta 8000+ oyun</span><span>&#9679;</span><span>Sınıfta, evde, kitapta &mdash; tek ekosistem</span><span>&#9679;</span>
-    </div>
-</div>
 
 <!-- NAV -->
 <nav>
     <a href="#hero" class="nav-logo">
-        <img src="bear-mascot.png?v=3" alt="" class="nav-bear" aria-hidden="true" width="46" height="46">
+        <img src="bear-mascot.png?v=3" alt="" class="nav-bear" aria-hidden="true" width="50" height="44">
         <span>Arkadaşım Kelimeler</span>
     </a>
     <ul class="nav-links">
@@ -56,33 +46,12 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-    <svg class="hero-ribbon" viewBox="-200 0 1900 620" fill="none" aria-hidden="true">
-        <defs>
-            <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="n"/>
-                <feColorMatrix in="n" type="saturate" values="0" result="d"/>
-                <feComponentTransfer in="d" result="d2"><feFuncA type="linear" slope="0.34"/></feComponentTransfer>
-                <feComposite in="d2" in2="SourceAlpha" operator="in" result="grainMasked"/>
-                <feBlend in="SourceGraphic" in2="grainMasked" mode="multiply"/>
-            </filter>
-        </defs>
-        <g filter="url(#grain)">
-            <path d="M-60 452 C 210 452, 250 150, 470 150 S 720 452, 940 452 S 1230 140, 1420 190 C 1560 220, 1620 300, 1660 300"
-                  stroke="#000" stroke-width="120" fill="none" stroke-linecap="round"/>
-            <path d="M-60 452 C 210 452, 250 150, 470 150 S 720 452, 940 452 S 1230 140, 1420 190 C 1560 220, 1620 300, 1660 300"
-                  stroke="#4da2ff" stroke-width="118" fill="none" stroke-linecap="round"/>
-        </g>
-    </svg>
-    <span class="sticker sticker-rocket" aria-hidden="true">🚀</span>
-    <span class="sticker sticker-coin" aria-hidden="true">🪙</span>
-    <span class="sticker sticker-check" aria-hidden="true">✅</span>
-    <span class="sticker sticker-wallet" aria-hidden="true">🎒</span>
     <div class="hero-content">
         <div class="hero-text fade-in">
             <img src="logo.png?v=11" alt="Arkadaşım Kelimeler" class="hero-logo">
             <div class="slogan">Eğitim ve eğlence aynı yerde</div>
-            <h1>İlkokula<br>en iyi başlangıç</h1>
-            <p>Fiziksel materyal ve teknolojiyi birleştirdik. Sınıfta dersi MEB'in İlk Okuma Yazma kitapları ve akıllı tahta programımızdan takip et, ders kitaplarına destek olan zengin PDF arşiviyle çalış ve mobil uygulamadaki binlerce oyunla potansiyelini geliştir.</p>
+            <h1>İlkokula en iyi başlangıç.</h1>
+            <p>Fiziksel materyal ve teknolojiyi birleştirdik. Sınıfta dersi MEB'in İlk Okuma Yazma kitapları ve akıllı tahta programımızdan takip et, ders kitaplarına destek olan zengin PDF arşiviyle çalış ve mobil uygulamadaki binlerce oyunla potansiyelini geliştir. Eğlenceli öğrenme dünyasına hoş geldin.</p>
             <div class="store-buttons">
                 <a href="#" class="store-btn">
                     <i class="fab fa-apple"></i>
@@ -294,7 +263,17 @@
 </section>
 
 <!-- FEATURES -->
-<section id="ozellikler" class="band-white">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">🧠</span></span>
+            <span class="flow-travel"><span class="flow-bob">📚</span></span>
+            <span class="flow-travel"><span class="flow-bob">🎮</span></span>
+            <span class="flow-travel"><span class="flow-bob">⭐</span></span>
+    </div>
+</div>
+
+<section id="ozellikler">
     <div class="container">
         <h2 class="section-title fade-in">Özellikler</h2>
         <p class="section-subtitle fade-in">Türkiye'nin ilk ve tek tam yapılandırılmış İlk Okuma-Yazma Öğretimine hoş geldin! Kelime oyunlarını seviyorsan, öğrenirken gelişmek ve ömür boyu kullanacağın bilişsel yetenekler kazanmak istiyorsan doğru yerdesin! İşte seni bekleyen harika özellikler.</p>
@@ -349,7 +328,17 @@
 </section>
 
 <!-- GAMES -->
-<section id="oyunlar" class="band-sky">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">✏️</span></span>
+            <span class="flow-travel"><span class="flow-bob">🔤</span></span>
+            <span class="flow-travel"><span class="flow-bob">✨</span></span>
+            <span class="flow-travel"><span class="flow-bob">🎯</span></span>
+    </div>
+</div>
+
+<section id="oyunlar">
     <div class="container">
         <h2 class="section-title fade-in">Oyunlarımız</h2>
         <p class="section-subtitle fade-in">Platformumuzda seni bekleyen birbirinden eğlenceli kelime oyunlarını keşfet!</p>
@@ -479,7 +468,17 @@
 </section>
 
 <!-- HOW TO PLAY -->
-<section id="nasil-oynanir" class="band-gray">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">📚</span></span>
+            <span class="flow-travel"><span class="flow-bob">🖍️</span></span>
+            <span class="flow-travel"><span class="flow-bob">🎮</span></span>
+            <span class="flow-travel"><span class="flow-bob">⭐</span></span>
+    </div>
+</div>
+
+<section id="nasil-oynanir">
     <div class="container">
         <h2 class="section-title fade-in">Sistem Nasıl Çalışır?</h2>
         <p class="section-subtitle fade-in">Dört kolay adımda eğlenceye katıl!</p>
@@ -584,7 +583,17 @@
 </section>
 
 <!-- STATS -->
-<section id="istatistikler" class="band-white">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">🏆</span></span>
+            <span class="flow-travel"><span class="flow-bob">📈</span></span>
+            <span class="flow-travel"><span class="flow-bob">✨</span></span>
+            <span class="flow-travel"><span class="flow-bob">🎓</span></span>
+    </div>
+</div>
+
+<section id="istatistikler">
     <div class="container">
         <h2 class="section-title fade-in">Rakamlarla Biz</h2>
         <p class="section-subtitle fade-in">Milyonlarca oyuncunun tercihi olmaktan gurur duyuyoruz.</p>
@@ -614,7 +623,17 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="yorumlar" class="band-lavender">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">💬</span></span>
+            <span class="flow-travel"><span class="flow-bob">⭐</span></span>
+            <span class="flow-travel"><span class="flow-bob">😊</span></span>
+            <span class="flow-travel"><span class="flow-bob">✨</span></span>
+    </div>
+</div>
+
+<section id="yorumlar">
     <div class="container">
         <h2 class="section-title fade-in">Kullanıcılarımız Ne Diyor?</h2>
         <p class="section-subtitle fade-in">Milyonlarca mutlu kullanıcıdan bazıları...</p>
@@ -648,7 +667,17 @@
 </section>
 
 <!-- FAQ -->
-<section id="sss" class="band-white">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">❓</span></span>
+            <span class="flow-travel"><span class="flow-bob">💡</span></span>
+            <span class="flow-travel"><span class="flow-bob">📖</span></span>
+            <span class="flow-travel"><span class="flow-bob">✨</span></span>
+    </div>
+</div>
+
+<section id="sss">
     <div class="container">
         <h2 class="section-title fade-in">Sıkça Sorulan Sorular</h2>
         <p class="section-subtitle fade-in">Merak ettiklerin burada!</p>
@@ -694,7 +723,17 @@
 </section>
 
 <!-- SUNUM / PRESENTATION -->
-<section id="sunum" class="band-sky">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">🧠</span></span>
+            <span class="flow-travel"><span class="flow-bob">🤖</span></span>
+            <span class="flow-travel"><span class="flow-bob">📊</span></span>
+            <span class="flow-travel"><span class="flow-bob">⭐</span></span>
+    </div>
+</div>
+
+<section id="sunum">
     <div class="container">
         <h2 class="section-title fade-in">Arkadaşım Kelimeler</h2>
         <p class="section-subtitle fade-in">Yapay Zeka ve Nörobilim ile İlk Okuma Yazmayı Yeniden Tanımlıyoruz</p>
@@ -860,7 +899,17 @@
 </section>
 
 <!-- ACADEMIC -->
-<section id="akademik" class="band-white">
+<!-- FLOW DIVIDER -->
+<div class="flow-divider" aria-hidden="true">
+    <div class="flow-track">
+            <span class="flow-travel"><span class="flow-bob">🔬</span></span>
+            <span class="flow-travel"><span class="flow-bob">📚</span></span>
+            <span class="flow-travel"><span class="flow-bob">🧩</span></span>
+            <span class="flow-travel"><span class="flow-bob">✨</span></span>
+    </div>
+</div>
+
+<section id="akademik">
     <div class="container">
         <h2 class="section-title fade-in">Bilimsel Temel</h2>
         <p class="section-subtitle fade-in">İlk Okuma Yazma: Bir Çocuğun Eğitim Hayatındaki En Kritik Eşik</p>
