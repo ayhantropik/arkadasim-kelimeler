@@ -58,7 +58,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 
 body {
     font-family: var(--font-ui);
@@ -69,6 +69,7 @@ body {
     color: var(--color-carbon);
     background: var(--color-paper-white);
     overflow-x: hidden;
+    padding-bottom: var(--marquee-height);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -84,7 +85,8 @@ img { max-width: 100%; }
    MARQUEE
    ========================================================= */
 .marquee {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 1002;
+    border-top: var(--hairline);
     height: var(--marquee-height);
     background: var(--color-carbon);
     color: var(--color-paper-white);
@@ -115,13 +117,13 @@ img { max-width: 100%; }
 .nav-backdrop {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 1000;
-    height: calc(var(--marquee-height) + var(--nav-height) + 24px);
+    height: calc(var(--nav-height) + 24px);
     background: var(--color-sky-wash);
     border-bottom: var(--hairline);
 }
 nav {
     position: fixed;
-    top: calc(var(--marquee-height) + 12px);
+    top: 12px;
     left: 50%; transform: translateX(-50%);
     z-index: 1001;
     width: calc(100% - 32px);
@@ -201,7 +203,7 @@ nav {
 
 .mobile-menu {
     position: fixed;
-    top: calc(var(--marquee-height) + var(--nav-height) + 20px);
+    top: calc(var(--nav-height) + 20px);
     left: 16px; right: 16px;
     z-index: 1000;
     background: var(--color-paper-white);
@@ -322,7 +324,7 @@ h3, h4 { font-family: var(--font-ui); font-weight: 700; line-height: 1.15; color
 .hero {
     position: relative;
     background: var(--color-sky-wash);
-    padding: calc(var(--marquee-height) + var(--nav-height) + var(--spacing-48)) 0 var(--spacing-80);
+    padding: calc(var(--nav-height) + var(--spacing-48)) 0 var(--spacing-80);
     overflow: hidden;
 }
 .hero-ribbon {
@@ -394,8 +396,8 @@ img.hero-logo {
     width: 74px; height: 74px;
     z-index: 2;
 }
-.sticker-rocket { background: var(--color-ember); top: 150px; left: 44%; transform: rotate(-13deg); }
-.sticker-coin   { background: var(--color-sunburst); top: 150px; right: 2%; transform: rotate(11deg); border-radius: var(--radius-pill); }
+.sticker-rocket { background: var(--color-ember); top: 116px; left: 44%; transform: rotate(-13deg); }
+.sticker-coin   { background: var(--color-sunburst); top: 116px; right: 2%; transform: rotate(11deg); border-radius: var(--radius-pill); }
 .sticker-check  { background: var(--color-mint-pop); bottom: 3%; left: 40%; transform: rotate(8deg); }
 .sticker-wallet { background: var(--color-voltage-violet); bottom: 3%; right: 2%; transform: rotate(-9deg); border-radius: 16px; }
 
@@ -1137,9 +1139,9 @@ footer h4 {
     .trio-desc, .trio-text-right .trio-desc { max-width: 290px; }
     /* keep the stickers clear of the centred headline on narrow screens */
     .sticker { width: 46px; height: 46px; font-size: 19px; }
-    /* the marquee + nav are fixed over the top of the band */
-    .sticker-rocket { top: 140px; left: -1%; }
-    .sticker-coin   { top: 140px; right: -1%; }
+    /* the nav pill is fixed over the top of the band */
+    .sticker-rocket { top: 106px; left: -1%; }
+    .sticker-coin   { top: 106px; right: -1%; }
     .sticker-check  { bottom: 2%;  left: -1%; }
     .sticker-wallet { bottom: 2%;  right: -1%; }
     .footer-grid { grid-template-columns: 1fr; gap: var(--spacing-32); }
