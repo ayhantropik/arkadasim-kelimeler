@@ -99,15 +99,18 @@ img { max-width: 100%; }
     white-space: nowrap;
     animation: marquee 38s linear infinite;
 }
-.marquee-track span {
+.marquee-track > span {
     display: inline-block;
-    will-change: transform;
     line-height: 1;
     padding: 0 var(--spacing-24);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
+}
+.marquee-track .mq-ch {
+    display: inline-block;
+    will-change: transform;
 }
 @keyframes marquee {
     from { transform: translateX(0); }

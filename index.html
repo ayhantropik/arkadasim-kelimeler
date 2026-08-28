@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=16">
+    <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -1296,23 +1296,44 @@
     });
 
     /* ---------------------------------------------------------
-       Marquee: GSAP drives the scroll, and every word arcs over
-       the middle of the screen as it passes — like hopping a
-       hurdle parked at the centre. The CSS animation stays as the
-       fallback and is switched off only once GSAP takes over.
+       Marquee: GSAP drives the scroll and every LETTER clears a
+       hurdle standing at the centre of the screen. The lift is a
+       function of the letter's distance from that point, so the
+       arc is tied to position rather than fired as a tween — the
+       letters cross one after another like a field of hurdlers.
+       The CSS animation stays as the fallback and is switched off
+       only once GSAP has taken over.
        --------------------------------------------------------- */
     (function marquee() {
         const track = document.querySelector('.marquee-track');
         if (!track || typeof gsap === 'undefined') return;
 
-        const words = Array.prototype.filter.call(
-            track.querySelectorAll('span'),
-            function (s) { return s.textContent.trim() !== '\u25CF'; }
-        );
+        const HOP_HEIGHT = 15;   // px at the top of the arc
+        const HOP_RADIUS = 26;   // px either side of the hurdle
+        const HOP_TILT = 11;     // deg the runner leans through the jump
+        const HANG = 0.65;       // <1 flattens the top of the arc into hang time
+        const SPEED = 24;        // seconds for one full copy of the strip
 
-        const HOP_HEIGHT = 16;   // px at the top of the arc
-        const HOP_RADIUS = 190;  // px either side of centre the arc spans
-        const HOP_TILT = 6;      // deg of lean through the jump
+        // split every word into letters; spaces stay as text nodes so the
+        // words keep their natural spacing
+        const letters = [];
+        Array.prototype.forEach.call(track.children, function (item) {
+            const text = item.textContent;
+            if (text.trim() === '\u25CF') return;   // separators do not run
+            item.textContent = '';
+            for (let i = 0; i < text.length; i++) {
+                if (text[i] === ' ') {
+                    item.appendChild(document.createTextNode(' '));
+                } else {
+                    const ch = document.createElement('span');
+                    ch.className = 'mq-ch';
+                    ch.textContent = text[i];
+                    item.appendChild(ch);
+                    letters.push(ch);
+                }
+            }
+        });
+        if (!letters.length) return;
 
         let loop = null, metrics = [], trackLeft = 0, half = 0;
 
@@ -1321,29 +1342,33 @@
             const tr = track.getBoundingClientRect();
             trackLeft = tr.left;
             half = tr.width / 2;
-            metrics = words.map(function (el) {
+            metrics = letters.map(function (el) {
                 const r = el.getBoundingClientRect();
                 return {
                     offset: r.left - tr.left + r.width / 2,
                     setY: gsap.quickSetter(el, 'y', 'px'),
-                    setRot: gsap.quickSetter(el, 'rotation', 'deg')
+                    setRot: gsap.quickSetter(el, 'rotation', 'deg'),
+                    airborne: false
                 };
             });
         }
 
-        function hop() {
+        function run() {
             const x = gsap.getProperty(track, 'x');
             const mid = window.innerWidth / 2;
             for (let i = 0; i < metrics.length; i++) {
                 const m = metrics[i];
                 const t = (trackLeft + x + m.offset - mid) / HOP_RADIUS;
                 if (t > -1 && t < 1) {
-                    const lift = 1 - t * t;
+                    const lift = Math.pow(1 - t * t, HANG);
                     m.setY(-HOP_HEIGHT * lift);
                     m.setRot(-t * HOP_TILT * lift);
-                } else {
+                    m.airborne = true;
+                } else if (m.airborne) {
+                    // only written once on landing, not every frame
                     m.setY(0);
                     m.setRot(0);
+                    m.airborne = false;
                 }
             }
         }
@@ -1351,12 +1376,17 @@
         gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', function () {
             track.style.animation = 'none';
             measure();
-            loop = gsap.to(track, { x: function () { return -half; }, duration: 38, ease: 'none', repeat: -1 });
-            gsap.ticker.add(hop);
+            loop = gsap.to(track, {
+                x: function () { return -half; },
+                duration: SPEED,
+                ease: 'none',
+                repeat: -1
+            });
+            gsap.ticker.add(run);
             return function () {
-                gsap.ticker.remove(hop);
+                gsap.ticker.remove(run);
                 if (loop) { loop.kill(); loop = null; }
-                gsap.set(words, { y: 0, rotation: 0 });
+                gsap.set(letters, { y: 0, rotation: 0 });
                 track.style.animation = '';
             };
         });
